@@ -853,6 +853,10 @@ function getUidByName(name) {
   return p ? p.uid : null;
 }
 
+// Total unique dex numbers (300, not 308 — alt forms share a number)
+const UNIQUE_DEX_NUMS = [...new Set(POKEMON.map(p => p.num))];
+const DEX_TOTAL = UNIQUE_DEX_NUMS.length;
+
 // ─── Boot Animation ──────────────────────────────────
 function runBootAnimation() {
   const boot = document.getElementById('boot-screen');
@@ -902,10 +906,15 @@ function updateCellState(uid) {
 }
 
 function updateProgress() {
-  const count = caughtSet.size;
-  const total = POKEMON.length;
-  document.getElementById('progress-count').textContent = `${count} / ${total}`;
-  document.getElementById('progress-bar').style.width = `${(count / total) * 100}%`;
+  // Count by unique dex number — catching any form of #059 counts that dex entry
+  const caughtNums = new Set();
+  caughtSet.forEach(uid => {
+    const p = POKEMON.find(pk => pk.uid === uid);
+    if (p) caughtNums.add(p.num);
+  });
+  const count = caughtNums.size;
+  document.getElementById('progress-count').textContent = `${count} / ${DEX_TOTAL}`;
+  document.getElementById('progress-bar').style.width = `${(count / DEX_TOTAL) * 100}%`;
 }
 
 // ─── Search & Filters ────────────────────────────────
