@@ -1,14 +1,16 @@
 # Pokopia Pokodex
 
-A Pokodex-themed reference app for **Pokémon Pokopia** (Nintendo Switch 2). Look up which habitats to build to find any Pokémon.
+A mobile-friendly reference app for **Pokémon Pokopia** (Nintendo Switch 2). Tap any uncaught Pokémon to see which habitats to build, what materials you need, and where to place them. Works offline from your phone's home screen.
 
 ## Features
 
-- All 308 Pokémon with silhouette/color toggle for caught tracking
+- All 300 Pokémon with silhouette/color toggle for caught tracking
 - 209 habitats with materials, rarity, locations, time, and weather data
 - Tap any Pokémon to see which habitats attract it
 - Tap a habitat card to see all Pokémon that appear there
+- Filter by region (Bleak Beach, Cloud Island, Palette Town, Rocky Ridges, Sparkling Skylands, Withered Wastelands)
 - Search by name, filter by caught/missing
+- Alternate forms tracked independently (Pikachu/Peakychu, Shellos forms, etc.)
 - Works offline (PWA with service worker)
 - Boot-up animation because it's fun
 
