@@ -828,6 +828,79 @@ body {
   clip: rect(0,0,0,0);
   white-space: nowrap;
 }
+
+/* ─── Cloud Sync ───────────────────────────────────── */
+.sync-toggle-btn {
+  margin-left: auto;
+  width: 40px; height: 40px; flex-shrink: 0;
+  border-radius: 10px;
+  border: 2px solid #660000;
+  background: #550000;
+  color: #CC8888;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.3);
+  display: flex; align-items: center; justify-content: center;
+}
+.sync-toggle-btn:active { transform: scale(0.94); }
+.sync-toggle-btn.on {
+  color: #6EFF6E; border-color: #338833;
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.3), 0 0 8px rgba(68,204,68,0.5);
+}
+
+.sync-overlay {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(0,0,0,0.7);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.sync-overlay.open { opacity: 1; pointer-events: auto; }
+.sync-card {
+  background: #F0EDE4;
+  border-radius: 16px;
+  width: 100%; max-width: 360px;
+  padding: 16px 18px 20px;
+  border: 3px solid #880000;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  transform: scale(0.92);
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+  max-height: 88vh; overflow-y: auto;
+}
+.sync-overlay.open .sync-card { transform: scale(1); }
+.sync-close {
+  float: right; width: 28px; height: 28px; border-radius: 50%;
+  background: #DDD; border: none; font-size: 15px; color: #666;
+  cursor: pointer; margin: -2px -4px 0 0;
+}
+.sync-title { font-size: 18px; font-weight: 800; color: #CC0000; margin-bottom: 8px; }
+.sync-sub { font-size: 12.5px; color: #777; line-height: 1.5; margin-bottom: 12px; }
+.sync-mini-label { font-size: 11px; font-weight: 700; color: #999;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.sync-code {
+  font-family: 'Courier New', monospace; font-size: 21px; font-weight: 700;
+  letter-spacing: 0.12em; text-align: center; color: #CC0000;
+  background: #FFF; border: 2px dashed #CC9999; border-radius: 10px;
+  padding: 14px 8px; margin-bottom: 10px;
+  user-select: text; -webkit-user-select: text;
+}
+.sync-btn-primary, .sync-btn-secondary {
+  width: 100%; padding: 12px; border-radius: 12px;
+  font-size: 15px; font-weight: 700; cursor: pointer; border: none; margin-top: 8px;
+}
+.sync-btn-primary { background: #CC0000; color: #FFF; }
+.sync-btn-primary:active, .sync-btn-secondary:active { transform: scale(0.98); }
+.sync-btn-secondary { background: #E8E4DA; color: #555; }
+.sync-input2 {
+  width: 100%; padding: 11px 12px; border: 2px solid #CC9999; border-radius: 10px;
+  background: #FFF; color: #333; font-size: 16px; text-align: center;
+  letter-spacing: 0.06em; text-transform: uppercase; margin-top: 6px; outline: none;
+  user-select: text; -webkit-user-select: text;
+}
+.sync-input2::placeholder { color: #C0A0A0; }
+.sync-status { text-align: center; font-size: 12.5px; font-weight: 600; margin: 10px 0 2px; }
+.sync-divider { border: none; border-top: 1px solid #D0CCC2; margin: 16px 0; }
 </style>
 </head>
 <body>
@@ -856,6 +929,7 @@ body {
       <div class="dot dot-yellow"></div>
       <div class="dot dot-green"></div>
     </div>
+    <button class="sync-toggle-btn" id="sync-btn" aria-label="Cloud sync">☁</button>
   </div>
 
   <!-- Hinge line -->
@@ -935,6 +1009,11 @@ body {
   <div class="lightbox-content" id="lightbox-content"></div>
 </div>
 
+<!-- Cloud Sync -->
+<div class="sync-overlay" id="sync-overlay">
+  <div class="sync-card" id="sync-card"></div>
+</div>
+
 <script src="data.js"></script>
 <script>
 // ─── Unique IDs for duplicate dex numbers ────────────
@@ -958,6 +1037,16 @@ POKEMON.forEach(p => {
 // ─── State ────────────────────────────────────────────
 const STORAGE_KEY = 'pokopia-caught';
 let caughtSet = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
+
+// Cloud sync config/state (shared Supabase project, isolated pokopia_sync table)
+const CODE_KEY = 'pokopia-code';
+const SUPA_URL = 'https://jsdfzigyjqgemiiisrpn.supabase.co';
+const SUPA_KEY = 'sb_publishable_kVv0yMRSHh1G08d5s0q9FQ_yPNM7x9f';
+let syncCode = localStorage.getItem(CODE_KEY) || '';
+let syncReady = false;
+let pushTimer = null;
+let syncStatus = '';
+
 let currentFilter = 'all';
 let currentRegion = '';
 let searchQuery = '';
@@ -980,6 +1069,7 @@ let selectedPokemon = null;
 
 function saveCaught() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify([...caughtSet]));
+  if (syncReady && syncCode) schedulePush();
 }
 
 function isCaught(uid) {
@@ -1473,9 +1563,108 @@ document.getElementById('search-input').addEventListener('input', (e) => {
   }
 });
 
+// ─── Cloud Sync ──────────────────────────────────────
+function rpc(fn, body) {
+  return fetch(SUPA_URL + '/rest/v1/rpc/' + fn, {
+    method: 'POST',
+    headers: { 'apikey': SUPA_KEY, 'Authorization': 'Bearer ' + SUPA_KEY, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  }).then(r => { if (!r.ok) throw new Error('http ' + r.status); return r.json(); });
+}
+
+function genCode() {
+  const A = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  const rnd = new Uint8Array(12); crypto.getRandomValues(rnd);
+  let out = '';
+  for (let i = 0; i < 12; i++) { out += A[rnd[i] % 32]; if (i === 3 || i === 7) out += '-'; }
+  return out;
+}
+
+function syncSetStatus(s) {
+  syncStatus = s;
+  document.getElementById('sync-btn').classList.toggle('on', !!syncCode);
+  if (document.getElementById('sync-overlay').classList.contains('open')) renderSyncCard();
+}
+
+function schedulePush() { clearTimeout(pushTimer); pushTimer = setTimeout(pushNow, 1200); }
+
+function pushNow() {
+  if (!syncCode) return;
+  syncSetStatus('saving');
+  rpc('pokopia_push', { p_code: syncCode, p_caught: [...caughtSet] })
+    .then(() => syncSetStatus('ok'), () => syncSetStatus('err'));
+}
+
+function pullAndMerge() {
+  if (!syncCode) return;
+  syncSetStatus('saving');
+  rpc('pokopia_pull', { p_code: syncCode }).then(rows => {
+    if (rows && rows[0] && Array.isArray(rows[0].caught)) {
+      rows[0].caught.forEach(uid => caughtSet.add(uid));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([...caughtSet]));
+      buildGrid();
+      applyFilters();
+    }
+    pushNow(); // write merged set back up
+  }, () => syncSetStatus('err'));
+}
+
+function syncStatusLine() {
+  if (syncStatus === 'saving') return '<span style="color:#999">Syncing…</span>';
+  if (syncStatus === 'err') return '<span style="color:#CC0000">Offline — will sync when reconnected</span>';
+  return '<span style="color:#2E9E2E">Backed up to the cloud ✓</span>';
+}
+
+function renderSyncCard() {
+  const card = document.getElementById('sync-card');
+  let body;
+  if (!syncCode) {
+    body = '<p class="sync-sub">Back up your Pokodex to the cloud so it survives updates, reinstalls, and new phones — and syncs across your devices.</p>' +
+      '<button class="sync-btn-primary" data-sync="enable">Turn On Sync</button>';
+  } else {
+    body = '<div class="sync-mini-label">Your sync code</div>' +
+      '<div class="sync-code">' + syncCode + '</div>' +
+      '<button class="sync-btn-primary" data-sync="copy">Copy Code</button>' +
+      '<p class="sync-status">' + syncStatusLine() + '</p>' +
+      '<hr class="sync-divider">' +
+      '<div class="sync-mini-label">Use on another device</div>' +
+      '<p class="sync-sub">Open the app there, tap ☁, and paste this code to load your Pokodex. It merges — you never lose a catch.</p>' +
+      '<input class="sync-input2" id="sync-code-input" placeholder="XXXX-XXXX-XXXX" autocapitalize="characters" autocomplete="off" autocorrect="off">' +
+      '<button class="sync-btn-primary" data-sync="link">Load That Code</button>' +
+      '<button class="sync-btn-secondary" data-sync="off">Turn Off Sync (keeps this device)</button>';
+  }
+  card.innerHTML = '<button class="sync-close" data-sync="close">✕</button>' +
+    '<div class="sync-title">☁ Cloud Sync</div>' + body;
+}
+
+function openSync() { renderSyncCard(); document.getElementById('sync-overlay').classList.add('open'); }
+function closeSync() { document.getElementById('sync-overlay').classList.remove('open'); }
+
+document.getElementById('sync-btn').addEventListener('click', openSync);
+document.getElementById('sync-overlay').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('sync-overlay')) { closeSync(); return; }
+  const btn = e.target.closest('[data-sync]'); if (!btn) return;
+  const act = btn.getAttribute('data-sync');
+  if (act === 'close') closeSync();
+  else if (act === 'enable') { syncCode = genCode(); localStorage.setItem(CODE_KEY, syncCode); pushNow(); renderSyncCard(); }
+  else if (act === 'copy') {
+    if (navigator.clipboard) navigator.clipboard.writeText(syncCode);
+    btn.textContent = 'Copied!';
+    setTimeout(() => { if (document.getElementById('sync-overlay').classList.contains('open')) renderSyncCard(); }, 1200);
+  } else if (act === 'link') {
+    const v = (document.getElementById('sync-code-input').value || '').trim().toUpperCase();
+    if (v.replace(/[^A-Z0-9]/g, '').length < 8) { btn.textContent = 'Enter your full code'; return; }
+    syncCode = v; localStorage.setItem(CODE_KEY, syncCode); pullAndMerge(); renderSyncCard();
+  } else if (act === 'off') { syncCode = ''; localStorage.removeItem(CODE_KEY); syncSetStatus(''); renderSyncCard(); }
+});
+
 // ─── Init ────────────────────────────────────────────
 buildGrid();
 runBootAnimation();
+
+syncReady = true;
+document.getElementById('sync-btn').classList.toggle('on', !!syncCode);
+if (syncCode) pullAndMerge();
 
 // Register service worker
 if ('serviceWorker' in navigator) {
