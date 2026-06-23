@@ -12804,35 +12804,208 @@ const POKEMON = [
     "name": "Jirachi",
     "sprite": "img/pokemon/385.png",
     "specialties": [],
-    "habitats": []
+    "habitats": [
+      {
+        "habitatNum": 210,
+        "habitatName": "Surrounded by stars",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
   },
   {
     "num": "302",
     "name": "Sableye",
     "sprite": "img/pokemon/302.png",
     "specialties": [],
-    "habitats": []
+    "habitats": [
+      {
+        "habitatNum": 211,
+        "habitatName": "Treasure-hunting set",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
   },
   {
     "num": "303",
     "name": "Hoppip",
     "sprite": "img/pokemon/187.png",
     "specialties": [],
-    "habitats": []
+    "habitats": [
+      {
+        "habitatNum": 212,
+        "habitatName": "Yellow carpet",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
   },
   {
     "num": "304",
     "name": "Skiploom",
     "sprite": "img/pokemon/188.png",
     "specialties": [],
-    "habitats": []
+    "habitats": [
+      {
+        "habitatNum": 212,
+        "habitatName": "Yellow carpet",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 213,
+        "habitatName": "Field-trip friends",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
   },
   {
     "num": "305",
     "name": "Jumpluff",
     "sprite": "img/pokemon/189.png",
     "specialties": [],
-    "habitats": []
+    "habitats": [
+      {
+        "habitatNum": 212,
+        "habitatName": "Yellow carpet",
+        "rarity": "Very Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 214,
+        "habitatName": "Dandelion lunchtime",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
   }
 ];
 
@@ -27342,6 +27515,299 @@ const HABITATS = [
         "spriteNum": "700",
         "rarity": "Common",
         "locations": [
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 210,
+    "name": "Surrounded by stars",
+    "description": "",
+    "image": "img/habitats/e5.png",
+    "materials": [
+      {
+        "item": "Star closet",
+        "quantity": 1,
+        "image": "img/items/starcloset.png"
+      },
+      {
+        "item": "Starry-sky bed",
+        "quantity": 1,
+        "image": "img/items/starry-skybed.png"
+      },
+      {
+        "item": "Cloud table",
+        "quantity": 1,
+        "image": "img/items/cloudtable.png"
+      },
+      {
+        "item": "Jirachi lamp",
+        "quantity": 1,
+        "image": "img/items/jirachilamp.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Jirachi",
+        "spriteNum": "385",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 211,
+    "name": "Treasure-hunting set",
+    "description": "",
+    "image": "img/habitats/e4.png",
+    "materials": [
+      {
+        "item": "Adventure kit",
+        "quantity": 1,
+        "image": "img/items/adventurekit.png"
+      },
+      {
+        "item": "Map and compass",
+        "quantity": 1,
+        "image": "img/items/mapandcompass.png"
+      },
+      {
+        "item": "Treasure",
+        "quantity": 1,
+        "image": "img/items/treasure.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Sableye",
+        "spriteNum": "302",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 212,
+    "name": "Yellow carpet",
+    "description": "",
+    "image": "img/habitats/e1.png",
+    "materials": [
+      {
+        "item": "Dandy flowers",
+        "quantity": 4,
+        "image": "img/items/dandyflowers.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Hoppip",
+        "spriteNum": "187",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Skiploom",
+        "spriteNum": "188",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Jumpluff",
+        "spriteNum": "189",
+        "rarity": "Very Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 213,
+    "name": "Field-trip friends",
+    "description": "",
+    "image": "img/habitats/e2.png",
+    "materials": [
+      {
+        "item": "Flower backpack",
+        "quantity": 1,
+        "image": "img/items/flowerbackpack.png"
+      },
+      {
+        "item": "Hoppip water bottle",
+        "quantity": 1,
+        "image": "img/items/hoppipwaterbottle.png"
+      },
+      {
+        "item": "Lunch box",
+        "quantity": 1,
+        "image": "img/items/lunchbox.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Skiploom",
+        "spriteNum": "188",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 214,
+    "name": "Dandelion lunchtime",
+    "description": "",
+    "image": "img/habitats/e3.png",
+    "materials": [
+      {
+        "item": "Dandy flowers",
+        "quantity": 1,
+        "image": "img/items/dandyflowers.png"
+      },
+      {
+        "item": "Flower cushion",
+        "quantity": 1,
+        "image": "img/items/flowercushion.png"
+      },
+      {
+        "item": "Lunch box",
+        "quantity": 1,
+        "image": "img/items/lunchbox.png"
+      },
+      {
+        "item": "Flowery table setting",
+        "quantity": 1,
+        "image": "img/items/flowerytablesetting.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Jumpluff",
+        "spriteNum": "189",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
           "Palette Town",
           "Cloud Island"
         ],
