@@ -1,6 +1,6 @@
-// Pokopia Pokodex — Game Data
-// Auto-generated from Serebii.net on 2026-03-25
-// Do not edit manually — re-run scrape-serebii.js to update
+// Pokopia Pokédex — Game Data
+// Auto-generated from Serebii.net, plus manually-added event Pokémon (Jirachi event, etc.)
+// Re-run scrape-serebii.js to refresh; event Pokémon are re-appended from its EVENT_POKEMON list.
 
 const POKEMON = [
   {
@@ -2034,11 +2034,7 @@ const POKEMON = [
         "habitatName": "Illuminated waterfall",
         "rarity": "Common",
         "locations": [
-          "Withered Wastelands",
-          "Bleak Beach",
-          "Rocky Ridges",
           "Sparkling Skylands",
-          "Palette Town",
           "Cloud Island"
         ],
         "times": [
@@ -3129,7 +3125,7 @@ const POKEMON = [
       },
       {
         "habitatNum": 44,
-        "habitatName": "Crazy log handicrafts",
+        "habitatName": "Cozy log handicrafts",
         "rarity": "Common",
         "locations": [
           "Withered Wastelands",
@@ -3187,7 +3183,7 @@ const POKEMON = [
       },
       {
         "habitatNum": 44,
-        "habitatName": "Crazy log handicrafts",
+        "habitatName": "Cozy log handicrafts",
         "rarity": "Rare",
         "locations": [
           "Withered Wastelands",
@@ -3246,7 +3242,7 @@ const POKEMON = [
       },
       {
         "habitatNum": 44,
-        "habitatName": "Crazy log handicrafts",
+        "habitatName": "Cozy log handicrafts",
         "rarity": "Very Rare",
         "locations": [
           "Withered Wastelands",
@@ -4339,30 +4335,6 @@ const POKEMON = [
         "habitatNum": 59,
         "habitatName": "Shaded beach",
         "rarity": "Common",
-        "locations": [
-          "Withered Wastelands",
-          "Bleak Beach",
-          "Rocky Ridges",
-          "Sparkling Skylands",
-          "Palette Town",
-          "Cloud Island"
-        ],
-        "times": [
-          "Morning",
-          "Day",
-          "Evening",
-          "Night"
-        ],
-        "weather": [
-          "Sun",
-          "Cloud",
-          "Rain"
-        ]
-      },
-      {
-        "habitatNum": 98,
-        "habitatName": "Red tall grass",
-        "rarity": "Rare",
         "locations": [
           "Withered Wastelands",
           "Bleak Beach",
@@ -7627,6 +7599,29 @@ const POKEMON = [
     ],
     "habitats": [
       {
+        "habitatNum": 102,
+        "habitatName": "Elevated red tall grass",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
         "habitatNum": 125,
         "habitatName": "Chirping recital",
         "rarity": "Rare",
@@ -8085,6 +8080,30 @@ const POKEMON = [
     ],
     "habitats": [
       {
+        "habitatNum": 98,
+        "habitatName": "Red tall grass",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
         "habitatNum": 128,
         "habitatName": "Music and magazines",
         "rarity": "Common",
@@ -8123,29 +8142,6 @@ const POKEMON = [
         "habitatNum": 102,
         "habitatName": "Elevated red tall grass",
         "rarity": "Common",
-        "locations": [
-          "Withered Wastelands",
-          "Bleak Beach",
-          "Rocky Ridges",
-          "Sparkling Skylands",
-          "Palette Town",
-          "Cloud Island"
-        ],
-        "times": [
-          "Morning",
-          "Day",
-          "Evening"
-        ],
-        "weather": [
-          "Sun",
-          "Cloud",
-          "Rain"
-        ]
-      },
-      {
-        "habitatNum": 102,
-        "habitatName": "Elevated red tall grass",
-        "rarity": "Rare",
         "locations": [
           "Withered Wastelands",
           "Bleak Beach",
@@ -9788,11 +9784,7 @@ const POKEMON = [
         "habitatName": "Surging psychic power",
         "rarity": "Rare",
         "locations": [
-          "Withered Wastelands",
-          "Bleak Beach",
-          "Rocky Ridges",
           "Sparkling Skylands",
-          "Palette Town",
           "Cloud Island"
         ],
         "times": [
@@ -9812,11 +9804,7 @@ const POKEMON = [
         "habitatName": "Experiment Space",
         "rarity": "Common",
         "locations": [
-          "Withered Wastelands",
-          "Bleak Beach",
-          "Rocky Ridges",
           "Sparkling Skylands",
-          "Palette Town",
           "Cloud Island"
         ],
         "times": [
@@ -12028,26 +12016,6 @@ const POKEMON = [
           "Cloud",
           "Rain"
         ]
-      },
-      {
-        "habitatNum": 156,
-        "habitatName": "Sewer hole inspection",
-        "rarity": "Common",
-        "locations": [
-          "Palette Town",
-          "Cloud Island"
-        ],
-        "times": [
-          "Morning",
-          "Day",
-          "Evening",
-          "Night"
-        ],
-        "weather": [
-          "Sun",
-          "Cloud",
-          "Rain"
-        ]
       }
     ]
   },
@@ -12064,6 +12032,30 @@ const POKEMON = [
         "habitatName": "Large luggage carrier",
         "rarity": "Rare",
         "locations": [
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 156,
+        "habitatName": "Sewer hole inspection",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
           "Palette Town",
           "Cloud Island"
         ],
@@ -12805,6 +12797,41 @@ const POKEMON = [
     "specialties": [
       "Teleport"
     ],
+    "habitats": []
+  },
+  {
+    "num": "301",
+    "name": "Jirachi",
+    "sprite": "img/pokemon/385.png",
+    "specialties": [],
+    "habitats": []
+  },
+  {
+    "num": "302",
+    "name": "Sableye",
+    "sprite": "img/pokemon/302.png",
+    "specialties": [],
+    "habitats": []
+  },
+  {
+    "num": "303",
+    "name": "Hoppip",
+    "sprite": "img/pokemon/187.png",
+    "specialties": [],
+    "habitats": []
+  },
+  {
+    "num": "304",
+    "name": "Skiploom",
+    "sprite": "img/pokemon/188.png",
+    "specialties": [],
+    "habitats": []
+  },
+  {
+    "num": "305",
+    "name": "Jumpluff",
+    "sprite": "img/pokemon/189.png",
+    "specialties": [],
     "habitats": []
   }
 ];
@@ -14462,7 +14489,7 @@ const HABITATS = [
     "materials": [
       {
         "item": "Seat (any)",
-        "quantity": 1,
+        "quantity": 2,
         "image": "img/items/seat(any).png"
       },
       {
@@ -16013,7 +16040,7 @@ const HABITATS = [
   },
   {
     "num": 44,
-    "name": "Crazy log handicrafts",
+    "name": "Cozy log handicrafts",
     "description": "This space is packed with wooden furniture. It feels almost like you're in a mountain cabin",
     "image": "img/habitats/44.png",
     "materials": [
@@ -17383,9 +17410,9 @@ const HABITATS = [
     "image": "img/habitats/63.png",
     "materials": [
       {
-        "item": "Waste bin",
+        "item": "Garbage bin",
         "quantity": 1,
-        "image": "img/items/wastebin.png"
+        "image": "img/items/garbagebin.png"
       },
       {
         "item": "Sign",
@@ -18946,9 +18973,9 @@ const HABITATS = [
     "image": "img/habitats/84.png",
     "materials": [
       {
-        "item": "Waste bin",
+        "item": "Waste bin (any)",
         "quantity": 1,
-        "image": "img/items/wastebin.png"
+        "image": "img/items/wastebin(any).png"
       },
       {
         "item": "Vending Machine",
@@ -19951,8 +19978,8 @@ const HABITATS = [
         ]
       },
       {
-        "name": "Exeggcute",
-        "spriteNum": "102",
+        "name": "Kricketune",
+        "spriteNum": "402",
         "rarity": "Rare",
         "locations": [
           "Withered Wastelands",
@@ -20296,8 +20323,8 @@ const HABITATS = [
         ]
       },
       {
-        "name": "Chatot",
-        "spriteNum": "441",
+        "name": "Honchkrow",
+        "spriteNum": "430",
         "rarity": "Rare",
         "locations": [
           "Withered Wastelands",
@@ -20519,7 +20546,7 @@ const HABITATS = [
     "image": "img/habitats/105.png",
     "materials": [
       {
-        "item": "Pointyt ree",
+        "item": "Pointy tree",
         "quantity": 1,
         "image": "img/items/pointytree.png"
       },
@@ -22540,7 +22567,7 @@ const HABITATS = [
   {
     "num": 134,
     "name": "Absolute luxury",
-    "description": "Every single piece of this furniture set is top-noth, creating the ultimate air of luxury",
+    "description": "Every single piece of this furniture set is top-notch, creating the ultimate air of luxury",
     "image": "img/habitats/134.png",
     "materials": [
       {
@@ -23642,11 +23669,7 @@ const HABITATS = [
         "spriteNum": "130",
         "rarity": "Common",
         "locations": [
-          "Withered Wastelands",
-          "Bleak Beach",
-          "Rocky Ridges",
           "Sparkling Skylands",
-          "Palette Town",
           "Cloud Island"
         ],
         "times": [
@@ -23934,11 +23957,7 @@ const HABITATS = [
         "spriteNum": "065",
         "rarity": "Rare",
         "locations": [
-          "Withered Wastelands",
-          "Bleak Beach",
-          "Rocky Ridges",
           "Sparkling Skylands",
-          "Palette Town",
           "Cloud Island"
         ],
         "times": [
@@ -24271,10 +24290,14 @@ const HABITATS = [
     ],
     "pokemon": [
       {
-        "name": "Tinkatink",
-        "spriteNum": "957",
+        "name": "Tinkatuff",
+        "spriteNum": "958",
         "rarity": "Common",
         "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
           "Palette Town",
           "Cloud Island"
         ],
@@ -24794,7 +24817,7 @@ const HABITATS = [
       },
       {
         "item": "Seat (any)",
-        "quantity": 1,
+        "quantity": 2,
         "image": "img/items/seat(any).png"
       }
     ],
@@ -25066,11 +25089,7 @@ const HABITATS = [
         "spriteNum": "065",
         "rarity": "Common",
         "locations": [
-          "Withered Wastelands",
-          "Bleak Beach",
-          "Rocky Ridges",
           "Sparkling Skylands",
-          "Palette Town",
           "Cloud Island"
         ],
         "times": [
@@ -25511,7 +25530,7 @@ const HABITATS = [
       },
       {
         "item": "Table (any)",
-        "quantity": 1,
+        "quantity": 2,
         "image": "img/items/table(any).png"
       },
       {
@@ -26418,9 +26437,9 @@ const HABITATS = [
     "image": "img/habitats/191.png",
     "materials": [
       {
-        "item": "Pedastal",
+        "item": "Pedestal",
         "quantity": 1,
-        "image": "img/items/pedastal.png"
+        "image": "img/items/pedestal.png"
       },
       {
         "item": "Malicious Armor",
@@ -26472,9 +26491,9 @@ const HABITATS = [
     "image": "img/habitats/192.png",
     "materials": [
       {
-        "item": "Pedastal",
+        "item": "Pedestal",
         "quantity": 1,
-        "image": "img/items/pedastal.png"
+        "image": "img/items/pedestal.png"
       },
       {
         "item": "Auspicious Armor",
