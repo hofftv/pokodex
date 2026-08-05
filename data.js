@@ -6,6 +6,7 @@ const POKEMON = [
   {
     "num": "001",
     "name": "Bulbasaur",
+    "dex": "main",
     "sprite": "img/pokemon/001.png",
     "specialties": [
       "Grow"
@@ -64,6 +65,7 @@ const POKEMON = [
   {
     "num": "002",
     "name": "Ivysaur",
+    "dex": "main",
     "sprite": "img/pokemon/002.png",
     "specialties": [
       "Grow"
@@ -122,6 +124,7 @@ const POKEMON = [
   {
     "num": "003",
     "name": "Venusaur",
+    "dex": "main",
     "sprite": "img/pokemon/003.png",
     "specialties": [
       "Grow",
@@ -181,6 +184,7 @@ const POKEMON = [
   {
     "num": "004",
     "name": "Charmander",
+    "dex": "main",
     "sprite": "img/pokemon/004.png",
     "specialties": [
       "Burn"
@@ -215,6 +219,7 @@ const POKEMON = [
   {
     "num": "005",
     "name": "Charmeleon",
+    "dex": "main",
     "sprite": "img/pokemon/005.png",
     "specialties": [
       "Burn"
@@ -249,6 +254,7 @@ const POKEMON = [
   {
     "num": "006",
     "name": "Charizard",
+    "dex": "main",
     "sprite": "img/pokemon/006.png",
     "specialties": [
       "Burn",
@@ -306,6 +312,7 @@ const POKEMON = [
   {
     "num": "007",
     "name": "Squirtle",
+    "dex": "main",
     "sprite": "img/pokemon/007.png",
     "specialties": [
       "Water"
@@ -364,6 +371,7 @@ const POKEMON = [
   {
     "num": "008",
     "name": "Wartortle",
+    "dex": "main",
     "sprite": "img/pokemon/008.png",
     "specialties": [
       "Water"
@@ -398,6 +406,7 @@ const POKEMON = [
   {
     "num": "009",
     "name": "Blastoise",
+    "dex": "main",
     "sprite": "img/pokemon/009.png",
     "specialties": [
       "Water",
@@ -457,6 +466,7 @@ const POKEMON = [
   {
     "num": "010",
     "name": "Pidgey",
+    "dex": "main",
     "sprite": "img/pokemon/016.png",
     "specialties": [
       "Fly",
@@ -515,6 +525,7 @@ const POKEMON = [
   {
     "num": "011",
     "name": "Pidgeotto",
+    "dex": "main",
     "sprite": "img/pokemon/017.png",
     "specialties": [
       "Fly",
@@ -572,6 +583,7 @@ const POKEMON = [
   {
     "num": "012",
     "name": "Pidgeot",
+    "dex": "main",
     "sprite": "img/pokemon/018.png",
     "specialties": [
       "Fly",
@@ -606,6 +618,7 @@ const POKEMON = [
   {
     "num": "013",
     "name": "Oddish",
+    "dex": "main",
     "sprite": "img/pokemon/043.png",
     "specialties": [
       "Grow"
@@ -637,6 +650,7 @@ const POKEMON = [
   {
     "num": "014",
     "name": "Gloom",
+    "dex": "main",
     "sprite": "img/pokemon/044.png",
     "specialties": [
       "Grow"
@@ -671,6 +685,7 @@ const POKEMON = [
   {
     "num": "015",
     "name": "Vileplume",
+    "dex": "main",
     "sprite": "img/pokemon/045.png",
     "specialties": [
       "Grow",
@@ -706,6 +721,7 @@ const POKEMON = [
   {
     "num": "016",
     "name": "Bellossom",
+    "dex": "main",
     "sprite": "img/pokemon/182.png",
     "specialties": [
       "Grow",
@@ -741,6 +757,7 @@ const POKEMON = [
   {
     "num": "017",
     "name": "Paras",
+    "dex": "main",
     "sprite": "img/pokemon/046.png",
     "specialties": [
       "Search"
@@ -799,6 +816,7 @@ const POKEMON = [
   {
     "num": "018",
     "name": "Parasect",
+    "dex": "main",
     "sprite": "img/pokemon/047.png",
     "specialties": [
       "Search"
@@ -857,6 +875,7 @@ const POKEMON = [
   {
     "num": "019",
     "name": "Venonat",
+    "dex": "main",
     "sprite": "img/pokemon/048.png",
     "specialties": [
       "Search"
@@ -909,6 +928,7 @@ const POKEMON = [
   {
     "num": "020",
     "name": "Venomoth",
+    "dex": "main",
     "sprite": "img/pokemon/049.png",
     "specialties": [
       "Search"
@@ -961,6 +981,7 @@ const POKEMON = [
   {
     "num": "021",
     "name": "Bellsprout",
+    "dex": "main",
     "sprite": "img/pokemon/069.png",
     "specialties": [
       "Grow",
@@ -996,6 +1017,7 @@ const POKEMON = [
   {
     "num": "022",
     "name": "Weepinbell",
+    "dex": "main",
     "sprite": "img/pokemon/070.png",
     "specialties": [
       "Grow",
@@ -1055,6 +1077,7 @@ const POKEMON = [
   {
     "num": "023",
     "name": "Victreebel",
+    "dex": "main",
     "sprite": "img/pokemon/071.png",
     "specialties": [
       "Grow",
@@ -1114,6 +1137,7 @@ const POKEMON = [
   {
     "num": "024",
     "name": "Slowpoke",
+    "dex": "main",
     "sprite": "img/pokemon/079.png",
     "specialties": [
       "Water",
@@ -1149,6 +1173,7 @@ const POKEMON = [
   {
     "num": "025",
     "name": "Slowbro",
+    "dex": "main",
     "sprite": "img/pokemon/080.png",
     "specialties": [
       "Water",
@@ -1202,12 +1227,37 @@ const POKEMON = [
           "Cloud",
           "Rain"
         ]
+      },
+      {
+        "habitatNum": 184,
+        "habitatName": "Fishing pond",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
       }
     ]
   },
   {
     "num": "026",
     "name": "Slowking",
+    "dex": "main",
     "sprite": "img/pokemon/199.png",
     "specialties": [
       "Water",
@@ -1291,6 +1341,7 @@ const POKEMON = [
   {
     "num": "027",
     "name": "Magnemite",
+    "dex": "main",
     "sprite": "img/pokemon/081.png",
     "specialties": [
       "Generate"
@@ -1325,6 +1376,7 @@ const POKEMON = [
   {
     "num": "028",
     "name": "Magneton",
+    "dex": "main",
     "sprite": "img/pokemon/082.png",
     "specialties": [
       "Generate"
@@ -1383,6 +1435,7 @@ const POKEMON = [
   {
     "num": "029",
     "name": "Magnezone",
+    "dex": "main",
     "sprite": "img/pokemon/462.png",
     "specialties": [
       "Generate",
@@ -1442,6 +1495,7 @@ const POKEMON = [
   {
     "num": "030",
     "name": "Onix",
+    "dex": "main",
     "sprite": "img/pokemon/095.png",
     "specialties": [
       "Crush",
@@ -1477,6 +1531,7 @@ const POKEMON = [
   {
     "num": "031",
     "name": "Steelix",
+    "dex": "main",
     "sprite": "img/pokemon/208.png",
     "specialties": [
       "Crush",
@@ -1512,6 +1567,7 @@ const POKEMON = [
   {
     "num": "032",
     "name": "Cubone",
+    "dex": "main",
     "sprite": "img/pokemon/104.png",
     "specialties": [
       "Build"
@@ -1546,6 +1602,7 @@ const POKEMON = [
   {
     "num": "033",
     "name": "Marowak",
+    "dex": "main",
     "sprite": "img/pokemon/105.png",
     "specialties": [
       "Build"
@@ -1580,6 +1637,7 @@ const POKEMON = [
   {
     "num": "034",
     "name": "Tyrogue",
+    "dex": "main",
     "sprite": "img/pokemon/236.png",
     "specialties": [
       "Trade"
@@ -1614,6 +1672,7 @@ const POKEMON = [
   {
     "num": "035",
     "name": "Hitmonlee",
+    "dex": "main",
     "sprite": "img/pokemon/106.png",
     "specialties": [
       "Trade"
@@ -1648,6 +1707,7 @@ const POKEMON = [
   {
     "num": "036",
     "name": "Hitmonchan",
+    "dex": "main",
     "sprite": "img/pokemon/107.png",
     "specialties": [
       "Trade"
@@ -1682,6 +1742,7 @@ const POKEMON = [
   {
     "num": "037",
     "name": "Hitmontop",
+    "dex": "main",
     "sprite": "img/pokemon/237.png",
     "specialties": [
       "Trade"
@@ -1716,6 +1777,7 @@ const POKEMON = [
   {
     "num": "038",
     "name": "Koffing",
+    "dex": "main",
     "sprite": "img/pokemon/109.png",
     "specialties": [
       "Recycle"
@@ -1746,6 +1808,7 @@ const POKEMON = [
   {
     "num": "039",
     "name": "Weezing",
+    "dex": "main",
     "sprite": "img/pokemon/110.png",
     "specialties": [
       "Recycle"
@@ -1796,6 +1859,7 @@ const POKEMON = [
   {
     "num": "040",
     "name": "Tangela",
+    "dex": "main",
     "sprite": "img/pokemon/114.png",
     "specialties": [
       "Grow",
@@ -1827,6 +1891,7 @@ const POKEMON = [
   {
     "num": "041",
     "name": "Professor Tangrowth",
+    "dex": "main",
     "sprite": "img/pokemon/465-professortangrowth.png",
     "specialties": [
       "Appraise"
@@ -1861,6 +1926,7 @@ const POKEMON = [
   {
     "num": "041",
     "name": "Tangrowth",
+    "dex": "main",
     "sprite": "img/pokemon/465.png",
     "specialties": [
       "Grow",
@@ -1891,6 +1957,7 @@ const POKEMON = [
   {
     "num": "042",
     "name": "Scyther",
+    "dex": "main",
     "sprite": "img/pokemon/123.png",
     "specialties": [
       "Chop"
@@ -1925,6 +1992,7 @@ const POKEMON = [
   {
     "num": "043",
     "name": "Scizor",
+    "dex": "main",
     "sprite": "img/pokemon/212.png",
     "specialties": [
       "Chop"
@@ -1955,6 +2023,7 @@ const POKEMON = [
   {
     "num": "044",
     "name": "Pinsir",
+    "dex": "main",
     "sprite": "img/pokemon/127.png",
     "specialties": [
       "Chop",
@@ -1990,6 +2059,7 @@ const POKEMON = [
   {
     "num": "045",
     "name": "Magikarp",
+    "dex": "main",
     "sprite": "img/pokemon/129.png",
     "specialties": [
       "???"
@@ -2024,6 +2094,7 @@ const POKEMON = [
   {
     "num": "046",
     "name": "Gyarados",
+    "dex": "main",
     "sprite": "img/pokemon/130.png",
     "specialties": [
       "Water"
@@ -2054,6 +2125,7 @@ const POKEMON = [
   {
     "num": "047",
     "name": "Ditto",
+    "dex": "main",
     "sprite": "img/pokemon/132.png",
     "specialties": [
       "Transform"
@@ -2063,6 +2135,7 @@ const POKEMON = [
   {
     "num": "048",
     "name": "Hoothoot",
+    "dex": "main",
     "sprite": "img/pokemon/163.png",
     "specialties": [
       "Trade",
@@ -2137,6 +2210,7 @@ const POKEMON = [
   {
     "num": "049",
     "name": "Noctowl",
+    "dex": "main",
     "sprite": "img/pokemon/164.png",
     "specialties": [
       "Trade",
@@ -2193,6 +2267,7 @@ const POKEMON = [
   {
     "num": "050",
     "name": "Heracross",
+    "dex": "main",
     "sprite": "img/pokemon/214.png",
     "specialties": [
       "Chop",
@@ -2228,6 +2303,7 @@ const POKEMON = [
   {
     "num": "051",
     "name": "Volbeat",
+    "dex": "main",
     "sprite": "img/pokemon/313.png",
     "specialties": [
       "Hype"
@@ -2262,6 +2338,7 @@ const POKEMON = [
   {
     "num": "052",
     "name": "Illumise",
+    "dex": "main",
     "sprite": "img/pokemon/314.png",
     "specialties": [
       "Hype"
@@ -2296,6 +2373,7 @@ const POKEMON = [
   {
     "num": "053",
     "name": "Gulpin",
+    "dex": "main",
     "sprite": "img/pokemon/316.png",
     "specialties": [
       "Storage"
@@ -2326,6 +2404,7 @@ const POKEMON = [
   {
     "num": "054",
     "name": "Swalot",
+    "dex": "main",
     "sprite": "img/pokemon/317.png",
     "specialties": [
       "Storage"
@@ -2360,6 +2439,7 @@ const POKEMON = [
   {
     "num": "055",
     "name": "Cacnea",
+    "dex": "main",
     "sprite": "img/pokemon/331.png",
     "specialties": [
       "Grow"
@@ -2392,6 +2472,7 @@ const POKEMON = [
   {
     "num": "056",
     "name": "Cacturne",
+    "dex": "main",
     "sprite": "img/pokemon/332.png",
     "specialties": [
       "Grow",
@@ -2424,6 +2505,7 @@ const POKEMON = [
   {
     "num": "057",
     "name": "Combee",
+    "dex": "main",
     "sprite": "img/pokemon/415.png",
     "specialties": [
       "Litter"
@@ -2458,6 +2540,7 @@ const POKEMON = [
   {
     "num": "058",
     "name": "Vespiquen",
+    "dex": "main",
     "sprite": "img/pokemon/416.png",
     "specialties": [
       "Gather Honey",
@@ -2493,6 +2576,7 @@ const POKEMON = [
   {
     "num": "059",
     "name": "Shellos",
+    "dex": "main",
     "sprite": "img/pokemon/422.png",
     "specialties": [
       "Water"
@@ -2527,6 +2611,7 @@ const POKEMON = [
   {
     "num": "059",
     "name": "Shellos East Sea",
+    "dex": "main",
     "sprite": "img/pokemon/422-shelloseastsea.png",
     "specialties": [
       "Water"
@@ -2561,6 +2646,7 @@ const POKEMON = [
   {
     "num": "060",
     "name": "Gastrodon",
+    "dex": "main",
     "sprite": "img/pokemon/423.png",
     "specialties": [
       "Water",
@@ -2596,6 +2682,7 @@ const POKEMON = [
   {
     "num": "060",
     "name": "Gastrodon East Sea",
+    "dex": "main",
     "sprite": "img/pokemon/423-gastrodoneastsea.png",
     "specialties": [
       "Water",
@@ -2631,6 +2718,7 @@ const POKEMON = [
   {
     "num": "061",
     "name": "Drifloon",
+    "dex": "main",
     "sprite": "img/pokemon/425.png",
     "specialties": [
       "Dream Island"
@@ -2713,6 +2801,7 @@ const POKEMON = [
   {
     "num": "062",
     "name": "Drifblim",
+    "dex": "main",
     "sprite": "img/pokemon/426.png",
     "specialties": [
       "Fly",
@@ -2748,6 +2837,7 @@ const POKEMON = [
   {
     "num": "063",
     "name": "Drilbur",
+    "dex": "main",
     "sprite": "img/pokemon/529.png",
     "specialties": [
       "Search"
@@ -2782,6 +2872,7 @@ const POKEMON = [
   {
     "num": "064",
     "name": "Excadrill",
+    "dex": "main",
     "sprite": "img/pokemon/530.png",
     "specialties": [
       "Search",
@@ -2817,6 +2908,7 @@ const POKEMON = [
   {
     "num": "065",
     "name": "Timburr",
+    "dex": "main",
     "sprite": "img/pokemon/532.png",
     "specialties": [
       "Build"
@@ -2851,6 +2943,7 @@ const POKEMON = [
   {
     "num": "066",
     "name": "Gurdurr",
+    "dex": "main",
     "sprite": "img/pokemon/533.png",
     "specialties": [
       "Build"
@@ -2909,6 +3002,7 @@ const POKEMON = [
   {
     "num": "067",
     "name": "Conkeldurr",
+    "dex": "main",
     "sprite": "img/pokemon/534.png",
     "specialties": [
       "Build",
@@ -2944,6 +3038,7 @@ const POKEMON = [
   {
     "num": "068",
     "name": "Litwick",
+    "dex": "main",
     "sprite": "img/pokemon/607.png",
     "specialties": [
       "Burn"
@@ -3002,6 +3097,7 @@ const POKEMON = [
   {
     "num": "069",
     "name": "Lampent",
+    "dex": "main",
     "sprite": "img/pokemon/608.png",
     "specialties": [
       "Burn"
@@ -3060,6 +3156,7 @@ const POKEMON = [
   {
     "num": "070",
     "name": "Chandelure",
+    "dex": "main",
     "sprite": "img/pokemon/609.png",
     "specialties": [
       "Burn"
@@ -3094,6 +3191,7 @@ const POKEMON = [
   {
     "num": "071",
     "name": "Axew",
+    "dex": "main",
     "sprite": "img/pokemon/610.png",
     "specialties": [
       "Chop"
@@ -3152,6 +3250,7 @@ const POKEMON = [
   {
     "num": "072",
     "name": "Fraxure",
+    "dex": "main",
     "sprite": "img/pokemon/611.png",
     "specialties": [
       "Chop"
@@ -3210,6 +3309,7 @@ const POKEMON = [
   {
     "num": "073",
     "name": "Haxorus",
+    "dex": "main",
     "sprite": "img/pokemon/612.png",
     "specialties": [
       "Chop",
@@ -3269,6 +3369,7 @@ const POKEMON = [
   {
     "num": "074",
     "name": "Goomy",
+    "dex": "main",
     "sprite": "img/pokemon/704.png",
     "specialties": [
       "Water"
@@ -3323,6 +3424,7 @@ const POKEMON = [
   {
     "num": "075",
     "name": "Sliggoo",
+    "dex": "main",
     "sprite": "img/pokemon/705.png",
     "specialties": [
       "Water"
@@ -3355,6 +3457,7 @@ const POKEMON = [
   {
     "num": "076",
     "name": "Goodra",
+    "dex": "main",
     "sprite": "img/pokemon/706.png",
     "specialties": [
       "Water",
@@ -3388,6 +3491,7 @@ const POKEMON = [
   {
     "num": "077",
     "name": "Cramorant",
+    "dex": "main",
     "sprite": "img/pokemon/845.png",
     "specialties": [
       "Fly",
@@ -3419,6 +3523,7 @@ const POKEMON = [
   {
     "num": "078",
     "name": "Pichu",
+    "dex": "main",
     "sprite": "img/pokemon/172.png",
     "specialties": [
       "Generate"
@@ -3449,6 +3554,7 @@ const POKEMON = [
   {
     "num": "079",
     "name": "Peakychu",
+    "dex": "main",
     "sprite": "img/pokemon/025-peakychu.png",
     "specialties": [
       "Illuminate"
@@ -3483,6 +3589,7 @@ const POKEMON = [
   {
     "num": "079",
     "name": "Pikachu",
+    "dex": "main",
     "sprite": "img/pokemon/025.png",
     "specialties": [
       "Generate"
@@ -3513,6 +3620,7 @@ const POKEMON = [
   {
     "num": "080",
     "name": "Raichu",
+    "dex": "main",
     "sprite": "img/pokemon/026.png",
     "specialties": [
       "Generate",
@@ -3548,6 +3656,7 @@ const POKEMON = [
   {
     "num": "081",
     "name": "Zubat",
+    "dex": "main",
     "sprite": "img/pokemon/041.png",
     "specialties": [
       "Search"
@@ -3600,6 +3709,7 @@ const POKEMON = [
   {
     "num": "082",
     "name": "Golbat",
+    "dex": "main",
     "sprite": "img/pokemon/042.png",
     "specialties": [
       "Search"
@@ -3631,6 +3741,7 @@ const POKEMON = [
   {
     "num": "083",
     "name": "Crobat",
+    "dex": "main",
     "sprite": "img/pokemon/169.png",
     "specialties": [
       "Search",
@@ -3684,6 +3795,7 @@ const POKEMON = [
   {
     "num": "084",
     "name": "Meowth",
+    "dex": "main",
     "sprite": "img/pokemon/052.png",
     "specialties": [
       "Trade"
@@ -3742,6 +3854,7 @@ const POKEMON = [
   {
     "num": "085",
     "name": "Persian",
+    "dex": "main",
     "sprite": "img/pokemon/053.png",
     "specialties": [
       "Trade",
@@ -3777,6 +3890,7 @@ const POKEMON = [
   {
     "num": "086",
     "name": "Psyduck",
+    "dex": "main",
     "sprite": "img/pokemon/054.png",
     "specialties": [
       "Search"
@@ -3811,6 +3925,7 @@ const POKEMON = [
   {
     "num": "087",
     "name": "Golduck",
+    "dex": "main",
     "sprite": "img/pokemon/055.png",
     "specialties": [
       "Search"
@@ -3845,6 +3960,7 @@ const POKEMON = [
   {
     "num": "088",
     "name": "Growlithe",
+    "dex": "main",
     "sprite": "img/pokemon/058.png",
     "specialties": [
       "Burn",
@@ -3904,6 +4020,7 @@ const POKEMON = [
   {
     "num": "089",
     "name": "Arcanine",
+    "dex": "main",
     "sprite": "img/pokemon/059.png",
     "specialties": [
       "Burn",
@@ -3963,6 +4080,7 @@ const POKEMON = [
   {
     "num": "090",
     "name": "Farfetch'd",
+    "dex": "main",
     "sprite": "img/pokemon/083.png",
     "specialties": [
       "Chop",
@@ -3998,6 +4116,7 @@ const POKEMON = [
   {
     "num": "091",
     "name": "Grimer",
+    "dex": "main",
     "sprite": "img/pokemon/088.png",
     "specialties": [
       "Litter"
@@ -4032,6 +4151,7 @@ const POKEMON = [
   {
     "num": "092",
     "name": "Muk",
+    "dex": "main",
     "sprite": "img/pokemon/089.png",
     "specialties": [
       "Litter"
@@ -4066,6 +4186,7 @@ const POKEMON = [
   {
     "num": "093",
     "name": "Gastly",
+    "dex": "main",
     "sprite": "img/pokemon/092.png",
     "specialties": [
       "Gather",
@@ -4098,6 +4219,7 @@ const POKEMON = [
   {
     "num": "094",
     "name": "Haunter",
+    "dex": "main",
     "sprite": "img/pokemon/093.png",
     "specialties": [
       "Gather",
@@ -4151,6 +4273,7 @@ const POKEMON = [
   {
     "num": "095",
     "name": "Gengar",
+    "dex": "main",
     "sprite": "img/pokemon/094.png",
     "specialties": [
       "Gather",
@@ -4183,6 +4306,7 @@ const POKEMON = [
   {
     "num": "096",
     "name": "Voltorb",
+    "dex": "main",
     "sprite": "img/pokemon/100.png",
     "specialties": [
       "Generate",
@@ -4242,6 +4366,7 @@ const POKEMON = [
   {
     "num": "097",
     "name": "Electrode",
+    "dex": "main",
     "sprite": "img/pokemon/101.png",
     "specialties": [
       "Generate",
@@ -4301,6 +4426,7 @@ const POKEMON = [
   {
     "num": "098",
     "name": "Exeggcute",
+    "dex": "main",
     "sprite": "img/pokemon/102.png",
     "specialties": [
       "Grow",
@@ -4360,6 +4486,7 @@ const POKEMON = [
   {
     "num": "099",
     "name": "Exeggutor",
+    "dex": "main",
     "sprite": "img/pokemon/103.png",
     "specialties": [
       "Grow",
@@ -4419,6 +4546,7 @@ const POKEMON = [
   {
     "num": "100",
     "name": "Happiny",
+    "dex": "main",
     "sprite": "img/pokemon/440.png",
     "specialties": [
       "Trade"
@@ -4477,6 +4605,7 @@ const POKEMON = [
   {
     "num": "101",
     "name": "Chansey",
+    "dex": "main",
     "sprite": "img/pokemon/113.png",
     "specialties": [
       "Trade"
@@ -4511,6 +4640,7 @@ const POKEMON = [
   {
     "num": "102",
     "name": "Blissey",
+    "dex": "main",
     "sprite": "img/pokemon/242.png",
     "specialties": [
       "Trade",
@@ -4546,6 +4676,7 @@ const POKEMON = [
   {
     "num": "103",
     "name": "Elekid",
+    "dex": "main",
     "sprite": "img/pokemon/239.png",
     "specialties": [
       "Generate"
@@ -4580,6 +4711,7 @@ const POKEMON = [
   {
     "num": "104",
     "name": "Electabuzz",
+    "dex": "main",
     "sprite": "img/pokemon/125.png",
     "specialties": [
       "Generate"
@@ -4638,6 +4770,7 @@ const POKEMON = [
   {
     "num": "105",
     "name": "Electivire",
+    "dex": "main",
     "sprite": "img/pokemon/466.png",
     "specialties": [
       "Generate",
@@ -4697,6 +4830,7 @@ const POKEMON = [
   {
     "num": "106",
     "name": "Lapras",
+    "dex": "main",
     "sprite": "img/pokemon/131.png",
     "specialties": [
       "Water"
@@ -4731,6 +4865,7 @@ const POKEMON = [
   {
     "num": "107",
     "name": "Munchlax",
+    "dex": "main",
     "sprite": "img/pokemon/446.png",
     "specialties": [
       "Bulldoze"
@@ -4781,6 +4916,7 @@ const POKEMON = [
   {
     "num": "108",
     "name": "Mosslax",
+    "dex": "main",
     "sprite": "img/pokemon/143-mosslax.png",
     "specialties": [
       "Eat"
@@ -4815,6 +4951,7 @@ const POKEMON = [
   {
     "num": "108",
     "name": "Snorlax",
+    "dex": "main",
     "sprite": "img/pokemon/143.png",
     "specialties": [
       "Trade",
@@ -4866,6 +5003,7 @@ const POKEMON = [
   {
     "num": "109",
     "name": "Spinarak",
+    "dex": "main",
     "sprite": "img/pokemon/167.png",
     "specialties": [
       "Litter"
@@ -4900,6 +5038,7 @@ const POKEMON = [
   {
     "num": "110",
     "name": "Ariados",
+    "dex": "main",
     "sprite": "img/pokemon/168.png",
     "specialties": [
       "Litter"
@@ -4934,6 +5073,7 @@ const POKEMON = [
   {
     "num": "111",
     "name": "Mareep",
+    "dex": "main",
     "sprite": "img/pokemon/179.png",
     "specialties": [
       "Generate",
@@ -4993,6 +5133,7 @@ const POKEMON = [
   {
     "num": "112",
     "name": "Flaaffy",
+    "dex": "main",
     "sprite": "img/pokemon/180.png",
     "specialties": [
       "Generate",
@@ -5052,6 +5193,7 @@ const POKEMON = [
   {
     "num": "113",
     "name": "Ampharos",
+    "dex": "main",
     "sprite": "img/pokemon/181.png",
     "specialties": [
       "Generate",
@@ -5087,6 +5229,7 @@ const POKEMON = [
   {
     "num": "114",
     "name": "Azurill",
+    "dex": "main",
     "sprite": "img/pokemon/298.png",
     "specialties": [
       "Water",
@@ -5146,6 +5289,7 @@ const POKEMON = [
   {
     "num": "115",
     "name": "Marill",
+    "dex": "main",
     "sprite": "img/pokemon/183.png",
     "specialties": [
       "Water",
@@ -5205,6 +5349,7 @@ const POKEMON = [
   {
     "num": "116",
     "name": "Azumarill",
+    "dex": "main",
     "sprite": "img/pokemon/184.png",
     "specialties": [
       "Water",
@@ -5238,6 +5383,7 @@ const POKEMON = [
   {
     "num": "117",
     "name": "Paldean Wooper",
+    "dex": "main",
     "sprite": "img/pokemon/194-p.png",
     "specialties": [
       "Litter"
@@ -5268,6 +5414,7 @@ const POKEMON = [
   {
     "num": "118",
     "name": "Clodsire",
+    "dex": "main",
     "sprite": "img/pokemon/980.png",
     "specialties": [
       "Litter",
@@ -5327,6 +5474,7 @@ const POKEMON = [
   {
     "num": "119",
     "name": "Smeargle",
+    "dex": "main",
     "sprite": "img/pokemon/235-smearguru.png",
     "specialties": [
       "Paint"
@@ -5361,6 +5509,7 @@ const POKEMON = [
   {
     "num": "120",
     "name": "Torchic",
+    "dex": "main",
     "sprite": "img/pokemon/255.png",
     "specialties": [
       "Burn"
@@ -5419,6 +5568,7 @@ const POKEMON = [
   {
     "num": "121",
     "name": "Combusken",
+    "dex": "main",
     "sprite": "img/pokemon/256.png",
     "specialties": [
       "Burn",
@@ -5478,6 +5628,7 @@ const POKEMON = [
   {
     "num": "122",
     "name": "Blaziken",
+    "dex": "main",
     "sprite": "img/pokemon/257.png",
     "specialties": [
       "Burn",
@@ -5537,6 +5688,7 @@ const POKEMON = [
   {
     "num": "123",
     "name": "Wingull",
+    "dex": "main",
     "sprite": "img/pokemon/278.png",
     "specialties": [
       "Water",
@@ -5594,6 +5746,7 @@ const POKEMON = [
   {
     "num": "124",
     "name": "Pelipper",
+    "dex": "main",
     "sprite": "img/pokemon/279.png",
     "specialties": [
       "Water",
@@ -5651,6 +5804,7 @@ const POKEMON = [
   {
     "num": "125",
     "name": "Makuhita",
+    "dex": "main",
     "sprite": "img/pokemon/296.png",
     "specialties": [
       "Build",
@@ -5710,6 +5864,7 @@ const POKEMON = [
   {
     "num": "126",
     "name": "Hariyama",
+    "dex": "main",
     "sprite": "img/pokemon/297.png",
     "specialties": [
       "Build",
@@ -5769,6 +5924,7 @@ const POKEMON = [
   {
     "num": "127",
     "name": "Absol",
+    "dex": "main",
     "sprite": "img/pokemon/359.png",
     "specialties": [
       "Chop"
@@ -5803,6 +5959,7 @@ const POKEMON = [
   {
     "num": "128",
     "name": "Piplup",
+    "dex": "main",
     "sprite": "img/pokemon/393.png",
     "specialties": [
       "Water"
@@ -5837,6 +5994,7 @@ const POKEMON = [
   {
     "num": "129",
     "name": "Prinplup",
+    "dex": "main",
     "sprite": "img/pokemon/394.png",
     "specialties": [
       "Water",
@@ -5896,6 +6054,7 @@ const POKEMON = [
   {
     "num": "130",
     "name": "Empoleon",
+    "dex": "main",
     "sprite": "img/pokemon/395.png",
     "specialties": [
       "Water",
@@ -5951,6 +6110,7 @@ const POKEMON = [
   {
     "num": "131",
     "name": "Audino",
+    "dex": "main",
     "sprite": "img/pokemon/531.png",
     "specialties": [
       "Trade"
@@ -5985,6 +6145,7 @@ const POKEMON = [
   {
     "num": "132",
     "name": "Trubbish",
+    "dex": "main",
     "sprite": "img/pokemon/568.png",
     "specialties": [
       "Recycle"
@@ -6019,6 +6180,7 @@ const POKEMON = [
   {
     "num": "133",
     "name": "Garbodor",
+    "dex": "main",
     "sprite": "img/pokemon/569.png",
     "specialties": [
       "Recycle",
@@ -6054,6 +6216,7 @@ const POKEMON = [
   {
     "num": "134",
     "name": "Zorua",
+    "dex": "main",
     "sprite": "img/pokemon/570.png",
     "specialties": [
       "Trade"
@@ -6088,6 +6251,7 @@ const POKEMON = [
   {
     "num": "135",
     "name": "Zoroark",
+    "dex": "main",
     "sprite": "img/pokemon/571.png",
     "specialties": [
       "Trade",
@@ -6147,6 +6311,7 @@ const POKEMON = [
   {
     "num": "136",
     "name": "Minccino",
+    "dex": "main",
     "sprite": "img/pokemon/572.png",
     "specialties": [
       "Gather"
@@ -6205,6 +6370,7 @@ const POKEMON = [
   {
     "num": "137",
     "name": "Cinccino",
+    "dex": "main",
     "sprite": "img/pokemon/573.png",
     "specialties": [
       "Gather",
@@ -6240,6 +6406,7 @@ const POKEMON = [
   {
     "num": "138",
     "name": "Grubbin",
+    "dex": "main",
     "sprite": "img/pokemon/736.png",
     "specialties": [
       "Chop"
@@ -6298,6 +6465,7 @@ const POKEMON = [
   {
     "num": "139",
     "name": "Charjabug",
+    "dex": "main",
     "sprite": "img/pokemon/737.png",
     "specialties": [
       "Generate",
@@ -6333,6 +6501,7 @@ const POKEMON = [
   {
     "num": "140",
     "name": "Vikavolt",
+    "dex": "main",
     "sprite": "img/pokemon/738.png",
     "specialties": [
       "Generate",
@@ -6358,12 +6527,38 @@ const POKEMON = [
           "Cloud",
           "Rain"
         ]
+      },
+      {
+        "habitatNum": 1029,
+        "habitatName": "Bubbly stage",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
       }
     ]
   },
   {
     "num": "141",
     "name": "Mimikyu",
+    "dex": "main",
     "sprite": "img/pokemon/778.png",
     "specialties": [
       "Trade"
@@ -6398,6 +6593,7 @@ const POKEMON = [
   {
     "num": "142",
     "name": "Pawmi",
+    "dex": "main",
     "sprite": "img/pokemon/921.png",
     "specialties": [
       "Generate"
@@ -6456,6 +6652,7 @@ const POKEMON = [
   {
     "num": "143",
     "name": "Pawmo",
+    "dex": "main",
     "sprite": "img/pokemon/922.png",
     "specialties": [
       "Generate",
@@ -6515,6 +6712,7 @@ const POKEMON = [
   {
     "num": "144",
     "name": "Pawmot",
+    "dex": "main",
     "sprite": "img/pokemon/923.png",
     "specialties": [
       "Generate",
@@ -6550,6 +6748,7 @@ const POKEMON = [
   {
     "num": "145",
     "name": "Tatsugiri Curly Form",
+    "dex": "main",
     "sprite": "img/pokemon/978-tatsugiricurlyform.png",
     "specialties": [
       "Trade"
@@ -6584,6 +6783,7 @@ const POKEMON = [
   {
     "num": "145",
     "name": "Tatsugiri Droopy Form",
+    "dex": "main",
     "sprite": "img/pokemon/978-tatsugiridroopyform.png",
     "specialties": [
       "Trade"
@@ -6618,6 +6818,7 @@ const POKEMON = [
   {
     "num": "145",
     "name": "Tatsugiri Stretchy Form",
+    "dex": "main",
     "sprite": "img/pokemon/978-tatsugiristretchyform.png",
     "specialties": [
       "Trade"
@@ -6652,6 +6853,7 @@ const POKEMON = [
   {
     "num": "146",
     "name": "Ekans",
+    "dex": "main",
     "sprite": "img/pokemon/023.png",
     "specialties": [
       "Search"
@@ -6686,6 +6888,7 @@ const POKEMON = [
   {
     "num": "147",
     "name": "Arbok",
+    "dex": "main",
     "sprite": "img/pokemon/024.png",
     "specialties": [
       "Search"
@@ -6720,6 +6923,7 @@ const POKEMON = [
   {
     "num": "148",
     "name": "Cleffa",
+    "dex": "main",
     "sprite": "img/pokemon/173.png",
     "specialties": [
       "Hype"
@@ -6751,6 +6955,7 @@ const POKEMON = [
   {
     "num": "149",
     "name": "Clefairy",
+    "dex": "main",
     "sprite": "img/pokemon/035.png",
     "specialties": [
       "Hype"
@@ -6803,6 +7008,7 @@ const POKEMON = [
   {
     "num": "150",
     "name": "Clefable",
+    "dex": "main",
     "sprite": "img/pokemon/036.png",
     "specialties": [
       "Hype",
@@ -6856,6 +7062,7 @@ const POKEMON = [
   {
     "num": "151",
     "name": "Igglybuff",
+    "dex": "main",
     "sprite": "img/pokemon/174.png",
     "specialties": [
       "Hype"
@@ -6890,6 +7097,7 @@ const POKEMON = [
   {
     "num": "152",
     "name": "Jigglypuff",
+    "dex": "main",
     "sprite": "img/pokemon/039.png",
     "specialties": [
       "Hype"
@@ -6948,6 +7156,7 @@ const POKEMON = [
   {
     "num": "153",
     "name": "Wigglytuff",
+    "dex": "main",
     "sprite": "img/pokemon/040.png",
     "specialties": [
       "Hype",
@@ -6983,6 +7192,7 @@ const POKEMON = [
   {
     "num": "154",
     "name": "Diglett",
+    "dex": "main",
     "sprite": "img/pokemon/050.png",
     "specialties": [
       "Hype"
@@ -7041,6 +7251,7 @@ const POKEMON = [
   {
     "num": "155",
     "name": "Dugtrio",
+    "dex": "main",
     "sprite": "img/pokemon/051.png",
     "specialties": [
       "Hype",
@@ -7100,6 +7311,7 @@ const POKEMON = [
   {
     "num": "156",
     "name": "Machop",
+    "dex": "main",
     "sprite": "img/pokemon/066.png",
     "specialties": [
       "Build",
@@ -7131,6 +7343,7 @@ const POKEMON = [
   {
     "num": "157",
     "name": "Machoke",
+    "dex": "main",
     "sprite": "img/pokemon/067.png",
     "specialties": [
       "Build",
@@ -7190,6 +7403,7 @@ const POKEMON = [
   {
     "num": "158",
     "name": "Machamp",
+    "dex": "main",
     "sprite": "img/pokemon/068.png",
     "specialties": [
       "Build",
@@ -7249,6 +7463,7 @@ const POKEMON = [
   {
     "num": "159",
     "name": "Geodude",
+    "dex": "main",
     "sprite": "img/pokemon/074.png",
     "specialties": [
       "Crush"
@@ -7279,6 +7494,7 @@ const POKEMON = [
   {
     "num": "160",
     "name": "Graveler",
+    "dex": "main",
     "sprite": "img/pokemon/075.png",
     "specialties": [
       "Crush"
@@ -7313,6 +7529,7 @@ const POKEMON = [
   {
     "num": "161",
     "name": "Golem",
+    "dex": "main",
     "sprite": "img/pokemon/076.png",
     "specialties": [
       "Crush",
@@ -7348,6 +7565,7 @@ const POKEMON = [
   {
     "num": "162",
     "name": "Magby",
+    "dex": "main",
     "sprite": "img/pokemon/240.png",
     "specialties": [
       "Burn"
@@ -7378,6 +7596,7 @@ const POKEMON = [
   {
     "num": "163",
     "name": "Magmar",
+    "dex": "main",
     "sprite": "img/pokemon/126.png",
     "specialties": [
       "Burn"
@@ -7412,6 +7631,7 @@ const POKEMON = [
   {
     "num": "164",
     "name": "Magmortar",
+    "dex": "main",
     "sprite": "img/pokemon/467.png",
     "specialties": [
       "Burn",
@@ -7447,6 +7667,7 @@ const POKEMON = [
   {
     "num": "165",
     "name": "Bonsly",
+    "dex": "main",
     "sprite": "img/pokemon/438.png",
     "specialties": [
       "Bulldoze"
@@ -7481,6 +7702,7 @@ const POKEMON = [
   {
     "num": "166",
     "name": "Sudowoodo",
+    "dex": "main",
     "sprite": "img/pokemon/185.png",
     "specialties": [
       "Trade"
@@ -7539,6 +7761,7 @@ const POKEMON = [
   {
     "num": "167",
     "name": "Murkrow",
+    "dex": "main",
     "sprite": "img/pokemon/198.png",
     "specialties": [
       "Trade",
@@ -7592,6 +7815,7 @@ const POKEMON = [
   {
     "num": "168",
     "name": "Honchkrow",
+    "dex": "main",
     "sprite": "img/pokemon/430.png",
     "specialties": [
       "Trade",
@@ -7647,6 +7871,7 @@ const POKEMON = [
   {
     "num": "169",
     "name": "Larvitar",
+    "dex": "main",
     "sprite": "img/pokemon/246.png",
     "specialties": [
       "Crush",
@@ -7682,6 +7907,7 @@ const POKEMON = [
   {
     "num": "170",
     "name": "Pupitar",
+    "dex": "main",
     "sprite": "img/pokemon/247.png",
     "specialties": [
       "Crush",
@@ -7717,6 +7943,7 @@ const POKEMON = [
   {
     "num": "171",
     "name": "Tyranitar",
+    "dex": "main",
     "sprite": "img/pokemon/248.png",
     "specialties": [
       "Crush",
@@ -7776,6 +8003,7 @@ const POKEMON = [
   {
     "num": "172",
     "name": "Lotad",
+    "dex": "main",
     "sprite": "img/pokemon/270.png",
     "specialties": [
       "Water"
@@ -7858,6 +8086,7 @@ const POKEMON = [
   {
     "num": "173",
     "name": "Lombre",
+    "dex": "main",
     "sprite": "img/pokemon/271.png",
     "specialties": [
       "Water"
@@ -7916,6 +8145,7 @@ const POKEMON = [
   {
     "num": "174",
     "name": "Ludicolo",
+    "dex": "main",
     "sprite": "img/pokemon/272.png",
     "specialties": [
       "Water",
@@ -7951,6 +8181,7 @@ const POKEMON = [
   {
     "num": "175",
     "name": "Mawile",
+    "dex": "main",
     "sprite": "img/pokemon/303.png",
     "specialties": [
       "Trade",
@@ -7982,6 +8213,7 @@ const POKEMON = [
   {
     "num": "176",
     "name": "Torkoal",
+    "dex": "main",
     "sprite": "img/pokemon/324.png",
     "specialties": [
       "Burn"
@@ -8016,6 +8248,7 @@ const POKEMON = [
   {
     "num": "177",
     "name": "Kricketot",
+    "dex": "main",
     "sprite": "img/pokemon/401.png",
     "specialties": [
       "Hype"
@@ -8074,6 +8307,7 @@ const POKEMON = [
   {
     "num": "178",
     "name": "Kricketune",
+    "dex": "main",
     "sprite": "img/pokemon/402.png",
     "specialties": [
       "Hype"
@@ -8132,6 +8366,7 @@ const POKEMON = [
   {
     "num": "179",
     "name": "Chatot",
+    "dex": "main",
     "sprite": "img/pokemon/441.png",
     "specialties": [
       "Hype",
@@ -8189,6 +8424,7 @@ const POKEMON = [
   {
     "num": "180",
     "name": "Riolu",
+    "dex": "main",
     "sprite": "img/pokemon/447.png",
     "specialties": [
       "Build"
@@ -8247,6 +8483,7 @@ const POKEMON = [
   {
     "num": "181",
     "name": "Lucario",
+    "dex": "main",
     "sprite": "img/pokemon/448.png",
     "specialties": [
       "Build"
@@ -8281,6 +8518,7 @@ const POKEMON = [
   {
     "num": "182",
     "name": "Stereo Rotom",
+    "dex": "main",
     "sprite": "img/pokemon/479-stereorotom.png",
     "specialties": [
       "DJ"
@@ -8315,6 +8553,7 @@ const POKEMON = [
   {
     "num": "183",
     "name": "Larvesta",
+    "dex": "main",
     "sprite": "img/pokemon/636.png",
     "specialties": [
       "Burn",
@@ -8350,6 +8589,7 @@ const POKEMON = [
   {
     "num": "184",
     "name": "Volcarona",
+    "dex": "main",
     "sprite": "img/pokemon/637.png",
     "specialties": [
       "Burn",
@@ -8409,6 +8649,7 @@ const POKEMON = [
   {
     "num": "185",
     "name": "Rowlet",
+    "dex": "main",
     "sprite": "img/pokemon/722.png",
     "specialties": [
       "Grow"
@@ -8439,6 +8680,7 @@ const POKEMON = [
   {
     "num": "186",
     "name": "Dartrix",
+    "dex": "main",
     "sprite": "img/pokemon/723.png",
     "specialties": [
       "Grow",
@@ -8474,6 +8716,7 @@ const POKEMON = [
   {
     "num": "187",
     "name": "Decidueye",
+    "dex": "main",
     "sprite": "img/pokemon/724.png",
     "specialties": [
       "Grow",
@@ -8533,6 +8776,7 @@ const POKEMON = [
   {
     "num": "188",
     "name": "Scorbunny",
+    "dex": "main",
     "sprite": "img/pokemon/813.png",
     "specialties": [
       "Burn"
@@ -8567,6 +8811,7 @@ const POKEMON = [
   {
     "num": "189",
     "name": "Raboot",
+    "dex": "main",
     "sprite": "img/pokemon/814.png",
     "specialties": [
       "Burn"
@@ -8625,6 +8870,7 @@ const POKEMON = [
   {
     "num": "190",
     "name": "Cinderace",
+    "dex": "main",
     "sprite": "img/pokemon/815.png",
     "specialties": [
       "Burn",
@@ -8684,6 +8930,7 @@ const POKEMON = [
   {
     "num": "191",
     "name": "Skwovet",
+    "dex": "main",
     "sprite": "img/pokemon/819.png",
     "specialties": [
       "Search",
@@ -8715,6 +8962,7 @@ const POKEMON = [
   {
     "num": "192",
     "name": "Greedent",
+    "dex": "main",
     "sprite": "img/pokemon/820-cook.png",
     "specialties": [
       "Party"
@@ -8749,6 +8997,7 @@ const POKEMON = [
   {
     "num": "193",
     "name": "Rolycoly",
+    "dex": "main",
     "sprite": "img/pokemon/837.png",
     "specialties": [
       "Burn",
@@ -8784,6 +9033,7 @@ const POKEMON = [
   {
     "num": "194",
     "name": "Carkol",
+    "dex": "main",
     "sprite": "img/pokemon/838.png",
     "specialties": [
       "Burn",
@@ -8819,6 +9069,7 @@ const POKEMON = [
   {
     "num": "195",
     "name": "Coalossal",
+    "dex": "main",
     "sprite": "img/pokemon/839.png",
     "specialties": [
       "Burn",
@@ -8878,6 +9129,7 @@ const POKEMON = [
   {
     "num": "196",
     "name": "Toxel",
+    "dex": "main",
     "sprite": "img/pokemon/848.png",
     "specialties": [
       "Generate"
@@ -8908,6 +9160,7 @@ const POKEMON = [
   {
     "num": "197",
     "name": "Toxtricity Amped Form",
+    "dex": "main",
     "sprite": "img/pokemon/849-toxtricityampedform.png",
     "specialties": [
       "Generate",
@@ -8943,6 +9196,7 @@ const POKEMON = [
   {
     "num": "197",
     "name": "Toxtricity Low Key Form",
+    "dex": "main",
     "sprite": "img/pokemon/849-toxtricitylowkeyform.png",
     "specialties": [
       "Generate",
@@ -8978,6 +9232,7 @@ const POKEMON = [
   {
     "num": "198",
     "name": "Fidough",
+    "dex": "main",
     "sprite": "img/pokemon/926.png",
     "specialties": [
       "Search"
@@ -9034,6 +9289,7 @@ const POKEMON = [
   {
     "num": "199",
     "name": "Dachsbun",
+    "dex": "main",
     "sprite": "img/pokemon/927.png",
     "specialties": [
       "Search",
@@ -9091,6 +9347,7 @@ const POKEMON = [
   {
     "num": "200",
     "name": "Charcadet",
+    "dex": "main",
     "sprite": "img/pokemon/935.png",
     "specialties": [
       "Burn"
@@ -9125,6 +9382,7 @@ const POKEMON = [
   {
     "num": "201",
     "name": "Armarouge",
+    "dex": "main",
     "sprite": "img/pokemon/936.png",
     "specialties": [
       "Burn",
@@ -9160,6 +9418,7 @@ const POKEMON = [
   {
     "num": "202",
     "name": "Ceruledge",
+    "dex": "main",
     "sprite": "img/pokemon/937.png",
     "specialties": [
       "Burn",
@@ -9195,6 +9454,7 @@ const POKEMON = [
   {
     "num": "203",
     "name": "Glimmet",
+    "dex": "main",
     "sprite": "img/pokemon/969.png",
     "specialties": [
       "Litter"
@@ -9253,6 +9513,7 @@ const POKEMON = [
   {
     "num": "204",
     "name": "Glimmora",
+    "dex": "main",
     "sprite": "img/pokemon/970.png",
     "specialties": [
       "Litter"
@@ -9311,6 +9572,7 @@ const POKEMON = [
   {
     "num": "205",
     "name": "Gimmighoul",
+    "dex": "main",
     "sprite": "img/pokemon/999.png",
     "specialties": [
       "Collect"
@@ -9345,6 +9607,7 @@ const POKEMON = [
   {
     "num": "206",
     "name": "Gholdengo",
+    "dex": "main",
     "sprite": "img/pokemon/1000.png",
     "specialties": [
       "Collect"
@@ -9379,6 +9642,7 @@ const POKEMON = [
   {
     "num": "207",
     "name": "Vulpix",
+    "dex": "main",
     "sprite": "img/pokemon/037.png",
     "specialties": [
       "Burn"
@@ -9413,6 +9677,7 @@ const POKEMON = [
   {
     "num": "208",
     "name": "Ninetales",
+    "dex": "main",
     "sprite": "img/pokemon/038.png",
     "specialties": [
       "Burn"
@@ -9471,6 +9736,7 @@ const POKEMON = [
   {
     "num": "209",
     "name": "Poliwag",
+    "dex": "main",
     "sprite": "img/pokemon/060.png",
     "specialties": [
       "Water"
@@ -9505,6 +9771,7 @@ const POKEMON = [
   {
     "num": "210",
     "name": "Poliwhirl",
+    "dex": "main",
     "sprite": "img/pokemon/061.png",
     "specialties": [
       "Water"
@@ -9539,6 +9806,7 @@ const POKEMON = [
   {
     "num": "211",
     "name": "Poliwrath",
+    "dex": "main",
     "sprite": "img/pokemon/062.png",
     "specialties": [
       "Water",
@@ -9598,6 +9866,7 @@ const POKEMON = [
   {
     "num": "212",
     "name": "Politoed",
+    "dex": "main",
     "sprite": "img/pokemon/186.png",
     "specialties": [
       "Water",
@@ -9681,6 +9950,7 @@ const POKEMON = [
   {
     "num": "213",
     "name": "Abra",
+    "dex": "main",
     "sprite": "img/pokemon/063.png",
     "specialties": [
       "Teleport"
@@ -9739,6 +10009,7 @@ const POKEMON = [
   {
     "num": "214",
     "name": "Kadabra",
+    "dex": "main",
     "sprite": "img/pokemon/064.png",
     "specialties": [
       "Teleport"
@@ -9773,6 +10044,7 @@ const POKEMON = [
   {
     "num": "215",
     "name": "Alakazam",
+    "dex": "main",
     "sprite": "img/pokemon/065.png",
     "specialties": [
       "Teleport",
@@ -9824,6 +10096,7 @@ const POKEMON = [
   {
     "num": "216",
     "name": "Mime Jr.",
+    "dex": "main",
     "sprite": "img/pokemon/439.png",
     "specialties": [
       "Gather"
@@ -9882,6 +10155,7 @@ const POKEMON = [
   {
     "num": "217",
     "name": "Mr. Mime",
+    "dex": "main",
     "sprite": "img/pokemon/122.png",
     "specialties": [
       "Gather",
@@ -9917,6 +10191,7 @@ const POKEMON = [
   {
     "num": "218",
     "name": "Porygon",
+    "dex": "main",
     "sprite": "img/pokemon/137.png",
     "specialties": [
       "Recycle"
@@ -9951,6 +10226,7 @@ const POKEMON = [
   {
     "num": "219",
     "name": "Porygon2",
+    "dex": "main",
     "sprite": "img/pokemon/233.png",
     "specialties": [
       "Recycle"
@@ -9985,6 +10261,7 @@ const POKEMON = [
   {
     "num": "220",
     "name": "Porygon-Z",
+    "dex": "main",
     "sprite": "img/pokemon/474.png",
     "specialties": [
       "Rarify"
@@ -10019,6 +10296,7 @@ const POKEMON = [
   {
     "num": "221",
     "name": "Dratini",
+    "dex": "main",
     "sprite": "img/pokemon/147.png",
     "specialties": [
       "Water"
@@ -10077,6 +10355,7 @@ const POKEMON = [
   {
     "num": "222",
     "name": "Dragonair",
+    "dex": "main",
     "sprite": "img/pokemon/148.png",
     "specialties": [
       "Water"
@@ -10135,6 +10414,7 @@ const POKEMON = [
   {
     "num": "223",
     "name": "Dragonite",
+    "dex": "main",
     "sprite": "img/pokemon/149.png",
     "specialties": [
       "Water",
@@ -10170,6 +10450,7 @@ const POKEMON = [
   {
     "num": "224",
     "name": "Cyndaquil",
+    "dex": "main",
     "sprite": "img/pokemon/155.png",
     "specialties": [
       "Burn"
@@ -10204,6 +10485,7 @@ const POKEMON = [
   {
     "num": "225",
     "name": "Quilava",
+    "dex": "main",
     "sprite": "img/pokemon/156.png",
     "specialties": [
       "Burn"
@@ -10262,6 +10544,7 @@ const POKEMON = [
   {
     "num": "226",
     "name": "Typhlosion",
+    "dex": "main",
     "sprite": "img/pokemon/157.png",
     "specialties": [
       "Burn",
@@ -10321,6 +10604,7 @@ const POKEMON = [
   {
     "num": "227",
     "name": "Misdreavus",
+    "dex": "main",
     "sprite": "img/pokemon/200.png",
     "specialties": [
       "Trade"
@@ -10373,6 +10657,7 @@ const POKEMON = [
   {
     "num": "228",
     "name": "Mismagius",
+    "dex": "main",
     "sprite": "img/pokemon/429.png",
     "specialties": [
       "Gather",
@@ -10447,6 +10732,7 @@ const POKEMON = [
   {
     "num": "229",
     "name": "Girafarig",
+    "dex": "main",
     "sprite": "img/pokemon/203.png",
     "specialties": [
       "Gather"
@@ -10481,6 +10767,7 @@ const POKEMON = [
   {
     "num": "230",
     "name": "Farigiraf",
+    "dex": "main",
     "sprite": "img/pokemon/981.png",
     "specialties": [
       "Gather",
@@ -10516,6 +10803,7 @@ const POKEMON = [
   {
     "num": "231",
     "name": "Ralts",
+    "dex": "main",
     "sprite": "img/pokemon/280.png",
     "specialties": [
       "Teleport"
@@ -10550,6 +10838,7 @@ const POKEMON = [
   {
     "num": "232",
     "name": "Kirlia",
+    "dex": "main",
     "sprite": "img/pokemon/281.png",
     "specialties": [
       "Teleport"
@@ -10608,6 +10897,7 @@ const POKEMON = [
   {
     "num": "233",
     "name": "Gardevoir",
+    "dex": "main",
     "sprite": "img/pokemon/282.png",
     "specialties": [
       "Teleport",
@@ -10667,6 +10957,7 @@ const POKEMON = [
   {
     "num": "234",
     "name": "Gallade",
+    "dex": "main",
     "sprite": "img/pokemon/475.png",
     "specialties": [
       "Teleport",
@@ -10702,6 +10993,7 @@ const POKEMON = [
   {
     "num": "235",
     "name": "Plusle",
+    "dex": "main",
     "sprite": "img/pokemon/311.png",
     "specialties": [
       "Generate"
@@ -10736,6 +11028,7 @@ const POKEMON = [
   {
     "num": "236",
     "name": "Minun",
+    "dex": "main",
     "sprite": "img/pokemon/312.png",
     "specialties": [
       "Generate"
@@ -10770,6 +11063,7 @@ const POKEMON = [
   {
     "num": "237",
     "name": "Trapinch",
+    "dex": "main",
     "sprite": "img/pokemon/328.png",
     "specialties": [
       "Bulldoze",
@@ -10805,6 +11099,7 @@ const POKEMON = [
   {
     "num": "238",
     "name": "Vibrava",
+    "dex": "main",
     "sprite": "img/pokemon/329.png",
     "specialties": [
       "Bulldoze",
@@ -10840,6 +11135,7 @@ const POKEMON = [
   {
     "num": "239",
     "name": "Flygon",
+    "dex": "main",
     "sprite": "img/pokemon/330.png",
     "specialties": [
       "Bulldoze",
@@ -10875,6 +11171,7 @@ const POKEMON = [
   {
     "num": "240",
     "name": "Swablu",
+    "dex": "main",
     "sprite": "img/pokemon/333.png",
     "specialties": [
       "Litter"
@@ -10909,6 +11206,7 @@ const POKEMON = [
   {
     "num": "241",
     "name": "Altaria",
+    "dex": "main",
     "sprite": "img/pokemon/334.png",
     "specialties": [
       "Litter",
@@ -10944,6 +11242,7 @@ const POKEMON = [
   {
     "num": "242",
     "name": "Duskull",
+    "dex": "main",
     "sprite": "img/pokemon/355.png",
     "specialties": [
       "Gather"
@@ -10975,6 +11274,7 @@ const POKEMON = [
   {
     "num": "243",
     "name": "Dusclops",
+    "dex": "main",
     "sprite": "img/pokemon/356.png",
     "specialties": [
       "Gather"
@@ -11006,6 +11306,7 @@ const POKEMON = [
   {
     "num": "244",
     "name": "Dusknoir",
+    "dex": "main",
     "sprite": "img/pokemon/477.png",
     "specialties": [
       "Gather",
@@ -11038,6 +11339,7 @@ const POKEMON = [
   {
     "num": "245",
     "name": "Beldum",
+    "dex": "main",
     "sprite": "img/pokemon/374.png",
     "specialties": [
       "Recycle"
@@ -11072,6 +11374,7 @@ const POKEMON = [
   {
     "num": "246",
     "name": "Metang",
+    "dex": "main",
     "sprite": "img/pokemon/375.png",
     "specialties": [
       "Recycle"
@@ -11106,6 +11409,7 @@ const POKEMON = [
   {
     "num": "247",
     "name": "Metagross",
+    "dex": "main",
     "sprite": "img/pokemon/376.png",
     "specialties": [
       "Recycle",
@@ -11141,6 +11445,7 @@ const POKEMON = [
   {
     "num": "248",
     "name": "Snivy",
+    "dex": "main",
     "sprite": "img/pokemon/495.png",
     "specialties": [
       "Grow",
@@ -11176,6 +11481,7 @@ const POKEMON = [
   {
     "num": "249",
     "name": "Servine",
+    "dex": "main",
     "sprite": "img/pokemon/496.png",
     "specialties": [
       "Grow",
@@ -11211,6 +11517,7 @@ const POKEMON = [
   {
     "num": "250",
     "name": "Serperior",
+    "dex": "main",
     "sprite": "img/pokemon/497.png",
     "specialties": [
       "Grow",
@@ -11270,6 +11577,7 @@ const POKEMON = [
   {
     "num": "251",
     "name": "Froakie",
+    "dex": "main",
     "sprite": "img/pokemon/656.png",
     "specialties": [
       "Water"
@@ -11304,6 +11612,7 @@ const POKEMON = [
   {
     "num": "252",
     "name": "Frogadier",
+    "dex": "main",
     "sprite": "img/pokemon/657.png",
     "specialties": [
       "Water"
@@ -11362,6 +11671,7 @@ const POKEMON = [
   {
     "num": "253",
     "name": "Greninja",
+    "dex": "main",
     "sprite": "img/pokemon/658.png",
     "specialties": [
       "Water",
@@ -11421,6 +11731,7 @@ const POKEMON = [
   {
     "num": "254",
     "name": "Dedenne",
+    "dex": "main",
     "sprite": "img/pokemon/702.png",
     "specialties": [
       "Search"
@@ -11451,6 +11762,7 @@ const POKEMON = [
   {
     "num": "255",
     "name": "Noibat",
+    "dex": "main",
     "sprite": "img/pokemon/714.png",
     "specialties": [
       "Search"
@@ -11485,6 +11797,7 @@ const POKEMON = [
   {
     "num": "256",
     "name": "Noivern",
+    "dex": "main",
     "sprite": "img/pokemon/715.png",
     "specialties": [
       "Search",
@@ -11520,6 +11833,7 @@ const POKEMON = [
   {
     "num": "257",
     "name": "Rookidee",
+    "dex": "main",
     "sprite": "img/pokemon/821.png",
     "specialties": [
       "Chop"
@@ -11554,6 +11868,7 @@ const POKEMON = [
   {
     "num": "258",
     "name": "Corvisquire",
+    "dex": "main",
     "sprite": "img/pokemon/822.png",
     "specialties": [
       "Chop"
@@ -11588,6 +11903,7 @@ const POKEMON = [
   {
     "num": "259",
     "name": "Corviknight",
+    "dex": "main",
     "sprite": "img/pokemon/823.png",
     "specialties": [
       "Chop",
@@ -11647,6 +11963,7 @@ const POKEMON = [
   {
     "num": "260",
     "name": "Dreepy",
+    "dex": "main",
     "sprite": "img/pokemon/885.png",
     "specialties": [
       "Gather",
@@ -11682,6 +11999,7 @@ const POKEMON = [
   {
     "num": "261",
     "name": "Drakloak",
+    "dex": "main",
     "sprite": "img/pokemon/886.png",
     "specialties": [
       "Gather",
@@ -11741,6 +12059,7 @@ const POKEMON = [
   {
     "num": "262",
     "name": "Dragapult",
+    "dex": "main",
     "sprite": "img/pokemon/887.png",
     "specialties": [
       "Gather",
@@ -11776,6 +12095,7 @@ const POKEMON = [
   {
     "num": "263",
     "name": "Sprigatito",
+    "dex": "main",
     "sprite": "img/pokemon/906.png",
     "specialties": [
       "Grow"
@@ -11834,6 +12154,7 @@ const POKEMON = [
   {
     "num": "264",
     "name": "Floragato",
+    "dex": "main",
     "sprite": "img/pokemon/907.png",
     "specialties": [
       "Grow"
@@ -11868,6 +12189,7 @@ const POKEMON = [
   {
     "num": "265",
     "name": "Meowscarada",
+    "dex": "main",
     "sprite": "img/pokemon/908.png",
     "specialties": [
       "Grow",
@@ -11903,6 +12225,7 @@ const POKEMON = [
   {
     "num": "266",
     "name": "Wattrel",
+    "dex": "main",
     "sprite": "img/pokemon/940.png",
     "specialties": [
       "Generate"
@@ -11937,6 +12260,7 @@ const POKEMON = [
   {
     "num": "267",
     "name": "Kilowattrel",
+    "dex": "main",
     "sprite": "img/pokemon/941.png",
     "specialties": [
       "Generate",
@@ -11972,6 +12296,7 @@ const POKEMON = [
   {
     "num": "268",
     "name": "Tinkatink",
+    "dex": "main",
     "sprite": "img/pokemon/957.png",
     "specialties": [
       "Build"
@@ -12022,6 +12347,7 @@ const POKEMON = [
   {
     "num": "269",
     "name": "Tinkatuff",
+    "dex": "main",
     "sprite": "img/pokemon/958.png",
     "specialties": [
       "Build"
@@ -12076,6 +12402,7 @@ const POKEMON = [
   {
     "num": "270",
     "name": "Tinkaton",
+    "dex": "main",
     "sprite": "img/pokemon/959-tinkmeister.png",
     "specialties": [
       "Engineer"
@@ -12110,6 +12437,7 @@ const POKEMON = [
   {
     "num": "271",
     "name": "Aerodactyl",
+    "dex": "main",
     "sprite": "img/pokemon/142.png",
     "specialties": [
       "Fly"
@@ -12144,6 +12472,7 @@ const POKEMON = [
   {
     "num": "272",
     "name": "Cranidos",
+    "dex": "main",
     "sprite": "img/pokemon/408.png",
     "specialties": [
       "Crush"
@@ -12178,6 +12507,7 @@ const POKEMON = [
   {
     "num": "273",
     "name": "Rampardos",
+    "dex": "main",
     "sprite": "img/pokemon/409.png",
     "specialties": [
       "Crush",
@@ -12213,6 +12543,7 @@ const POKEMON = [
   {
     "num": "274",
     "name": "Shieldon",
+    "dex": "main",
     "sprite": "img/pokemon/410.png",
     "specialties": [
       "Crush"
@@ -12247,6 +12578,7 @@ const POKEMON = [
   {
     "num": "275",
     "name": "Bastiodon",
+    "dex": "main",
     "sprite": "img/pokemon/411.png",
     "specialties": [
       "Crush",
@@ -12282,6 +12614,7 @@ const POKEMON = [
   {
     "num": "276",
     "name": "Tyrunt",
+    "dex": "main",
     "sprite": "img/pokemon/696.png",
     "specialties": [
       "Crush"
@@ -12316,6 +12649,7 @@ const POKEMON = [
   {
     "num": "277",
     "name": "Tyrantrum",
+    "dex": "main",
     "sprite": "img/pokemon/697.png",
     "specialties": [
       "Crush",
@@ -12351,6 +12685,7 @@ const POKEMON = [
   {
     "num": "278",
     "name": "Amaura",
+    "dex": "main",
     "sprite": "img/pokemon/698.png",
     "specialties": [
       "Crush"
@@ -12385,6 +12720,7 @@ const POKEMON = [
   {
     "num": "279",
     "name": "Aurorus",
+    "dex": "main",
     "sprite": "img/pokemon/699.png",
     "specialties": [
       "Crush",
@@ -12420,6 +12756,7 @@ const POKEMON = [
   {
     "num": "280",
     "name": "Eevee",
+    "dex": "main",
     "sprite": "img/pokemon/133.png",
     "specialties": [
       "Trade"
@@ -12454,6 +12791,7 @@ const POKEMON = [
   {
     "num": "281",
     "name": "Vaporeon",
+    "dex": "main",
     "sprite": "img/pokemon/134.png",
     "specialties": [
       "Water"
@@ -12484,6 +12822,7 @@ const POKEMON = [
   {
     "num": "282",
     "name": "Jolteon",
+    "dex": "main",
     "sprite": "img/pokemon/135.png",
     "specialties": [
       "Generate"
@@ -12514,6 +12853,7 @@ const POKEMON = [
   {
     "num": "283",
     "name": "Flareon",
+    "dex": "main",
     "sprite": "img/pokemon/136.png",
     "specialties": [
       "Burn"
@@ -12544,6 +12884,7 @@ const POKEMON = [
   {
     "num": "284",
     "name": "Espeon",
+    "dex": "main",
     "sprite": "img/pokemon/196.png",
     "specialties": [
       "Gather"
@@ -12574,6 +12915,7 @@ const POKEMON = [
   {
     "num": "285",
     "name": "Umbreon",
+    "dex": "main",
     "sprite": "img/pokemon/197.png",
     "specialties": [
       "Search"
@@ -12604,6 +12946,7 @@ const POKEMON = [
   {
     "num": "286",
     "name": "Leafeon",
+    "dex": "main",
     "sprite": "img/pokemon/470.png",
     "specialties": [
       "Grow"
@@ -12634,6 +12977,7 @@ const POKEMON = [
   {
     "num": "287",
     "name": "Glaceon",
+    "dex": "main",
     "sprite": "img/pokemon/471.png",
     "specialties": [
       "Trade"
@@ -12664,6 +13008,7 @@ const POKEMON = [
   {
     "num": "288",
     "name": "Sylveon",
+    "dex": "main",
     "sprite": "img/pokemon/700.png",
     "specialties": [
       "Hype"
@@ -12694,6 +13039,7 @@ const POKEMON = [
   {
     "num": "289",
     "name": "Kyogre",
+    "dex": "main",
     "sprite": "img/pokemon/382.png",
     "specialties": [
       "???"
@@ -12703,6 +13049,7 @@ const POKEMON = [
   {
     "num": "290",
     "name": "Raikou",
+    "dex": "main",
     "sprite": "img/pokemon/243.png",
     "specialties": [
       "Generate"
@@ -12712,6 +13059,7 @@ const POKEMON = [
   {
     "num": "291",
     "name": "Entei",
+    "dex": "main",
     "sprite": "img/pokemon/244.png",
     "specialties": [
       "Burn"
@@ -12721,6 +13069,7 @@ const POKEMON = [
   {
     "num": "292",
     "name": "Suicune",
+    "dex": "main",
     "sprite": "img/pokemon/245.png",
     "specialties": [
       "Water"
@@ -12730,6 +13079,7 @@ const POKEMON = [
   {
     "num": "293",
     "name": "Volcanion",
+    "dex": "main",
     "sprite": "img/pokemon/721.png",
     "specialties": [
       "Burn"
@@ -12739,6 +13089,7 @@ const POKEMON = [
   {
     "num": "294",
     "name": "Articuno",
+    "dex": "main",
     "sprite": "img/pokemon/144.png",
     "specialties": [
       "Fly"
@@ -12748,6 +13099,7 @@ const POKEMON = [
   {
     "num": "295",
     "name": "Zapdos",
+    "dex": "main",
     "sprite": "img/pokemon/145.png",
     "specialties": [
       "Fly"
@@ -12757,6 +13109,7 @@ const POKEMON = [
   {
     "num": "296",
     "name": "Moltres",
+    "dex": "main",
     "sprite": "img/pokemon/146.png",
     "specialties": [
       "Fly"
@@ -12766,6 +13119,7 @@ const POKEMON = [
   {
     "num": "297",
     "name": "Lugia",
+    "dex": "main",
     "sprite": "img/pokemon/249.png",
     "specialties": [
       "???"
@@ -12775,6 +13129,7 @@ const POKEMON = [
   {
     "num": "298",
     "name": "Ho-Oh",
+    "dex": "main",
     "sprite": "img/pokemon/250.png",
     "specialties": [
       "???"
@@ -12784,6 +13139,7 @@ const POKEMON = [
   {
     "num": "299",
     "name": "Mewtwo",
+    "dex": "main",
     "sprite": "img/pokemon/150.png",
     "specialties": [
       "Teleport"
@@ -12793,6 +13149,7 @@ const POKEMON = [
   {
     "num": "300",
     "name": "Mew",
+    "dex": "main",
     "sprite": "img/pokemon/151.png",
     "specialties": [
       "Teleport"
@@ -12800,13 +13157,2383 @@ const POKEMON = [
     "habitats": []
   },
   {
+    "num": "B001",
+    "name": "Shellder",
+    "dex": "basin",
+    "sprite": "img/pokemon/090.png",
+    "specialties": [
+      "Scrub",
+      "Litter"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1002,
+        "habitatName": "Basin tall grass and coral",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1009,
+        "habitatName": "Sandy digging spot",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B002",
+    "name": "Cloyster",
+    "dex": "basin",
+    "sprite": "img/pokemon/091.png",
+    "specialties": [
+      "Scrub",
+      "Litter"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1005,
+        "habitatName": "Swaying flower bed and seaweed",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B003",
+    "name": "Horsea",
+    "dex": "basin",
+    "sprite": "img/pokemon/116.png",
+    "specialties": [
+      "Water"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1007,
+        "habitatName": "Coral congregation",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B004",
+    "name": "Seadra",
+    "dex": "basin",
+    "sprite": "img/pokemon/117.png",
+    "specialties": [
+      "Water",
+      "Litter"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1007,
+        "habitatName": "Coral congregation",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B005",
+    "name": "Kingdra",
+    "dex": "basin",
+    "sprite": "img/pokemon/230.png",
+    "specialties": [
+      "Water",
+      "Litter"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1007,
+        "habitatName": "Coral congregation",
+        "rarity": "Very Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1034,
+        "habitatName": "Marine makeup stand",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B006",
+    "name": "Staryu",
+    "dex": "basin",
+    "sprite": "img/pokemon/120.png",
+    "specialties": [
+      "Teleport"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1003,
+        "habitatName": "Swaying flower bed",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B007",
+    "name": "Starmie",
+    "dex": "basin",
+    "sprite": "img/pokemon/121.png",
+    "specialties": [
+      "Teleport",
+      "Gather"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1036,
+        "habitatName": "Mermaid's Gym",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B008",
+    "name": "Totodile",
+    "dex": "basin",
+    "sprite": "img/pokemon/158.png",
+    "specialties": [
+      "Chop"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1001,
+        "habitatName": "Basin tall grass",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1024,
+        "habitatName": "Canoe dock",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1028,
+        "habitatName": "Bubbly bathtub",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B009",
+    "name": "Croconaw",
+    "dex": "basin",
+    "sprite": "img/pokemon/159.png",
+    "specialties": [
+      "Chop",
+      "Crush"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1015,
+        "habitatName": "Chimney rocks dig site",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1024,
+        "habitatName": "Canoe dock",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B010",
+    "name": "Feraligatr",
+    "dex": "basin",
+    "sprite": "img/pokemon/160.png",
+    "specialties": [
+      "Chop",
+      "Crush"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1001,
+        "habitatName": "Basin tall grass",
+        "rarity": "Very Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1011,
+        "habitatName": "Biteable punching bag",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B011",
+    "name": "Chinchou",
+    "dex": "basin",
+    "sprite": "img/pokemon/170.png",
+    "specialties": [
+      "Generate"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1023,
+        "habitatName": "Fluffy relaxation",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B012",
+    "name": "Lanturn",
+    "dex": "basin",
+    "sprite": "img/pokemon/171.png",
+    "specialties": [
+      "Generate",
+      "Water"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1033,
+        "habitatName": "Nostalgia zone",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B013",
+    "name": "Corsola",
+    "dex": "basin",
+    "sprite": "img/pokemon/222.png",
+    "specialties": [
+      "Grow"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1002,
+        "habitatName": "Basin tall grass and coral",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1007,
+        "habitatName": "Coral congregation",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B014",
+    "name": "Mudkip",
+    "dex": "basin",
+    "sprite": "img/pokemon/258.png",
+    "specialties": [
+      "Water"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1001,
+        "habitatName": "Basin tall grass",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1023,
+        "habitatName": "Fluffy relaxation",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B015",
+    "name": "Marshtomp",
+    "dex": "basin",
+    "sprite": "img/pokemon/259.png",
+    "specialties": [
+      "Water",
+      "Build"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1014,
+        "habitatName": "Creepy chimney rocks",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1025,
+        "habitatName": "Muddy playtime",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B016",
+    "name": "Swampert",
+    "dex": "basin",
+    "sprite": "img/pokemon/260.png",
+    "specialties": [
+      "Build",
+      "Bulldoze"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1002,
+        "habitatName": "Basin tall grass and coral",
+        "rarity": "Very Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1026,
+        "habitatName": "Muddy spa",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B017",
+    "name": "Carvanha",
+    "dex": "basin",
+    "sprite": "img/pokemon/318.png",
+    "specialties": [
+      "Chop"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1006,
+        "habitatName": "Seaweed and netting",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B018",
+    "name": "Sharpedo",
+    "dex": "basin",
+    "sprite": "img/pokemon/319.png",
+    "specialties": [
+      "Chop",
+      "Scrub"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1015,
+        "habitatName": "Chimney rocks dig site",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B019",
+    "name": "Barboach",
+    "dex": "basin",
+    "sprite": "img/pokemon/339.png",
+    "specialties": [
+      "Search"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1010,
+        "habitatName": "Sandy speech",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1019,
+        "habitatName": "Ocean rest spot",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1025,
+        "habitatName": "Muddy playtime",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B020",
+    "name": "Whiscash",
+    "dex": "basin",
+    "sprite": "img/pokemon/340.png",
+    "specialties": [
+      "Search",
+      "Bulldoze"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1035,
+        "habitatName": "Gorgeous Sleeping Area",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B021",
+    "name": "Corphish",
+    "dex": "basin",
+    "sprite": "img/pokemon/341.png",
+    "specialties": [
+      "Build"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1008,
+        "habitatName": "Sandy basin tall grass",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1009,
+        "habitatName": "Sandy digging spot",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B022",
+    "name": "Crawdaunt",
+    "dex": "basin",
+    "sprite": "img/pokemon/342.png",
+    "specialties": [
+      "Build",
+      "Crush"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1009,
+        "habitatName": "Sandy digging spot",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B023",
+    "name": "Luvdisc",
+    "dex": "basin",
+    "sprite": "img/pokemon/370.png",
+    "specialties": [
+      "Hype"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1004,
+        "habitatName": "Swaying flower bed and coral",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1018,
+        "habitatName": "Treasure chest and sparkling jewels",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1023,
+        "habitatName": "Fluffy relaxation",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B024",
+    "name": "Buizel",
+    "dex": "basin",
+    "sprite": "img/pokemon/418.png",
+    "specialties": [
+      "Chop",
+      "Trade"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1001,
+        "habitatName": "Basin tall grass",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1022,
+        "habitatName": "Smoothie-making spot",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B025",
+    "name": "Floatzel",
+    "dex": "basin",
+    "sprite": "img/pokemon/419.png",
+    "specialties": [
+      "Trade",
+      "Build"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1020,
+        "habitatName": "Marine shop",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B026",
+    "name": "Finneon",
+    "dex": "basin",
+    "sprite": "img/pokemon/456.png",
+    "specialties": [
+      "Hype"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1003,
+        "habitatName": "Swaying flower bed",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1012,
+        "habitatName": "Marine mossy rest spot",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B027",
+    "name": "Lumineon",
+    "dex": "basin",
+    "sprite": "img/pokemon/457.png",
+    "specialties": [
+      "Hype",
+      "Water"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1005,
+        "habitatName": "Swaying flower bed and seaweed",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1012,
+        "habitatName": "Marine mossy rest spot",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B028",
+    "name": "Frillish Male Form",
+    "dex": "basin",
+    "sprite": "img/pokemon/592-frillishmaleform.png",
+    "specialties": [
+      "Search",
+      "Burn"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1017,
+        "habitatName": "Playing sailor",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1021,
+        "habitatName": "Ocean treasures",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B028",
+    "name": "Frillish Female Form",
+    "dex": "basin",
+    "sprite": "img/pokemon/592-frillishfemaleform.png",
+    "specialties": [
+      "Search",
+      "Burn"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1017,
+        "habitatName": "Playing sailor",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1021,
+        "habitatName": "Ocean treasures",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B029",
+    "name": "Jellicent Male Form",
+    "dex": "basin",
+    "sprite": "img/pokemon/593-jellicentmaleform.png",
+    "specialties": [
+      "Search",
+      "Burn"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1032,
+        "habitatName": "Marine teatime",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B029",
+    "name": "Jellicent Female Form",
+    "dex": "basin",
+    "sprite": "img/pokemon/593-jellicentfemaleform.png",
+    "specialties": [
+      "Search",
+      "Burn"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1032,
+        "habitatName": "Marine teatime",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B030",
+    "name": "Alomomola",
+    "dex": "basin",
+    "sprite": "img/pokemon/594.png",
+    "specialties": [
+      "Water",
+      "Scrub"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1021,
+        "habitatName": "Ocean treasures",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B031",
+    "name": "Stunfisk",
+    "dex": "basin",
+    "sprite": "img/pokemon/618.png",
+    "specialties": [
+      "Generate",
+      "Bulldoze"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1003,
+        "habitatName": "Swaying flower bed",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1006,
+        "habitatName": "Seaweed and netting",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B032",
+    "name": "Inkay",
+    "dex": "basin",
+    "sprite": "img/pokemon/686.png",
+    "specialties": [
+      "Gather",
+      "Teleport"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1025,
+        "habitatName": "Muddy playtime",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B033",
+    "name": "Malamar",
+    "dex": "basin",
+    "sprite": "img/pokemon/687.png",
+    "specialties": [
+      "Gather",
+      "Teleport"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1027,
+        "habitatName": "Topsy-turby",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B034",
+    "name": "Popplio",
+    "dex": "basin",
+    "sprite": "img/pokemon/728.png",
+    "specialties": [
+      "Hype",
+      "Water"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1003,
+        "habitatName": "Swaying flower bed",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B035",
+    "name": "Brionne",
+    "dex": "basin",
+    "sprite": "img/pokemon/729.png",
+    "specialties": [
+      "Hype",
+      "Trade"
+    ],
+    "habitats": []
+  },
+  {
+    "num": "B036",
+    "name": "Primarina",
+    "dex": "basin",
+    "sprite": "img/pokemon/730.png",
+    "specialties": [
+      "Hype",
+      "Scrub"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1031,
+        "habitatName": "Elegant concert",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B037",
+    "name": "Mareanie",
+    "dex": "basin",
+    "sprite": "img/pokemon/747.png",
+    "specialties": [
+      "Recycle"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1004,
+        "habitatName": "Swaying flower bed and coral",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B038",
+    "name": "Toxapex",
+    "dex": "basin",
+    "sprite": "img/pokemon/748.png",
+    "specialties": [
+      "Recycle",
+      "Build"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1018,
+        "habitatName": "Treasure chest and sparkling jewels",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B039",
+    "name": "Wimpod",
+    "dex": "basin",
+    "sprite": "img/pokemon/767.png",
+    "specialties": [
+      "Recycle"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1016,
+        "habitatName": "Discarded treasure",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B040",
+    "name": "Golisopod",
+    "dex": "basin",
+    "sprite": "img/pokemon/768.png",
+    "specialties": [
+      "Recycle",
+      "Chop"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1004,
+        "habitatName": "Swaying flower bed and coral",
+        "rarity": "Very Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "habitatNum": 1016,
+        "habitatName": "Discarded treasure",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B041",
+    "name": "Bruxish",
+    "dex": "basin",
+    "sprite": "img/pokemon/779.png",
+    "specialties": [
+      "Gather",
+      "Teleport"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1013,
+        "habitatName": "Molten mossy rest spot",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B042",
+    "name": "Dhelmise",
+    "dex": "basin",
+    "sprite": "img/pokemon/781.png",
+    "specialties": [
+      "Grow",
+      "Litter"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1017,
+        "habitatName": "Playing sailor",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B043",
+    "name": "Chewtle",
+    "dex": "basin",
+    "sprite": "img/pokemon/833.png",
+    "specialties": [
+      "Chop"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1022,
+        "habitatName": "Smoothie-making spot",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B044",
+    "name": "Drednaw",
+    "dex": "basin",
+    "sprite": "img/pokemon/834.png",
+    "specialties": [
+      "Chop",
+      "Bulldoze"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1024,
+        "habitatName": "Canoe dock",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B045",
+    "name": "Pincurchin",
+    "dex": "basin",
+    "sprite": "img/pokemon/871.png",
+    "specialties": [
+      "Generate"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1014,
+        "habitatName": "Creepy chimney rocks",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B046",
+    "name": "Wiglett",
+    "dex": "basin",
+    "sprite": "img/pokemon/960.png",
+    "specialties": [
+      "Bulldoze"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1010,
+        "habitatName": "Sandy speech",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B047",
+    "name": "Wugtrio",
+    "dex": "basin",
+    "sprite": "img/pokemon/961.png",
+    "specialties": [
+      "Bulldoze",
+      "Search"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1030,
+        "habitatName": "Glowing stage for three",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B048",
+    "name": "Veluza",
+    "dex": "basin",
+    "sprite": "img/pokemon/976.png",
+    "specialties": [
+      "Gather",
+      "Teleport"
+    ],
+    "habitats": [
+      {
+        "habitatNum": 1012,
+        "habitatName": "Marine mossy rest spot",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": "B049",
+    "name": "Phione",
+    "dex": "basin",
+    "sprite": "img/pokemon/489.png",
+    "specialties": [
+      "Trade"
+    ],
+    "habitats": []
+  },
+  {
+    "num": "B050",
+    "name": "Manaphy",
+    "dex": "basin",
+    "sprite": "img/pokemon/490.png",
+    "specialties": [
+      "Trade",
+      "Hype"
+    ],
+    "habitats": []
+  },
+  {
     "num": "301",
     "name": "Jirachi",
+    "dex": "main",
     "sprite": "img/pokemon/385.png",
     "specialties": [],
     "habitats": [
       {
-        "habitatNum": 210,
+        "habitatNum": 2005,
         "habitatName": "Surrounded by stars",
         "rarity": "Common",
         "locations": [
@@ -12834,11 +15561,12 @@ const POKEMON = [
   {
     "num": "302",
     "name": "Sableye",
+    "dex": "main",
     "sprite": "img/pokemon/302.png",
     "specialties": [],
     "habitats": [
       {
-        "habitatNum": 211,
+        "habitatNum": 2004,
         "habitatName": "Treasure-hunting set",
         "rarity": "Common",
         "locations": [
@@ -12866,11 +15594,12 @@ const POKEMON = [
   {
     "num": "303",
     "name": "Hoppip",
+    "dex": "main",
     "sprite": "img/pokemon/187.png",
     "specialties": [],
     "habitats": [
       {
-        "habitatNum": 212,
+        "habitatNum": 2001,
         "habitatName": "Yellow carpet",
         "rarity": "Common",
         "locations": [
@@ -12898,11 +15627,12 @@ const POKEMON = [
   {
     "num": "304",
     "name": "Skiploom",
+    "dex": "main",
     "sprite": "img/pokemon/188.png",
     "specialties": [],
     "habitats": [
       {
-        "habitatNum": 212,
+        "habitatNum": 2001,
         "habitatName": "Yellow carpet",
         "rarity": "Rare",
         "locations": [
@@ -12926,7 +15656,7 @@ const POKEMON = [
         ]
       },
       {
-        "habitatNum": 213,
+        "habitatNum": 2002,
         "habitatName": "Field-trip friends",
         "rarity": "Common",
         "locations": [
@@ -12954,11 +15684,12 @@ const POKEMON = [
   {
     "num": "305",
     "name": "Jumpluff",
+    "dex": "main",
     "sprite": "img/pokemon/189.png",
     "specialties": [],
     "habitats": [
       {
-        "habitatNum": 212,
+        "habitatNum": 2001,
         "habitatName": "Yellow carpet",
         "rarity": "Very Rare",
         "locations": [
@@ -12982,7 +15713,7 @@ const POKEMON = [
         ]
       },
       {
-        "habitatNum": 214,
+        "habitatNum": 2003,
         "habitatName": "Dandelion lunchtime",
         "rarity": "Rare",
         "locations": [
@@ -26154,6 +28885,30 @@ const HABITATS = [
     ],
     "pokemon": [
       {
+        "name": "Slowbro",
+        "spriteNum": "080",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
         "name": "Slowking",
         "spriteNum": "199",
         "rarity": "Rare",
@@ -27533,36 +30288,21 @@ const HABITATS = [
     ]
   },
   {
-    "num": 210,
-    "name": "Surrounded by stars",
-    "description": "",
-    "image": "img/habitats/e5.png",
+    "num": 1001,
+    "name": "Basin tall grass",
+    "description": "Tall grass that can be seen all over the sea floor. Marine Pokémon may come here to hide.",
+    "image": "img/habitats/b1.png",
     "materials": [
       {
-        "item": "Star closet",
+        "item": "Seabed tall grass",
         "quantity": 1,
-        "image": "img/items/starcloset.png"
-      },
-      {
-        "item": "Starry-sky bed",
-        "quantity": 1,
-        "image": "img/items/starry-skybed.png"
-      },
-      {
-        "item": "Cloud table",
-        "quantity": 1,
-        "image": "img/items/cloudtable.png"
-      },
-      {
-        "item": "Jirachi lamp",
-        "quantity": 1,
-        "image": "img/items/jirachilamp.png"
+        "image": "img/items/seabedtallgrass.png"
       }
     ],
     "pokemon": [
       {
-        "name": "Jirachi",
-        "spriteNum": "385",
+        "name": "Mudkip",
+        "spriteNum": "258",
         "rarity": "Common",
         "locations": [
           "Withered Wastelands",
@@ -27570,7 +30310,83 @@ const HABITATS = [
           "Rocky Ridges",
           "Sparkling Skylands",
           "Palette Town",
-          "Cloud Island"
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Buizel",
+        "spriteNum": "418",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Totodile",
+        "spriteNum": "158",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Feraligatr",
+        "spriteNum": "160",
+        "rarity": "Very Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
         ],
         "times": [
           "Morning",
@@ -27587,31 +30403,31 @@ const HABITATS = [
     ]
   },
   {
-    "num": 211,
-    "name": "Treasure-hunting set",
-    "description": "",
-    "image": "img/habitats/e4.png",
+    "num": 1002,
+    "name": "Basin tall grass and coral",
+    "description": "Bushy tall grass and a variety of corals make this a perfect resting spot for Pokémon",
+    "image": "img/habitats/b2.png",
     "materials": [
       {
-        "item": "Adventure kit",
-        "quantity": 1,
-        "image": "img/items/adventurekit.png"
+        "item": "Seabed tall grass",
+        "quantity": 4,
+        "image": "img/items/seabedtallgrass.png"
       },
       {
-        "item": "Map and compass",
+        "item": "Small coral",
         "quantity": 1,
-        "image": "img/items/mapandcompass.png"
+        "image": "img/items/smallcoral.png"
       },
       {
-        "item": "Treasure",
+        "item": "Tall coral",
         "quantity": 1,
-        "image": "img/items/treasure.png"
+        "image": "img/items/tallcoral.png"
       }
     ],
     "pokemon": [
       {
-        "name": "Sableye",
-        "spriteNum": "302",
+        "name": "Corsola",
+        "spriteNum": "222",
         "rarity": "Common",
         "locations": [
           "Withered Wastelands",
@@ -27619,7 +30435,58 @@ const HABITATS = [
           "Rocky Ridges",
           "Sparkling Skylands",
           "Palette Town",
-          "Cloud Island"
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Shellder",
+        "spriteNum": "090",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Swampert",
+        "spriteNum": "260",
+        "rarity": "Very Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
         ],
         "times": [
           "Morning",
@@ -27636,9 +30503,2509 @@ const HABITATS = [
     ]
   },
   {
-    "num": 212,
+    "num": 1003,
+    "name": "Swaying flower bed",
+    "description": "A cluster of small flowers and luxuriant leaves that sways gently to and fro",
+    "image": "img/habitats/b3.png",
+    "materials": [
+      {
+        "item": "Seabed flowers",
+        "quantity": 4,
+        "image": "img/items/seabedflowers.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Stunfisk",
+        "spriteNum": "618",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Popplio",
+        "spriteNum": "728",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Staryu",
+        "spriteNum": "120",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Finneon",
+        "spriteNum": "456",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1004,
+    "name": "Swaying flower bed and coral",
+    "description": "This gorgeous tableau of colorful corals and basin flowers can lift your mood",
+    "image": "img/habitats/b4.png",
+    "materials": [
+      {
+        "item": "Colorful corals",
+        "quantity": 1,
+        "image": "img/items/colorfulcorals.png"
+      },
+      {
+        "item": "Seabed flowers",
+        "quantity": 4,
+        "image": "img/items/seabedflowers.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Mareanie",
+        "spriteNum": "747",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Luvdisc",
+        "spriteNum": "370",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Golisopod",
+        "spriteNum": "768",
+        "rarity": "Very Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1005,
+    "name": "Swaying flower bed and seaweed",
+    "description": "Flowers and seaweed sway gently beside rugged chimney rocks",
+    "image": "img/habitats/b5.png",
+    "materials": [
+      {
+        "item": "Chimney rocks",
+        "quantity": 1,
+        "image": "img/items/chimneyrocks.png"
+      },
+      {
+        "item": "Seabed flowers",
+        "quantity": 4,
+        "image": "img/items/seabedflowers.png"
+      },
+      {
+        "item": "Lush seaweed",
+        "quantity": 2,
+        "image": "img/items/lushseaweed.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Cloyster",
+        "spriteNum": "091",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Lumineon",
+        "spriteNum": "457",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1006,
+    "name": "Seaweed and netting",
+    "description": "A bunch of seaweed near some netting. Somehow none of it gets tangled in the mesh.",
+    "image": "img/habitats/b6.png",
+    "materials": [
+      {
+        "item": "Netting",
+        "quantity": 4,
+        "image": "img/items/netting.png"
+      },
+      {
+        "item": "Lush seaweed",
+        "quantity": 2,
+        "image": "img/items/lushseaweed.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Carvanha",
+        "spriteNum": "318",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Stunfisk",
+        "spriteNum": "618",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1007,
+    "name": "Coral congregation",
+    "description": "Colorful corals of various sizes. Pokémon who are coral connoisseurs find them irresistible",
+    "image": "img/habitats/b7.png",
+    "materials": [
+      {
+        "item": "Colorful corals",
+        "quantity": 1,
+        "image": "img/items/colorfulcorals.png"
+      },
+      {
+        "item": "Small coral",
+        "quantity": 1,
+        "image": "img/items/smallcoral.png"
+      },
+      {
+        "item": "Tall coral",
+        "quantity": 1,
+        "image": "img/items/tallcoral.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Horsea",
+        "spriteNum": "116",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Corsola",
+        "spriteNum": "222",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Seadra",
+        "spriteNum": "117",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Kingdra",
+        "spriteNum": "230",
+        "rarity": "Very Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1008,
+    "name": "Sandy basin tall grass",
+    "description": "Both the basin tall grass and the pile of sand are hiding spots for Pokémon",
+    "image": "img/habitats/b8.png",
+    "materials": [
+      {
+        "item": "Sandpile",
+        "quantity": 1,
+        "image": "img/items/sandpile.png"
+      },
+      {
+        "item": "Seabed tall grass",
+        "quantity": 4,
+        "image": "img/items/seabedtallgrass.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Corphish",
+        "spriteNum": "341",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1009,
+    "name": "Sandy digging spot",
+    "description": "Get your rake and shovel, then start digging until you find what you're after!",
+    "image": "img/habitats/b9.png",
+    "materials": [
+      {
+        "item": "Sandpile",
+        "quantity": 1,
+        "image": "img/items/sandpile.png"
+      },
+      {
+        "item": "Sandtoys",
+        "quantity": 1,
+        "image": "img/items/sandtoys.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Shellder",
+        "spriteNum": "090",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Corphish",
+        "spriteNum": "341",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Crawdaunt",
+        "spriteNum": "342",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1010,
+    "name": "Sandy speech",
+    "description": "Pokémon curious about the platform may pop out of the sandpile",
+    "image": "img/habitats/b10.png",
+    "materials": [
+      {
+        "item": "Sandpile",
+        "quantity": 1,
+        "image": "img/items/sandpile.png"
+      },
+      {
+        "item": "Table (any)",
+        "quantity": 1,
+        "image": "img/items/table(any).png"
+      },
+      {
+        "item": "Tabletop mic",
+        "quantity": 1,
+        "image": "img/items/tabletopmic.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Barboach",
+        "spriteNum": "339",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Wiglett",
+        "spriteNum": "960",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1011,
+    "name": "Biteable punching bag",
+    "description": "A punching bag hanging near a set of dentures. Pokémon with big jaws mayy be tempted to take a bite.",
+    "image": "img/habitats/b11.png",
+    "materials": [
+      {
+        "item": "Sandpile",
+        "quantity": 1,
+        "image": "img/items/sandpile.png"
+      },
+      {
+        "item": "Punching bag",
+        "quantity": 1,
+        "image": "img/items/punchingbag.png"
+      },
+      {
+        "item": "Table (any)",
+        "quantity": 1,
+        "image": "img/items/table(any).png"
+      },
+      {
+        "item": "Gold Teeth",
+        "quantity": 1,
+        "image": "img/items/goldteeth.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Feraligatr",
+        "spriteNum": "160",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1012,
+    "name": "Marine mossy rest spot",
+    "description": "The fluffy pink moss makes this spot very popular with aquatic Pokémon.",
+    "image": "img/habitats/b12.png",
+    "materials": [
+      {
+        "item": "Sea moss",
+        "quantity": 1,
+        "image": "img/items/seamoss.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Finneon",
+        "spriteNum": "456",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Veluza",
+        "spriteNum": "976",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Lumineon",
+        "spriteNum": "457",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1013,
+    "name": "Molten mossy rest spot",
+    "description": "Even the heat of the molten rock could not stop the thick growth of moss",
+    "image": "img/habitats/b13.png",
+    "materials": [
+      {
+        "item": "Molten rock",
+        "quantity": 1,
+        "image": "img/items/moltenrock.png"
+      },
+      {
+        "item": "Sea moss",
+        "quantity": 4,
+        "image": "img/items/seamoss.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Bruxish",
+        "spriteNum": "779",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1014,
+    "name": "Creepy chimney rocks",
+    "description": "Creepy chimney rocks surrounded by sea moss. Pick up the lantern and take a closer look",
+    "image": "img/habitats/b14.png",
+    "materials": [
+      {
+        "item": "Chimney rocks",
+        "quantity": 1,
+        "image": "img/items/chimneyrocks.png"
+      },
+      {
+        "item": "Sea moss",
+        "quantity": 4,
+        "image": "img/items/seamoss.png"
+      },
+      {
+        "item": "Barrel",
+        "quantity": 1,
+        "image": "img/items/barrel.png"
+      },
+      {
+        "item": "Lantern",
+        "quantity": 1,
+        "image": "img/items/lantern.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Pincurchin",
+        "spriteNum": "871",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Marshtomp",
+        "spriteNum": "259",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1015,
+    "name": "Chimney rocks dig site",
+    "description": "Dig around the chimney rocks to see if you can find any treasure!",
+    "image": "img/habitats/b15.png",
+    "materials": [
+      {
+        "item": "Chimney rocks",
+        "quantity": 1,
+        "image": "img/items/chimneyrocks.png"
+      },
+      {
+        "item": "Wheelbarrow",
+        "quantity": 1,
+        "image": "img/items/wheelbarrow.png"
+      },
+      {
+        "item": "Excavation tools",
+        "quantity": 1,
+        "image": "img/items/excavationtools.png"
+      },
+      {
+        "item": "Traffic cone",
+        "quantity": 1,
+        "image": "img/items/trafficcone.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Sharpedo",
+        "spriteNum": "319",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Croconaw",
+        "spriteNum": "159",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1016,
+    "name": "Discarded treasure",
+    "description": "A treasure chest that's been tossed out with the trash. Open it up and see what's inside!",
+    "image": "img/habitats/b16.png",
+    "materials": [
+      {
+        "item": "Big treasure chest",
+        "quantity": 1,
+        "image": "img/items/bigtreasurechest.png"
+      },
+      {
+        "item": "Waste bin",
+        "quantity": 1,
+        "image": "img/items/wastebin.png"
+      },
+      {
+        "item": "Garbage bags",
+        "quantity": 1,
+        "image": "img/items/garbagebags.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Wimpod",
+        "spriteNum": "767",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Golisopod",
+        "spriteNum": "768",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1017,
+    "name": "Playing sailor",
+    "description": "Turn the ship's wheel next to the treasure chest, just like a sea captain! Steady as she goes!",
+    "image": "img/habitats/b17.png",
+    "materials": [
+      {
+        "item": "Big treasure chest",
+        "quantity": 1,
+        "image": "img/items/bigtreasurechest.png"
+      },
+      {
+        "item": "Ship's wheel",
+        "quantity": 1,
+        "image": "img/items/ship'swheel.png"
+      },
+      {
+        "item": "Wooden crate",
+        "quantity": 1,
+        "image": "img/items/woodencrate.png"
+      },
+      {
+        "item": "Bottled ship",
+        "quantity": 1,
+        "image": "img/items/bottledship.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Frillish Female Form",
+        "spriteNum": "592-frillishfemaleform",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Frillish Male Form",
+        "spriteNum": "592-frillishmaleform",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Dhelmise",
+        "spriteNum": "781",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1018,
+    "name": "Treasure chest and sparkling jewels",
+    "description": "Take the jewls out of the chest and illuminate them with the lantern.",
+    "image": "img/habitats/b18.png",
+    "materials": [
+      {
+        "item": "Big treasure chest",
+        "quantity": 1,
+        "image": "img/items/bigtreasurechest.png"
+      },
+      {
+        "item": "Sparkling jewelry",
+        "quantity": 1,
+        "image": "img/items/sparklingjewelry.png"
+      },
+      {
+        "item": "Lantern",
+        "quantity": 1,
+        "image": "img/items/lantern.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Luvdisc",
+        "spriteNum": "370",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Toxapex",
+        "spriteNum": "748",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1019,
+    "name": "Ocean rest spot",
+    "description": "Sit on the cushion beside the coral and relax while gazing at the light.",
+    "image": "img/habitats/b19.png",
+    "materials": [
+      {
+        "item": "Small coral",
+        "quantity": 1,
+        "image": "img/items/smallcoral.png"
+      },
+      {
+        "item": "Seashell seat",
+        "quantity": 1,
+        "image": "img/items/seashellseat.png"
+      },
+      {
+        "item": "Lampion",
+        "quantity": 1,
+        "image": "img/items/lampion.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Barboach",
+        "spriteNum": "339",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1020,
+    "name": "Marine shop",
+    "description": "Just power up the cash register, and you'll be ready for business in no time-even underwater!",
+    "image": "img/habitats/b20.png",
+    "materials": [
+      {
+        "item": "Cash register",
+        "quantity": 1,
+        "image": "img/items/cashregister.png"
+      },
+      {
+        "item": "Table (any)",
+        "quantity": 2,
+        "image": "img/items/table(any).png"
+      },
+      {
+        "item": "Water",
+        "quantity": 1,
+        "image": "img/items/water.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Floatzel",
+        "spriteNum": "419",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1021,
+    "name": "Ocean treasures",
+    "description": "Sparkling jewelry and a bottled ship. These should be stored very carefully",
+    "image": "img/habitats/b21.png",
+    "materials": [
+      {
+        "item": "Marine chest",
+        "quantity": 1,
+        "image": "img/items/marinechest.png"
+      },
+      {
+        "item": "Bottled ship",
+        "quantity": 1,
+        "image": "img/items/bottledship.png"
+      },
+      {
+        "item": "Sparkling jewelry",
+        "quantity": 1,
+        "image": "img/items/sparklingjewelry.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Frillish Female Form",
+        "spriteNum": "592-frillishfemaleform",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Frillish Male Form",
+        "spriteNum": "592-frillishmaleform",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Alomomola",
+        "spriteNum": "594",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1022,
+    "name": "Smoothie-making spot",
+    "description": "Grab some berries and a blender, and you'll be all set to make smoothies",
+    "image": "img/habitats/b22.png",
+    "materials": [
+      {
+        "item": "Blender",
+        "quantity": 1,
+        "image": "img/items/blender.png"
+      },
+      {
+        "item": "Plated food",
+        "quantity": 1,
+        "image": "img/items/platedfood.png"
+      },
+      {
+        "item": "Table (any)",
+        "quantity": 1,
+        "image": "img/items/table(any).png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Buizel",
+        "spriteNum": "418",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Chewtle",
+        "spriteNum": "833",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1023,
+    "name": "Fluffy relaxation",
+    "description": "The huge cushion bed and fluffy doll create a soothing environment",
+    "image": "img/habitats/b23.png",
+    "materials": [
+      {
+        "item": "Cushion bed",
+        "quantity": 1,
+        "image": "img/items/cushionbed.png"
+      },
+      {
+        "item": "Lighting",
+        "quantity": 1,
+        "image": "img/items/lighting.png"
+      },
+      {
+        "item": "Doll (any)",
+        "quantity": 1,
+        "image": "img/items/doll(any).png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Chinchou",
+        "spriteNum": "170",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Mudkip",
+        "spriteNum": "258",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Luvdisc",
+        "spriteNum": "370",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1024,
+    "name": "Canoe dock",
+    "description": "A cozy little canoe dock. Pokémon may come by to ride the canoe",
+    "image": "img/habitats/b24.png",
+    "materials": [
+      {
+        "item": "Canoe",
+        "quantity": 1,
+        "image": "img/items/canoe.png"
+      },
+      {
+        "item": "Floating logs",
+        "quantity": 2,
+        "image": "img/items/floatinglogs.png"
+      },
+      {
+        "item": "Water",
+        "quantity": 2,
+        "image": "img/items/water.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Totodile",
+        "spriteNum": "158",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Croconaw",
+        "spriteNum": "159",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Drednaw",
+        "spriteNum": "834",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1025,
+    "name": "Muddy playtime",
+    "description": "Have fun in the muddy water by playing with the toys or riding the floating logs.",
+    "image": "img/habitats/b25.png",
+    "materials": [
+      {
+        "item": "Windup Inkay",
+        "quantity": 1,
+        "image": "img/items/windupinkay.png"
+      },
+      {
+        "item": "Towel rack",
+        "quantity": 1,
+        "image": "img/items/towelrack.png"
+      },
+      {
+        "item": "Floating logs",
+        "quantity": 1,
+        "image": "img/items/floatinglogs.png"
+      },
+      {
+        "item": "Muddy water",
+        "quantity": 2,
+        "image": "img/items/muddywater.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Marshtomp",
+        "spriteNum": "259",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Barboach",
+        "spriteNum": "339",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Inkay",
+        "spriteNum": "686",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1026,
+    "name": "Muddy spa",
+    "description": "A luxurious spa with a large, prominent fountain. Taking a mud bath may turn your skin silky smooth",
+    "image": "img/habitats/b26.png",
+    "materials": [
+      {
+        "item": "Seat (widde)",
+        "quantity": 1,
+        "image": "img/items/seat(widde).png"
+      },
+      {
+        "item": "Gyarados fountain",
+        "quantity": 1,
+        "image": "img/items/gyaradosfountain.png"
+      },
+      {
+        "item": "Bathtime set",
+        "quantity": 1,
+        "image": "img/items/bathtimeset.png"
+      },
+      {
+        "item": "Muddy water",
+        "quantity": 2,
+        "image": "img/items/muddywater.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Swampert",
+        "spriteNum": "260",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1027,
+    "name": "Topsy-turby",
+    "description": "A row of lampions hanging upside down, but that's fine as long as they shine brightly",
+    "image": "img/habitats/b27.png",
+    "materials": [
+      {
+        "item": "Lampion",
+        "quantity": 3,
+        "image": "img/items/lampion.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Malamar",
+        "spriteNum": "687",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1028,
+    "name": "Bubbly bathtub",
+    "description": "Fill the tub and enjoy a fun bubbly bath time",
+    "image": "img/habitats/b28.png",
+    "materials": [
+      {
+        "item": "Bathtub",
+        "quantity": 1,
+        "image": "img/items/bathtub.png"
+      },
+      {
+        "item": "Bubble machine",
+        "quantity": 1,
+        "image": "img/items/bubblemachine.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Totodile",
+        "spriteNum": "158",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1029,
+    "name": "Bubbly stage",
+    "description": "Dance on a stage bursting with bubbles!",
+    "image": "img/habitats/b29.png",
+    "materials": [
+      {
+        "item": "Small stage",
+        "quantity": 1,
+        "image": "img/items/smallstage.png"
+      },
+      {
+        "item": "Bubble machine",
+        "quantity": 2,
+        "image": "img/items/bubblemachine.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Vikavolt",
+        "spriteNum": "738",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Crabrawler",
+        "spriteNum": "739",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1030,
+    "name": "Glowing stage for three",
+    "description": "A shiny stage perfect for a trio. Gather everyone and get singing!",
+    "image": "img/habitats/b30.png",
+    "materials": [
+      {
+        "item": "Standing mic",
+        "quantity": 3,
+        "image": "img/items/standingmic.png"
+      },
+      {
+        "item": "Wireless power-transmitter post",
+        "quantity": 3,
+        "image": "img/items/wirelesspower-transmitterpost.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Wugtrio",
+        "spriteNum": "961",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1031,
+    "name": "Elegant concert",
+    "description": "A harp that gleams in the lamplight. Try strumming a melody inspired by the ocean.",
+    "image": "img/habitats/b31.png",
+    "materials": [
+      {
+        "item": "Harp",
+        "quantity": 1,
+        "image": "img/items/harp.png"
+      },
+      {
+        "item": "Marine chair",
+        "quantity": 1,
+        "image": "img/items/marinechair.png"
+      },
+      {
+        "item": "Shell lamp",
+        "quantity": 2,
+        "image": "img/items/shelllamp.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Primarina",
+        "spriteNum": "730",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1032,
+    "name": "Marine teatime",
+    "description": "Relax and enjoy teatime in a chic space while admiring a bottled ship.",
+    "image": "img/habitats/b32.png",
+    "materials": [
+      {
+        "item": "Chic table",
+        "quantity": 1,
+        "image": "img/items/chictable.png"
+      },
+      {
+        "item": "Chic chair",
+        "quantity": 2,
+        "image": "img/items/chicchair.png"
+      },
+      {
+        "item": "Push cart",
+        "quantity": 1,
+        "image": "img/items/pushcart.png"
+      },
+      {
+        "item": "Tea set",
+        "quantity": 1,
+        "image": "img/items/teaset.png"
+      },
+      {
+        "item": "Bottled ship",
+        "quantity": 1,
+        "image": "img/items/bottledship.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Jellicent Female Form",
+        "spriteNum": "593-jellicentfemaleform",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      },
+      {
+        "name": "Jellicent Male Form",
+        "spriteNum": "593-jellicentmaleform",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1033,
+    "name": "Nostalgia zone",
+    "description": "Listen to the melody of the music box and take a stroll down memory lane.",
+    "image": "img/habitats/b33.png",
+    "materials": [
+      {
+        "item": "Antique chest",
+        "quantity": 1,
+        "image": "img/items/antiquechest.png"
+      },
+      {
+        "item": "Music box",
+        "quantity": 1,
+        "image": "img/items/musicbox.png"
+      },
+      {
+        "item": "Photo frame",
+        "quantity": 1,
+        "image": "img/items/photoframe.png"
+      },
+      {
+        "item": "Sea moss",
+        "quantity": 2,
+        "image": "img/items/seamoss.png"
+      },
+      {
+        "item": "Wooden crate",
+        "quantity": 1,
+        "image": "img/items/woodencrate.png"
+      },
+      {
+        "item": "Lantern",
+        "quantity": 1,
+        "image": "img/items/lantern.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Lanturn",
+        "spriteNum": "171",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1034,
+    "name": "Marine makeup stand",
+    "description": "An elegant space adorned with shell and pearl furniture. You could probably get extra stylish here.",
+    "image": "img/habitats/b34.png",
+    "materials": [
+      {
+        "item": "Marine closet",
+        "quantity": 1,
+        "image": "img/items/marinecloset.png"
+      },
+      {
+        "item": "Marine dresser",
+        "quantity": 1,
+        "image": "img/items/marinedresser.png"
+      },
+      {
+        "item": "Marine chair",
+        "quantity": 1,
+        "image": "img/items/marinechair.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Kingdra",
+        "spriteNum": "230",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1035,
+    "name": "Gorgeous Sleeping Area",
+    "description": "Sleeping surrounded by gorgeously decorated furniture may help you drift into fancy dreams.",
+    "image": "img/habitats/b35.png",
+    "materials": [
+      {
+        "item": "Ornate partition",
+        "quantity": 1,
+        "image": "img/items/ornatepartition.png"
+      },
+      {
+        "item": "Ornate bed",
+        "quantity": 1,
+        "image": "img/items/ornatebed.png"
+      },
+      {
+        "item": "Ornate stand",
+        "quantity": 1,
+        "image": "img/items/ornatestand.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Whiscash",
+        "spriteNum": "340",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 1036,
+    "name": "Mermaid's Gym",
+    "description": "This space with a shining pearl sofa feels ready for someone to arrive",
+    "image": "img/habitats/b36.png",
+    "materials": [
+      {
+        "item": "Marine Sofa",
+        "quantity": 1,
+        "image": "img/items/marinesofa.png"
+      },
+      {
+        "item": "Pedestal",
+        "quantity": 6,
+        "image": "img/items/pedestal.png"
+      },
+      {
+        "item": "Decorative Great Ball",
+        "quantity": 1,
+        "image": "img/items/decorativegreatball.png"
+      },
+      {
+        "item": "Decorative Heal Ball",
+        "quantity": 1,
+        "image": "img/items/decorativehealball.png"
+      },
+      {
+        "item": "Decorative Dive Ball",
+        "quantity": 1,
+        "image": "img/items/decorativediveball.png"
+      },
+      {
+        "item": "Decorative Net Ball",
+        "quantity": 1,
+        "image": "img/items/decorativenetball.png"
+      },
+      {
+        "item": "Decorative Net Ball",
+        "quantity": 1,
+        "image": "img/items/decorativenetball.png"
+      },
+      {
+        "item": "Decorative Lure Ball",
+        "quantity": 1,
+        "image": "img/items/decorativelureball.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Starmie",
+        "spriteNum": "121",
+        "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island",
+          "Bubbly Basin"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 2001,
     "name": "Yellow carpet",
-    "description": "",
+    "description": "A field of warm, blooming yellow flowers. Just looking at it seems to fill you with energy",
     "image": "img/habitats/e1.png",
     "materials": [
       {
@@ -27723,9 +33090,9 @@ const HABITATS = [
     ]
   },
   {
-    "num": 213,
+    "num": 2002,
     "name": "Field-trip friends",
-    "description": "",
+    "description": "Pack a lunch box and canteen inside your backpack, and you're all set for a field trip",
     "image": "img/habitats/e2.png",
     "materials": [
       {
@@ -27772,9 +33139,9 @@ const HABITATS = [
     ]
   },
   {
-    "num": 214,
+    "num": 2003,
     "name": "Dandelion lunchtime",
-    "description": "",
+    "description": "Lunch box? Check. Tableware? Check. Time for a picnic lunch break!",
     "image": "img/habitats/e3.png",
     "materials": [
       {
@@ -27803,6 +33170,109 @@ const HABITATS = [
         "name": "Jumpluff",
         "spriteNum": "189",
         "rarity": "Rare",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 2004,
+    "name": "Treasure-hunting set",
+    "description": "A map and compass are essential treasure-hunting tools. Time to set off in search of jewels",
+    "image": "img/habitats/e4.png",
+    "materials": [
+      {
+        "item": "Adventure kit",
+        "quantity": 1,
+        "image": "img/items/adventurekit.png"
+      },
+      {
+        "item": "Map and compass",
+        "quantity": 1,
+        "image": "img/items/mapandcompass.png"
+      },
+      {
+        "item": "Treasure",
+        "quantity": 1,
+        "image": "img/items/treasure.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Sableye",
+        "spriteNum": "302",
+        "rarity": "Common",
+        "locations": [
+          "Withered Wastelands",
+          "Bleak Beach",
+          "Rocky Ridges",
+          "Sparkling Skylands",
+          "Palette Town",
+          "Cloud Island"
+        ],
+        "times": [
+          "Morning",
+          "Day",
+          "Evening",
+          "Night"
+        ],
+        "weather": [
+          "Sun",
+          "Cloud",
+          "Rain"
+        ]
+      }
+    ]
+  },
+  {
+    "num": 2005,
+    "name": "Surrounded by stars",
+    "description": "Surrounded by shining stars and fluffy clouds, you'll feel like you're living in a dream",
+    "image": "img/habitats/e5.png",
+    "materials": [
+      {
+        "item": "Star closet",
+        "quantity": 1,
+        "image": "img/items/starcloset.png"
+      },
+      {
+        "item": "Starry-sky bed",
+        "quantity": 1,
+        "image": "img/items/starry-skybed.png"
+      },
+      {
+        "item": "Cloud table",
+        "quantity": 1,
+        "image": "img/items/cloudtable.png"
+      },
+      {
+        "item": "Jirachi lamp",
+        "quantity": 1,
+        "image": "img/items/jirachilamp.png"
+      }
+    ],
+    "pokemon": [
+      {
+        "name": "Jirachi",
+        "spriteNum": "385",
+        "rarity": "Common",
         "locations": [
           "Withered Wastelands",
           "Bleak Beach",

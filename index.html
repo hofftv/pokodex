@@ -350,6 +350,7 @@ body {
   color: #FFAA44;
   text-align: center;
 }
+.crossfilter-split { color: #CC8855; }
 .item-missing-pokemon {
   display: flex;
   flex-wrap: wrap;
@@ -743,6 +744,34 @@ body {
   box-shadow: 0 0 8px rgba(255, 51, 51, 0.4);
 }
 
+/* ─── Dex Toggle (Main / Bubbly Basin) ────────────── */
+/* Deliberately its own class, not .view-btn or .filter-btn — those two carry click
+   handlers and an active-state sweep that would fight with the dex tabs. */
+.dex-toggle {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.dex-btn {
+  padding: 6px 18px;
+  border: 2px solid #660000;
+  border-radius: 14px;
+  background: #440000;
+  color: #CC8888;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: none;
+}
+.dex-btn:active { transform: scale(0.95); }
+.dex-btn.active {
+  background: #CC0000;
+  color: #FFF;
+  border-color: #FF3333;
+  box-shadow: 0 0 8px rgba(255, 51, 51, 0.4);
+}
+
 /* ─── Items View ──────────────────────────────────── */
 .items-container {
   padding: 6px;
@@ -942,9 +971,9 @@ body {
         <div class="progress-row">
           <div class="progress-label">
             <span class="pokeball-icon"></span>
-            <span>Pokodex</span>
+            <span id="progress-title">Pokodex</span>
           </div>
-          <div class="progress-count" id="progress-count">0 / 308</div>
+          <div class="progress-count" id="progress-count">0 / 305</div>
         </div>
         <div class="progress-bar-bg">
           <div class="progress-bar-fill" id="progress-bar" style="width: 0%"></div>
@@ -961,6 +990,10 @@ body {
       <button class="view-btn active" data-view="pokemon">Pokémon</button>
       <button class="view-btn" data-view="items">Items</button>
     </div>
+    <div class="dex-toggle" id="dex-row">
+      <button class="dex-btn active" data-dex="main">Main</button>
+      <button class="dex-btn" data-dex="basin">Basin</button>
+    </div>
     <div class="search-row">
       <span class="search-icon">🔍</span>
       <input type="text" class="search-input" id="search-input"
@@ -976,6 +1009,7 @@ body {
       <select class="region-select" id="region-select" aria-label="Filter by region">
         <option value="">All Regions</option>
         <option value="Bleak Beach">Bleak Beach</option>
+        <option value="Bubbly Basin">Bubbly Basin</option>
         <option value="Cloud Island">Cloud Island</option>
         <option value="Palette Town">Palette Town</option>
         <option value="Rocky Ridges">Rocky Ridges</option>
@@ -1019,6 +1053,10 @@ body {
 // ─── Unique IDs for duplicate dex numbers ────────────
 // Some Pokémon share a dex number (Pikachu/Peakychu, Shellos forms, etc.)
 // We assign each a unique ID so caught state doesn't collide.
+// Older data.js builds had no `dex` field — treat anything untagged as main-dex so the app
+// still works if it is ever served alongside a pre-2.0 data file.
+POKEMON.forEach(p => { p.dex = p.dex || 'main'; });
+
 const NUM_COUNT = {};
 POKEMON.forEach(p => { NUM_COUNT[p.num] = (NUM_COUNT[p.num] || 0) + 1; });
 POKEMON.forEach(p => {
@@ -1052,6 +1090,13 @@ let currentRegion = '';
 let searchQuery = '';
 let selectedPokemon = null;
 
+// Which dex tab is showing: 'main' (the 300 + event Pokémon) or 'basin' (the 50 from the
+// Bubbly Basin expansion). Stored under its own key — never inside STORAGE_KEY, which is the
+// caught-state array that gets synced to the cloud.
+const DEX_TAB_KEY = 'pokopia-dex-tab';
+let currentDex = localStorage.getItem(DEX_TAB_KEY) === 'basin' ? 'basin' : 'main';
+const DEX_LABELS = { main: 'Pokodex', basin: 'Bubbly Basin' };
+
 // Migrate old num-only keys → uid keys (one-time, idempotent)
 (function migrateCaughtKeys() {
   const dupeNums = Object.keys(NUM_COUNT).filter(n => NUM_COUNT[n] > 1);
@@ -1076,15 +1121,14 @@ function isCaught(uid) {
   return caughtSet.has(uid);
 }
 
-// Helper: find a Pokémon by name and return its uid
-function getUidByName(name) {
-  const p = POKEMON.find(pk => pk.name.toLowerCase() === name.toLowerCase());
-  return p ? p.uid : null;
-}
+// Unique dex numbers per tab — alt forms share a number, so entries > numbers.
+// Computed, never hardcoded: the main dex grows every time an event Pokémon is added.
+const DEX_NUMS = { main: new Set(), basin: new Set() };
+POKEMON.forEach(p => DEX_NUMS[p.dex].add(p.num));
+const DEX_TOTALS = { main: DEX_NUMS.main.size, basin: DEX_NUMS.basin.size };
 
-// Total unique dex numbers (300, not 308 — alt forms share a number)
-const UNIQUE_DEX_NUMS = [...new Set(POKEMON.map(p => p.num))];
-const DEX_TOTAL = UNIQUE_DEX_NUMS.length;
+// uid → Pokémon, so progress doesn't re-scan the whole array for every caught entry
+const UID_MAP = new Map(POKEMON.map(p => [p.uid, p]));
 
 // ─── Boot Animation ──────────────────────────────────
 function runBootAnimation() {
@@ -1108,6 +1152,9 @@ function buildGrid() {
     cell.className = `pokemon-cell ${isCaught(p.uid) ? 'caught' : 'uncaught'}`;
     cell.dataset.uid = p.uid;
     cell.dataset.num = p.num;
+    // A data attribute, not a class — updateCellState rewrites className wholesale on
+    // every catch toggle and would wipe a class.
+    cell.dataset.dex = p.dex;
     cell.dataset.name = p.name.toLowerCase();
     cell.dataset.locations = [...p.allLocations].join('|').toLowerCase();
 
@@ -1135,15 +1182,18 @@ function updateCellState(uid) {
 }
 
 function updateProgress() {
-  // Count by unique dex number — catching any form of #059 counts that dex entry
+  // Count by unique dex number — catching any form of #059 counts that dex entry.
+  // Scoped to the active tab so Basin catches don't inflate the main dex and vice versa.
   const caughtNums = new Set();
   caughtSet.forEach(uid => {
-    const p = POKEMON.find(pk => pk.uid === uid);
-    if (p) caughtNums.add(p.num);
+    const p = UID_MAP.get(uid);
+    if (p && p.dex === currentDex) caughtNums.add(p.num);
   });
   const count = caughtNums.size;
-  document.getElementById('progress-count').textContent = `${count} / ${DEX_TOTAL}`;
-  document.getElementById('progress-bar').style.width = `${(count / DEX_TOTAL) * 100}%`;
+  const total = DEX_TOTALS[currentDex];
+  document.getElementById('progress-title').textContent = DEX_LABELS[currentDex];
+  document.getElementById('progress-count').textContent = `${count} / ${total}`;
+  document.getElementById('progress-bar').style.width = `${total ? (count / total) * 100 : 0}%`;
 }
 
 // ─── Search & Filters ────────────────────────────────
@@ -1156,6 +1206,7 @@ function applyFilters() {
     const caught = isCaught(uid);
 
     let show = true;
+    if (cell.dataset.dex !== currentDex) show = false;
     if (currentFilter === 'caught' && !caught) show = false;
     if (currentFilter === 'missing' && caught) show = false;
     if (searchQuery && !name.includes(searchQuery)) show = false;
@@ -1171,6 +1222,18 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.classList.add('active');
     currentFilter = btn.dataset.filter;
     applyFilters();
+  });
+});
+
+document.querySelectorAll('.dex-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentDex = btn.dataset.dex;
+    localStorage.setItem(DEX_TAB_KEY, currentDex);
+    document.querySelectorAll('.dex-btn').forEach(b =>
+      b.classList.toggle('active', b.dataset.dex === currentDex));
+    applyFilters();
+    updateProgress();
+    document.querySelector('.screen').scrollTop = 0;
   });
 });
 
@@ -1417,6 +1480,7 @@ function renderItems() {
 
   let neededMap = null;
   let missingCount = 0;
+  let missingBasinCount = 0;
   if (crossFilterActive) {
     neededMap = computeNeededItems();
     const missingUids = new Set();
@@ -1426,6 +1490,13 @@ function renderItems() {
       }
     }
     missingCount = missingUids.size;
+    // The item list is deliberately global — it's a build list for everything still missing,
+    // not per-tab. Count the Basin share so the banner can say so instead of showing a
+    // number that doesn't match whichever dex tab you were last looking at.
+    missingUids.forEach(uid => {
+      const p = UID_MAP.get(uid);
+      if (p && p.dex === 'basin') missingBasinCount++;
+    });
   }
 
   let filtered = ITEM_LIST;
@@ -1448,7 +1519,10 @@ function renderItems() {
   }
 
   if (crossFilterActive) {
-    html += `<div class="crossfilter-banner">Showing <strong>${filtered.length}</strong> item${filtered.length !== 1 ? 's' : ''} needed for <strong>${missingCount}</strong> missing Pok\u00e9mon</div>`;
+    const split = missingBasinCount > 0
+      ? ` <span class="crossfilter-split">(${missingCount - missingBasinCount} Main + ${missingBasinCount} Basin)</span>`
+      : '';
+    html += `<div class="crossfilter-banner">Showing <strong>${filtered.length}</strong> item${filtered.length !== 1 ? 's' : ''} needed for <strong>${missingCount}</strong> missing Pok\u00e9mon${split}</div>`;
   }
 
   html += '<ul class="items-list">';
@@ -1513,6 +1587,7 @@ function switchView(view) {
   const itemsContainer = document.getElementById('items-container');
   const filterRow = document.getElementById('filter-row');
   const regionRow = document.getElementById('region-row');
+  const dexRow = document.getElementById('dex-row');
   const screenHeader = document.querySelector('.screen-header');
 
   document.querySelectorAll('.view-btn').forEach(b => {
@@ -1524,6 +1599,7 @@ function switchView(view) {
     itemsContainer.classList.add('hidden');
     filterRow.style.display = '';
     regionRow.style.display = '';
+    dexRow.style.display = '';
     screenHeader.style.display = '';
     searchInput.placeholder = 'Search Pokémon...';
     searchInput.value = searchQuery;
@@ -1532,6 +1608,7 @@ function switchView(view) {
     itemsContainer.classList.remove('hidden');
     filterRow.style.display = 'none';
     regionRow.style.display = 'none';
+    dexRow.style.display = 'none';
     screenHeader.style.display = 'none';
     searchInput.placeholder = 'Search items...';
     searchInput.value = '';
@@ -1659,7 +1736,12 @@ document.getElementById('sync-overlay').addEventListener('click', (e) => {
 });
 
 // ─── Init ────────────────────────────────────────────
+// Reflect the remembered dex tab before first paint, then filter — buildGrid renders every
+// Pokémon in both dexes, so without applyFilters the Basin 50 show up in the main grid.
+document.querySelectorAll('.dex-btn').forEach(b =>
+  b.classList.toggle('active', b.dataset.dex === currentDex));
 buildGrid();
+applyFilters();
 runBootAnimation();
 
 syncReady = true;
