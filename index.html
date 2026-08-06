@@ -171,6 +171,7 @@ body {
 /* Hinge line */
 .hinge-line {
   height: 2px;
+  flex: 0 0 auto;
   background: linear-gradient(90deg, transparent 5%, #660000 20%, #440000 50%, #660000 80%, transparent 95%);
   border-radius: 2px;
   margin: 0 4px 5px;
@@ -863,6 +864,31 @@ body {
 }
 .items-container.hidden { display: none; }
 
+.grid-empty {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+  padding: 20px;
+}
+.grid-empty.hidden { display: none; }
+.grid-empty-btn {
+  padding: 8px 16px;
+  border: 1px solid #D0CCC2;
+  border-radius: 14px;
+  background: #E8E4DA;
+  color: #555;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.grid-empty-btn:active { transform: scale(0.97); }
+
 /* ─── Build List ──────────────────────────────────── */
 .build-container {
   padding: 6px;
@@ -1165,6 +1191,7 @@ body {
         </div>
       </div>
       <div class="pokemon-grid" id="pokemon-grid"></div>
+      <div class="grid-empty hidden" id="grid-empty">No Pokémon match these filters.<br><button class="grid-empty-btn" id="clear-filters">Clear filters</button></div>
       <div class="items-container hidden" id="items-container"></div>
       <div class="build-container hidden" id="build-container"></div>
     </div>
@@ -1399,7 +1426,13 @@ POKEMON.forEach(p => {
   p.nightOnly = hasData && times.size === 1 && times.has('Night');
   p.timeLimited = hasData && times.size > 0 && times.size < ALL_TIMES.length;
   p.weatherLocked = hasData && weather.size > 0 && weather.size < ALL_WEATHER.length;
-  p.condBadge = p.nightOnly ? '🌙' : p.weatherLocked ? '🌧️' : p.timeLimited ? '☀️' : '';
+  // Use the Pokémon's ACTUAL weather, not a blanket rain icon — Charizard and Cacnea
+  // are weather-locked to Sun/Cloud and were being badged as rain-only, sending you to
+  // hunt them in the one condition they never appear in.
+  const firstWeather = ALL_WEATHER.find(x => weather.has(x));
+  p.condBadge = p.nightOnly ? '🌙'
+    : p.weatherLocked ? (WEATHER_ICON[firstWeather] || '🌧️')
+    : p.timeLimited ? '☀️' : '';
   p.condTitle = p.nightOnly ? 'Night only'
     : p.weatherLocked ? 'Only in ' + [...weather].join('/')
     : p.timeLimited ? 'Only in ' + [...times].join('/') : '';
@@ -1475,6 +1508,7 @@ function updateProgress() {
 
 // ─── Search & Filters ────────────────────────────────
 function applyFilters() {
+  let shown = 0;
   const cells = document.querySelectorAll('.pokemon-cell');
   cells.forEach(cell => {
     const uid = cell.dataset.uid;
@@ -1491,7 +1525,12 @@ function applyFilters() {
     if (currentCond && cell.dataset.cond !== currentCond) show = false;
 
     cell.classList.toggle('hidden', !show);
+    if (show) shown++;
   });
+  // The grid was the only view that just went blank — Build and Items both explain
+  // themselves. Two taps (e.g. Basin + Weather-locked) reaches an empty result.
+  const empty = document.getElementById('grid-empty');
+  if (empty) empty.classList.toggle('hidden', shown > 0);
 }
 
 document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -1526,6 +1565,17 @@ document.getElementById('region-select').addEventListener('change', (e) => {
 document.getElementById('cond-select').addEventListener('change', (e) => {
   currentCond = e.target.value;
   e.target.classList.toggle('active', !!currentCond);
+  applyFilters();
+});
+
+document.getElementById('clear-filters').addEventListener('click', () => {
+  currentFilter = 'all'; currentRegion = ''; currentCond = ''; searchQuery = '';
+  document.querySelectorAll('.filter-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.filter === 'all'));
+  const rs = document.getElementById('region-select'), csel = document.getElementById('cond-select');
+  rs.value = ''; rs.classList.remove('active');
+  csel.value = ''; csel.classList.remove('active');
+  document.getElementById('search-input').value = '';
   applyFilters();
 });
 
@@ -1647,11 +1697,15 @@ function openLightbox(habitat) {
 
   // Build spawn list
   let missingHere = 0;
+  let trackable = 0;
   const spawnHtml = habitat.pokemon.map(s => {
     // Find by name to get the correct uid (handles duplicate dex numbers)
     const matchedP = POKEMON.find(p => p.name.toLowerCase() === s.name.toLowerCase());
     const isCaughtP = matchedP ? isCaught(matchedP.uid) : false;
-    if (!isCaughtP) missingHere++;
+    // Only count spawns that map to a real dex entry. Serebii lists Crabrawler on
+    // "Bubbly stage" but its page 404s, so it exists in no dex — counting it left that
+    // habitat permanently reading "1 still missing" and disagreeing with the Build list.
+    if (matchedP) { trackable++; if (!isCaughtP) missingHere++; }
 
     const rarClass = s.rarity === 'Very Rare' ? 'veryrare'
       : s.rarity === 'Rare' ? 'rare'
@@ -1692,7 +1746,7 @@ function openLightbox(habitat) {
       </div>
     </div>
     <div class="lightbox-section" style="border-top:1px solid #D0CCC2">
-      <div class="lightbox-section-title">Pokémon in this habitat — ${missingHere ? `<span style="color:#CC0000">${missingHere} of ${habitat.pokemon.length} still missing</span>` : `all ${habitat.pokemon.length} caught ✓`}</div>
+      <div class="lightbox-section-title">Pokémon in this habitat — ${missingHere ? `<span style="color:#CC0000">${missingHere} of ${trackable} still missing</span>` : `all ${trackable} caught ✓`}</div>
       <div class="lightbox-spawn-list">${spawnHtml}</div>
     </div>
   `;
@@ -1879,9 +1933,13 @@ function renderItems() {
   let html = `<div class="crossfilter-row"><button class="${btnClass}" onclick="toggleCrossFilter()">Needed for Missing</button></div>`;
 
   if (filtered.length === 0) {
-    const msg = crossFilterActive
-      ? 'All caught! No items needed for missing Pok\u00e9mon. \ud83c\udf89'
-      : (query ? 'No items match "' + query.replace(/</g, '&lt;') + '"' : 'No items found');
+    // Check the search first: an empty result because nothing matched is not a
+    // reason to congratulate someone who still has 365 Pokémon to find.
+    const msg = query
+      ? 'No items match "' + query.replace(/</g, '&lt;') + '"'
+      : (crossFilterActive
+          ? 'All caught! No items needed for missing Pok\u00e9mon. \ud83c\udf89'
+          : 'No items found');
     container.innerHTML = html + `<div class="items-empty">${msg}</div>`;
     return;
   }
@@ -2082,15 +2140,46 @@ function pushNow() {
     .then(() => syncSetStatus('ok'), () => syncSetStatus('err'));
 }
 
-function pullAndMerge() {
+// Every read is stamped with the code it asked about and a generation counter.
+// Without this a slow answer for one code could land after the user had switched to
+// another and be written into THAT account — mixing one person's Pokémon into
+// someone else's cloud save, permanently and invisibly.
+let syncGeneration = 0;
+let syncPrevCode = '';
+
+// intent 'link' means the user typed a code they believe already exists. An empty
+// result then means they mistyped, NOT that we should create the record and upload
+// over it — doing that abandons their real code while reporting success.
+function pullAndMerge(intent) {
   if (!syncCode) return;
+  const forCode = syncCode;
+  const gen = ++syncGeneration;
+  const stale = () => gen !== syncGeneration || syncCode !== forCode;
   syncSetStatus('saving');
-  rpc('pokopia_pull', { p_code: syncCode }).then(rows => {
+  rpc('pokopia_pull', { p_code: forCode }).then(rows => {
+    if (stale()) return;                      // answer for a code we've since left
     if (!Array.isArray(rows)) { syncSetStatus('err'); return; }
 
-    // No row yet for this code — a brand-new code, or one whose row was cleared.
-    // Nothing to merge, and pushing here simply creates it.
-    if (rows.length === 0) { syncPulled = true; pushNow(); return; }
+    if (rows.length === 0) {
+      if (intent === 'link') {
+        // Nothing up there under the code they typed — almost certainly a typo.
+        // Don't create the record, don't push, and hand them back the code they had,
+        // which is otherwise gone from the device with no way to recover it.
+        if (syncPrevCode) {
+          syncCode = syncPrevCode;
+          try { localStorage.setItem(CODE_KEY, syncCode); } catch (e) { storageFailed = true; }
+        } else {
+          syncCode = '';
+          try { localStorage.removeItem(CODE_KEY); } catch (e) { storageFailed = true; }
+        }
+        syncPulled = false;
+        syncSetStatus('nocode');
+        renderSyncCard();
+        return;
+      }
+      // A code we just minted — nothing to merge, and pushing creates the record.
+      syncPulled = true; pushNow(); return;
+    }
 
     const remote = rows[0] && rows[0].caught;
     if (!Array.isArray(remote)) {
@@ -2107,11 +2196,11 @@ function pullAndMerge() {
       if (removedSet.has(uid)) return;        // deliberately un-caught here; don't resurrect
       if (!caughtSet.has(uid)) { caughtSet.add(uid); changed = true; }
     });
-    // A removal that the cloud no longer knows about has done its job everywhere, so
-    // retire it. Keeps the veto list from silently blocking a genuine future catch.
-    removedSet.forEach(uid => {
-      if (!remoteSet.has(uid)) { removedSet.delete(uid); changed = true; }
-    });
+    // Deliberately NO expiry on removals. Retiring one because the cloud no longer
+    // lists it looks safe but isn't: the cloud only reflects devices that have
+    // uploaded, so a second device still holding the old copy pushes the Pokémon
+    // back and the correction is undone. Re-catching clears the removal, and that
+    // is the only signal that actually means "I want this one back".
 
     syncPulled = true;
     if (changed) {
@@ -2138,12 +2227,19 @@ function syncStatusLine() {
   const warn = storageFailed
     ? '<p class="sync-status"><span style="color:#CC0000">⚠ Couldn\'t save on this device — storage may be full. Catches may be lost when you close the app.</span></p>'
     : '';
-  if (!syncCode) return warn;
+  // "that code doesn't exist" must still be visible when the failed attempt left the
+  // device with no code at all — otherwise a typo just silently does nothing.
+  if (!syncCode) {
+    return warn + (syncStatus === 'nocode'
+      ? '<p class="sync-status"><span style="color:#CC0000">No Pokodex found for that code — check it and try again.</span></p>'
+      : '');
+  }
   let line;
   if (syncStatus === 'saving') line = '<span style="color:#999">Syncing…</span>';
   else if (syncStatus === 'err') line = '<span style="color:#CC0000">Not backed up — couldn\'t reach the cloud</span>';
   else if (syncStatus === 'unsafe') line = '<span style="color:#CC0000">Not backed up — waiting to read the cloud copy first</span>';
   else if (syncStatus === 'badrow') line = '<span style="color:#CC0000">Cloud copy couldn\'t be read. Not writing over it — check the code.</span>';
+  else if (syncStatus === 'nocode') line = '<span style="color:#CC0000">No Pokodex found for that code — check it and try again.</span>';
   // Only claim success once the server has actually confirmed a write. This used to be
   // the default, so the card promised "Backed up ✓" before it had contacted anything.
   else if (syncStatus === 'ok') line = '<span style="color:#2E9E2E">Backed up to the cloud ✓</span>';
@@ -2221,8 +2317,9 @@ document.getElementById('sync-overlay').addEventListener('click', (e) => {
       btn.textContent = 'Tap again to switch from ' + syncCode;
       return;
     }
+    syncPrevCode = syncCode;
     if (!saveSyncCode(normalised)) { btn.textContent = 'Couldn\'t save on this device'; return; }
-    pullAndMerge(); renderSyncCard();
+    pullAndMerge('link'); renderSyncCard();
   } else if (act === 'off') {
     // Two-tap guard: this discards the only pointer to the cloud backup.
     if (btn.dataset.armed !== '1') {

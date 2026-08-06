@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pokopia-dex-v1';
+const CACHE_NAME = 'pokopia-dex-v2';
 
 // Install: cache core files
 self.addEventListener('install', e => {
@@ -46,8 +46,23 @@ self.addEventListener('fetch', e => {
       url.pathname.endsWith('/')) {
     e.respondWith(
       fetch(e.request).then(response => {
-        const clone = response.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+        // Only keep a response that is actually our app. Previously ANY response was
+        // stored, so opening the app once behind a hotel/airport wifi sign-in page
+        // saved that portal page as the offline copy — the app then booted to a frozen
+        // splash screen forever, and the obvious fix (clear site data) also wipes the
+        // caught list. Note a captive portal answers 200, so response.ok is not enough:
+        // the content type has to match what we asked for.
+        const ct = (response.headers.get('content-type') || '').toLowerCase();
+        const wantsJs = url.pathname.endsWith('.js');
+        const wantsJson = url.pathname.endsWith('.json');
+        const looksRight = response.ok && !response.redirected && (
+          wantsJs ? ct.includes('javascript')
+          : wantsJson ? ct.includes('json')
+          : ct.includes('text/html'));
+        if (looksRight) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+        }
         return response;
       }).catch(() => caches.match(e.request))
     );
