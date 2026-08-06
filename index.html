@@ -197,7 +197,8 @@ body {
 /* Header keeps its natural height; the scrolling list takes the rest. */
 .screen-header { flex: 0 0 auto; }
 .pokemon-grid,
-.items-container { flex: 1 1 auto; min-height: 0; }
+.items-container,
+.build-container { flex: 1 1 auto; min-height: 0; }
 
 /* Landscape and other short viewports. Below roughly 560px of height there isn't
    enough room to both fill the screen and show the controls, and a purely flexible
@@ -400,10 +401,13 @@ body {
   object-fit: contain;
 }
 
+/* Two selects side by side so the extra filter costs no vertical space —
+   the whole point of the layout work is that the controls stay on screen. */
 .region-row {
   margin-top: 8px;
   display: flex;
   justify-content: center;
+  gap: 6px;
 }
 .region-select {
   width: 100%;
@@ -576,18 +580,39 @@ body {
 .habitat-conditions {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  font-size: 11px;
-  color: #888;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
 }
-.condition-group {
-  display: flex;
+.condition-lead {
+  font-size: 11px;
+  font-weight: 700;
+  color: #B26A00;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.condition-pill {
+  display: inline-flex;
   align-items: center;
   gap: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #7A4A00;
+  background: #FFF1D6;
+  border: 1px solid #E8C58A;
+  border-radius: 10px;
+  padding: 2px 8px;
 }
-.condition-icon { font-size: 13px; }
-.condition-active { color: #333; font-weight: 600; }
-.condition-inactive { opacity: 0.3; }
+/* Grid badge for Pokémon restricted in every habitat they appear in */
+.cond-badge {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  font-size: 10px;
+  line-height: 1;
+  opacity: 0.9;
+  pointer-events: none;
+}
 
 .location-tags {
   display: flex;
@@ -739,6 +764,16 @@ body {
   border-bottom: 1px solid #EEE;
 }
 .lightbox-spawn-row:last-child { border-bottom: none; }
+/* 44px tall so it clears the touch-target minimum, and visibly tappable */
+.lightbox-spawn-row.tappable {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 6px 6px;
+  margin: 0 -6px;
+  border-radius: 8px;
+}
+.lightbox-spawn-row.tappable:active { background: #F0EDE4; }
+.spawn-chevron { margin-left: auto; color: #BBB; font-size: 18px; line-height: 1; }
 .lightbox-spawn-sprite {
   width: 32px; height: 32px;
   object-fit: contain;
@@ -817,6 +852,105 @@ body {
   overscroll-behavior: contain;
 }
 .items-container.hidden { display: none; }
+
+/* ─── Build List ──────────────────────────────────── */
+.build-container {
+  padding: 6px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+.build-container.hidden { display: none; }
+.build-intro {
+  font-size: 11px;
+  color: #777;
+  padding: 2px 4px 8px;
+  text-align: center;
+}
+.build-row {
+  display: flex;
+  gap: 10px;
+  padding: 10px 8px;
+  border-bottom: 1px solid #E0DDD4;
+  cursor: pointer;
+  border-radius: 8px;
+  align-items: flex-start;
+}
+.build-row:active { background: #F0EDE4; }
+.build-row:last-child { border-bottom: none; }
+.build-thumb {
+  width: 54px; height: 54px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #DDD;
+  flex: 0 0 auto;
+}
+.build-body { flex: 1 1 auto; min-width: 0; }
+.build-top {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.build-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.build-unlocks {
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 700;
+  color: #FFF;
+  background: #CC0000;
+  border-radius: 10px;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+.build-basin-tag {
+  font-size: 9px;
+  font-weight: 700;
+  color: #0A6E8A;
+  background: #DFF3FA;
+  border: 1px solid #A9DCEC;
+  border-radius: 8px;
+  padding: 1px 5px;
+  white-space: nowrap;
+}
+.build-mats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 5px;
+}
+.build-mat {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  color: #555;
+  background: #F0EDE4;
+  border-radius: 8px;
+  padding: 2px 7px 2px 3px;
+}
+.build-mat img { width: 16px; height: 16px; object-fit: contain; }
+.build-mat b { color: #CC0000; }
+.build-missing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  margin-top: 5px;
+  align-items: center;
+}
+.build-missing img { width: 26px; height: 26px; object-fit: contain; }
+.build-missing .more { font-size: 10px; color: #888; margin-left: 3px; }
+.build-empty {
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+  padding: 40px 20px;
+}
 .items-list { list-style: none; }
 .item-row {
   display: flex;
@@ -1018,6 +1152,7 @@ body {
       </div>
       <div class="pokemon-grid" id="pokemon-grid"></div>
       <div class="items-container hidden" id="items-container"></div>
+      <div class="build-container hidden" id="build-container"></div>
     </div>
   </div>
 
@@ -1025,6 +1160,7 @@ body {
   <div class="controls-area">
     <div class="view-toggle">
       <button class="view-btn active" data-view="pokemon">Pokémon</button>
+      <button class="view-btn" data-view="build">Build</button>
       <button class="view-btn" data-view="items">Items</button>
     </div>
     <div class="dex-toggle" id="dex-row">
@@ -1043,6 +1179,12 @@ body {
       <button class="filter-btn" data-filter="caught">Caught</button>
     </div>
     <div class="region-row" id="region-row">
+      <select class="region-select" id="cond-select" aria-label="Filter by spawn condition">
+        <option value="">Any Time</option>
+        <option value="night">🌙 Night only</option>
+        <option value="daytime">☀️ Daytime only</option>
+        <option value="weather">🌧️ Weather-locked</option>
+      </select>
       <select class="region-select" id="region-select" aria-label="Filter by region">
         <option value="">All Regions</option>
         <option value="Bleak Beach">Bleak Beach</option>
@@ -1151,6 +1293,7 @@ let syncStatus = '';
 
 let currentFilter = 'all';
 let currentRegion = '';
+let currentCond = '';
 let searchQuery = '';
 let selectedPokemon = null;
 
@@ -1213,6 +1356,45 @@ const DEX_TOTALS = { main: DEX_NUMS.main.size, basin: DEX_NUMS.basin.size };
 // uid → Pokémon, so progress doesn't re-scan the whole array for every caught entry
 const UID_MAP = new Map(POKEMON.map(p => [p.uid, p]));
 
+// ─── Spawn conditions ────────────────────────────────
+const ALL_TIMES = ['Morning', 'Day', 'Evening', 'Night'];
+const ALL_WEATHER = ['Sun', 'Cloud', 'Rain'];
+const TIME_ICON = { Morning: '🌅', Day: '☀️', Evening: '🌆', Night: '🌙' };
+const WEATHER_ICON = { Sun: '☀️', Cloud: '☁️', Rain: '🌧️' };
+
+// The restrictions on one habitat entry — empty when it's available in every
+// condition, which is true of 87% of them.
+function conditionPills(hab) {
+  const pills = [];
+  const t = hab.times || [], w = hab.weather || [];
+  if (t.length && t.length < ALL_TIMES.length) {
+    ALL_TIMES.forEach(x => { if (t.includes(x)) pills.push({ icon: TIME_ICON[x], label: x }); });
+  }
+  if (w.length && w.length < ALL_WEATHER.length) {
+    ALL_WEATHER.forEach(x => { if (w.includes(x)) pills.push({ icon: WEATHER_ICON[x], label: x }); });
+  }
+  return pills;
+}
+
+// A Pokémon only earns a grid badge if it is restricted across ALL of its habitats
+// combined. Judging per-habitat would wrongly flag something like Honchkrow, whose
+// individual habitats are time-limited but together cover the whole day.
+POKEMON.forEach(p => {
+  const times = new Set(), weather = new Set();
+  let hasData = false;
+  p.habitats.forEach(h => {
+    if ((h.times || []).length) { hasData = true; h.times.forEach(t => times.add(t)); }
+    if ((h.weather || []).length) h.weather.forEach(w => weather.add(w));
+  });
+  p.nightOnly = hasData && times.size === 1 && times.has('Night');
+  p.timeLimited = hasData && times.size > 0 && times.size < ALL_TIMES.length;
+  p.weatherLocked = hasData && weather.size > 0 && weather.size < ALL_WEATHER.length;
+  p.condBadge = p.nightOnly ? '🌙' : p.weatherLocked ? '🌧️' : p.timeLimited ? '☀️' : '';
+  p.condTitle = p.nightOnly ? 'Night only'
+    : p.weatherLocked ? 'Only in ' + [...weather].join('/')
+    : p.timeLimited ? 'Only in ' + [...times].join('/') : '';
+});
+
 // ─── Boot Animation ──────────────────────────────────
 function runBootAnimation() {
   const boot = document.getElementById('boot-screen');
@@ -1240,10 +1422,12 @@ function buildGrid() {
     cell.dataset.dex = p.dex;
     cell.dataset.name = p.name.toLowerCase();
     cell.dataset.locations = [...p.allLocations].join('|').toLowerCase();
+    cell.dataset.cond = p.nightOnly ? 'night' : p.weatherLocked ? 'weather' : p.timeLimited ? 'daytime' : '';
 
     cell.innerHTML = `
       <img class="sprite" src="${p.sprite}" alt="${p.name}"
            onerror="this.style.opacity='0.1'">
+      ${p.condBadge ? `<span class="cond-badge" title="${p.condTitle}">${p.condBadge}</span>` : ''}
       <span class="dex-num">#${p.num}</span>
     `;
 
@@ -1294,6 +1478,7 @@ function applyFilters() {
     if (currentFilter === 'missing' && caught) show = false;
     if (searchQuery && !name.includes(searchQuery)) show = false;
     if (currentRegion && !locations.includes(currentRegion.toLowerCase())) show = false;
+    if (currentCond && cell.dataset.cond !== currentCond) show = false;
 
     cell.classList.toggle('hidden', !show);
   });
@@ -1325,6 +1510,12 @@ document.querySelectorAll('.dex-btn').forEach(btn => {
 document.getElementById('region-select').addEventListener('change', (e) => {
   currentRegion = e.target.value;
   e.target.classList.toggle('active', !!currentRegion);
+  applyFilters();
+});
+
+document.getElementById('cond-select').addEventListener('change', (e) => {
+  currentCond = e.target.value;
+  e.target.classList.toggle('active', !!currentCond);
   applyFilters();
 });
 
@@ -1366,20 +1557,12 @@ function openSheet(pokemon) {
         : hab.rarity === 'Rare' ? 'rare'
         : hab.rarity === 'Uncommon' ? 'uncommon' : 'common';
 
-      // Time icons
-      const timeIcons = [
-        { label: 'Morning', icon: '🌅', active: hab.times.includes('Morning') },
-        { label: 'Day', icon: '☀️', active: hab.times.includes('Day') },
-        { label: 'Evening', icon: '🌆', active: hab.times.includes('Evening') },
-        { label: 'Night', icon: '🌙', active: hab.times.includes('Night') },
-      ];
-
-      // Weather icons
-      const weatherIcons = [
-        { label: 'Sun', icon: '☀️', active: hab.weather.includes('Sun') },
-        { label: 'Cloud', icon: '☁️', active: hab.weather.includes('Cloud') },
-        { label: 'Rain', icon: '🌧️', active: hab.weather.includes('Rain') },
-      ];
+      // Only the RESTRICTIONS, spelled out. The old row showed all seven icons every
+      // time and marked "not available" with 30% opacity — two nearly identical suns
+      // (one meaning Day, one meaning Sun) and a fade you had to notice. 87% of spawn
+      // rows have no restriction at all, so the row is now dropped entirely there and
+      // reads as a real signal when it does appear.
+      const condPills = conditionPills(hab);
 
       card.innerHTML = `
         <div class="habitat-card-header">
@@ -1396,15 +1579,10 @@ function openSheet(pokemon) {
             </span>
           `).join('')}
         </div>
-        <div class="habitat-conditions">
-          <span class="condition-group">
-            ${timeIcons.map(t => `<span class="condition-icon ${t.active ? 'condition-active' : 'condition-inactive'}" title="${t.label}">${t.icon}</span>`).join('')}
-          </span>
-          <span style="color:#CCC">|</span>
-          <span class="condition-group">
-            ${weatherIcons.map(w => `<span class="condition-icon ${w.active ? 'condition-active' : 'condition-inactive'}" title="${w.label}">${w.icon}</span>`).join('')}
-          </span>
-        </div>
+        ${condPills.length ? `<div class="habitat-conditions">
+          <span class="condition-lead">Only</span>
+          ${condPills.map(c => `<span class="condition-pill">${c.icon} ${c.label}</span>`).join('')}
+        </div>` : ''}
         <div class="location-tags">
           ${hab.locations.map(l => `<span class="location-tag">${l}</span>`).join('')}
         </div>
@@ -1449,6 +1627,7 @@ document.getElementById('catch-btn').addEventListener('click', () => {
   updateCellState(uid);
   updateProgress();
   if (currentView === 'items' && crossFilterActive) renderItems();
+  if (currentView === 'build') renderBuild();
   closeSheet();
 });
 
@@ -1457,22 +1636,27 @@ function openLightbox(habitat) {
   const content = document.getElementById('lightbox-content');
 
   // Build spawn list
+  let missingHere = 0;
   const spawnHtml = habitat.pokemon.map(s => {
     // Find by name to get the correct uid (handles duplicate dex numbers)
     const matchedP = POKEMON.find(p => p.name.toLowerCase() === s.name.toLowerCase());
     const isCaughtP = matchedP ? isCaught(matchedP.uid) : false;
+    if (!isCaughtP) missingHere++;
 
     const rarClass = s.rarity === 'Very Rare' ? 'veryrare'
       : s.rarity === 'Rare' ? 'rare'
       : s.rarity === 'Uncommon' ? 'uncommon' : 'common';
 
+    // Tappable: this list is exactly what you're hunting, and tapping a name used to
+    // do nothing — you had to back out two screens and find it in the grid by hand.
     return `
-      <div class="lightbox-spawn-row">
+      <div class="lightbox-spawn-row${matchedP ? ' tappable' : ''}"${matchedP ? ` data-jump="${matchedP.uid}"` : ''}>
         <img class="lightbox-spawn-sprite ${isCaughtP ? '' : 'uncaught'}"
              src="img/pokemon/${s.spriteNum}.png" alt="${s.name}"
              onerror="this.style.opacity='0.1'">
         <span class="lightbox-spawn-name ${isCaughtP ? '' : 'uncaught'}">${s.name}</span>
         <span class="rarity-badge rarity-${rarClass}" style="font-size:10px">${s.rarity}</span>
+        ${matchedP ? '<span class="spawn-chevron">›</span>' : ''}
       </div>
     `;
   }).join('');
@@ -1498,10 +1682,19 @@ function openLightbox(habitat) {
       </div>
     </div>
     <div class="lightbox-section" style="border-top:1px solid #D0CCC2">
-      <div class="lightbox-section-title">Pokémon in this habitat (${habitat.pokemon.length})</div>
+      <div class="lightbox-section-title">Pokémon in this habitat — ${missingHere ? `<span style="color:#CC0000">${missingHere} of ${habitat.pokemon.length} still missing</span>` : `all ${habitat.pokemon.length} caught ✓`}</div>
       <div class="lightbox-spawn-list">${spawnHtml}</div>
     </div>
   `;
+
+  content.querySelectorAll('[data-jump]').forEach(row => {
+    row.addEventListener('click', () => {
+      const p = UID_MAP.get(row.dataset.jump);
+      if (!p) return;
+      closeLightbox();
+      openSheet(p);
+    });
+  });
 
   document.getElementById('lightbox').classList.add('open');
 }
@@ -1531,7 +1724,87 @@ const ITEM_LIST = Object.values(ITEM_INDEX).sort((a, b) => a.name.localeCompare(
 
 let currentView = 'pokemon';
 let itemSearchQuery = '';
+let buildSearchQuery = '';
 let crossFilterActive = false;
+
+// ─── Build List ──────────────────────────────────────
+// The question a player actually has is "what should I build next?" The app already
+// worked out the answer and threw it away: computeNeededItems walked every missing
+// Pokémon's habitats and then keyed the result on ITEM, producing an A–Z catalogue of
+// essentially every object in the game. Keying the same walk on HABITAT and sorting by
+// how many missing Pokémon each one unlocks turns it into an actual to-do list.
+function computeBuildList() {
+  const byHabitat = new Map();
+  for (const p of POKEMON) {
+    if (caughtSet.has(p.uid)) continue;
+    for (const hab of p.habitats) {
+      const habitat = HABITAT_MAP[hab.habitatNum];
+      if (!habitat) continue;
+      if (!byHabitat.has(hab.habitatNum)) {
+        byHabitat.set(hab.habitatNum, { habitat, missing: [] });
+      }
+      const entry = byHabitat.get(hab.habitatNum);
+      if (!entry.missing.some(m => m.uid === p.uid)) {
+        entry.missing.push({ uid: p.uid, name: p.name, sprite: p.sprite, dex: p.dex, rarity: hab.rarity });
+      }
+    }
+  }
+  // Most Pokémon unlocked first; ties broken by fewest materials, then by name, so the
+  // order is stable rather than dependent on object insertion.
+  return [...byHabitat.values()].sort((a, b) =>
+    b.missing.length - a.missing.length ||
+    a.habitat.materials.length - b.habitat.materials.length ||
+    a.habitat.name.localeCompare(b.habitat.name));
+}
+
+function renderBuild() {
+  const container = document.getElementById('build-container');
+  const q = buildSearchQuery;
+  let list = computeBuildList();
+  if (q) list = list.filter(e => e.habitat.name.toLowerCase().includes(q));
+
+  if (!list.length) {
+    container.innerHTML = `<div class="build-empty">${q
+      ? 'No habitat matches "' + q.replace(/</g, '&lt;') + '"'
+      : 'Nothing left to build — every Pokémon with a habitat is caught. 🎉'}</div>`;
+    return;
+  }
+
+  const total = list.reduce((n, e) => n + e.missing.length, 0);
+  let html = `<div class="build-intro">Sorted by how many Pokémon you're still missing. Tap a habitat for the full recipe.</div>`;
+
+  html += list.map(e => {
+    const h = e.habitat;
+    const isBasin = h.num >= 1000 && h.num < 2000;
+    const shown = e.missing.slice(0, 8);
+    return `
+      <div class="build-row" data-habnum="${h.num}">
+        <img class="build-thumb" src="${h.image}" alt="${h.name}" onerror="this.style.background='#DDD'">
+        <div class="build-body">
+          <div class="build-top">
+            <span class="build-name">${h.name}</span>
+            ${isBasin ? '<span class="build-basin-tag">BASIN</span>' : ''}
+            <span class="build-unlocks">${e.missing.length} missing</span>
+          </div>
+          <div class="build-mats">
+            ${h.materials.map(m => `<span class="build-mat"><img src="${m.image}" alt="" onerror="this.style.display='none'"><b>${m.quantity}×</b> ${m.item}</span>`).join('') || '<span class="build-mat">No materials listed</span>'}
+          </div>
+          <div class="build-missing">
+            ${shown.map(m => `<img src="${m.sprite}" alt="${m.name}" title="${m.name}" onerror="this.style.opacity='0.15'">`).join('')}
+            ${e.missing.length > shown.length ? `<span class="more">+${e.missing.length - shown.length}</span>` : ''}
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+
+  container.innerHTML = html;
+  container.querySelectorAll('[data-habnum]').forEach(row => {
+    row.addEventListener('click', () => {
+      const h = HABITAT_MAP[Number(row.dataset.habnum)];
+      if (h) openLightbox(h);
+    });
+  });
+}
 
 function computeNeededItems() {
   const needed = new Map();
@@ -1617,8 +1890,11 @@ function renderItems() {
     const habitatsToShow = neededEntry
       ? item.habitats.filter(h => neededEntry.habitats.has(h.habitat.num))
       : item.habitats;
+    // Say "habitats" either way. This used to read "1 needed" on the parent row while
+    // the child row said "1x needed" — two nearly identical phrases, one counting
+    // habitats and the other counting how many of the item you need.
     const countLabel = neededEntry
-      ? `${habitatsToShow.length} needed`
+      ? `${habitatsToShow.length} habitat${habitatsToShow.length > 1 ? 's' : ''} to build`
       : `${item.habitats.length} habitat${item.habitats.length > 1 ? 's' : ''}`;
 
     html += `
@@ -1670,6 +1946,7 @@ function switchView(view) {
   const searchInput = document.getElementById('search-input');
   const grid = document.getElementById('pokemon-grid');
   const itemsContainer = document.getElementById('items-container');
+  const buildContainer = document.getElementById('build-container');
   const filterRow = document.getElementById('filter-row');
   const regionRow = document.getElementById('region-row');
   const dexRow = document.getElementById('dex-row');
@@ -1679,22 +1956,27 @@ function switchView(view) {
     b.classList.toggle('active', b.dataset.view === view);
   });
 
-  if (view === 'pokemon') {
-    grid.style.display = '';
-    itemsContainer.classList.add('hidden');
-    filterRow.style.display = '';
-    regionRow.style.display = '';
-    dexRow.style.display = '';
-    screenHeader.style.display = '';
+  // Only the Pokémon grid uses the dex tabs and the caught/region/condition filters —
+  // the Build and Items lists deliberately span both dexes.
+  const isPokemon = view === 'pokemon';
+  grid.style.display = isPokemon ? '' : 'none';
+  itemsContainer.classList.toggle('hidden', view !== 'items');
+  buildContainer.classList.toggle('hidden', view !== 'build');
+  filterRow.style.display = isPokemon ? '' : 'none';
+  regionRow.style.display = isPokemon ? '' : 'none';
+  dexRow.style.display = isPokemon ? '' : 'none';
+  screenHeader.style.display = isPokemon ? '' : 'none';
+
+  if (isPokemon) {
     searchInput.placeholder = 'Search Pokémon...';
     searchInput.value = searchQuery;
+  } else if (view === 'build') {
+    searchInput.placeholder = 'Search habitats...';
+    searchInput.value = '';
+    buildSearchQuery = '';
+    renderBuild();
+    buildContainer.scrollTop = 0;
   } else {
-    grid.style.display = 'none';
-    itemsContainer.classList.remove('hidden');
-    filterRow.style.display = 'none';
-    regionRow.style.display = 'none';
-    dexRow.style.display = 'none';
-    screenHeader.style.display = 'none';
     searchInput.placeholder = 'Search items...';
     searchInput.value = '';
     itemSearchQuery = '';
@@ -1713,12 +1995,15 @@ function toggleCrossFilter() {
   renderItems();
 }
 
-// Search input handles both views
+// Search input serves whichever view is showing
 document.getElementById('search-input').addEventListener('input', (e) => {
   const val = e.target.value.toLowerCase().trim();
   if (currentView === 'pokemon') {
     searchQuery = val;
     applyFilters();
+  } else if (currentView === 'build') {
+    buildSearchQuery = val;
+    renderBuild();
   } else {
     itemSearchQuery = val;
     renderItems();
@@ -1826,6 +2111,8 @@ function pullAndMerge() {
       } catch (e) { storageFailed = true; }
       buildGrid();
       applyFilters();
+      if (currentView === 'build') renderBuild();
+      else if (currentView === 'items' && crossFilterActive) renderItems();
       // The open sheet's button is stale after a merge. Leaving it saying
       // "Mark as Caught!" for a Pokémon the pull just marked caught meant one tap
       // silently un-caught it.

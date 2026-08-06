@@ -7,8 +7,10 @@ A mobile-friendly reference app for **Pokémon Pokopia** (Nintendo Switch 2). Ta
 - All 305 main-dex Pokémon with silhouette/color toggle for caught tracking
 - Separate **Basin** tab for the 50 Bubbly Basin Pokémon (2.0 Expansion Pass), with its own progress bar
 - 250 habitats with materials, rarity, locations, time, and weather data
+- **Build** tab: a to-do list of habitats ranked by how many Pokémon you're still missing, with the recipe for each
 - Tap any Pokémon to see which habitats attract it
-- Tap a habitat card to see all Pokémon that appear there
+- Tap a habitat card to see all Pokémon that appear there, and tap any of those to jump straight to it
+- Spawn restrictions spelled out ("Only 🌙 Night"), with badges on the 38 Pokémon that are time- or weather-locked everywhere, and a filter for them
 - Filter by region (Bleak Beach, Bubbly Basin, Cloud Island, Palette Town, Rocky Ridges, Sparkling Skylands, Withered Wastelands)
 - Search by name, filter by caught/missing
 - Alternate forms tracked independently (Pikachu/Peakychu, Shellos forms, etc.)
