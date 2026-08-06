@@ -26,11 +26,14 @@ body {
   padding-bottom: env(safe-area-inset-bottom, 0);
   -webkit-tap-highlight-color: transparent;
   user-select: none;
-  /* Pinned to the viewport so the device shell can lay itself out as a fixed
-     column: screen on top, controls underneath, always in thumb reach. dvh
-     tracks Safari's collapsing address bar; the vh line is the fallback. */
+  /* No safe-area padding here. Putting it on the body shrank the shell inside it and
+     left a dead band of bare background under the controls — on an iPhone that's the
+     home-indicator strip plus the shell's own padding, ~46px of nothing. The insets
+     now live inside the shell instead, so the red gradient bleeds to the screen edges
+     and the leftover height goes to the screen rather than to a gap. */
   height: 100vh;
   height: 100dvh;
+  overflow: hidden;
 }
 
 /* ─── Boot Animation ───────────────────────────────── */
@@ -123,12 +126,16 @@ body {
 .pokedex-shell {
   max-width: 430px;
   margin: 0 auto;
-  height: 100%;
+  /* Full viewport, not 100% of a padded body — see the note on body above. */
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   background: linear-gradient(145deg, #DC1818 0%, #CC0000 30%, #AA0000 70%, #880000 100%);
   position: relative;
-  padding: 12px 10px;
+  /* Safe-area insets absorbed here so nothing sits under the status bar or the home
+     indicator, while the shell itself still reaches the edges of the screen. */
+  padding: calc(10px + env(safe-area-inset-top, 0px)) 10px calc(4px + env(safe-area-inset-bottom, 0px));
   opacity: 0;
   transition: opacity 0.5s ease-out;
 }
@@ -139,7 +146,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 4px 6px 10px;
+  padding: 2px 6px 6px;
   flex: 0 0 auto;
 }
 .lens {
@@ -316,12 +323,12 @@ body {
 
 /* ─── Controls Area (below screen) ─────────────────── */
 .controls-area {
-  padding: 10px 6px 8px;
+  padding: 8px 6px 4px;
   flex: 0 0 auto;
 }
 .search-row {
   position: relative;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 .search-input {
   width: 100%;
@@ -404,7 +411,7 @@ body {
 /* Two selects side by side so the extra filter costs no vertical space —
    the whole point of the layout work is that the controls stay on screen. */
 .region-row {
-  margin-top: 8px;
+  margin-top: 6px;
   display: flex;
   justify-content: center;
   gap: 6px;
@@ -795,7 +802,7 @@ body {
   display: flex;
   gap: 6px;
   justify-content: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 .view-btn {
   padding: 6px 18px;
@@ -823,7 +830,7 @@ body {
   display: flex;
   gap: 6px;
   justify-content: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 .dex-btn {
   padding: 6px 18px;
