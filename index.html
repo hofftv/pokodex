@@ -158,12 +158,16 @@ body {
   padding: 0 6px 3px;
   flex: 0 0 auto;
 }
+/* 40px, not 28px: the top bar's height is set by the 40px sync button, so shrinking
+   the lens below that saved nothing at all — it just cost the device its face. */
 .lens {
-  width: 28px; height: 28px;
+  width: 40px; height: 40px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, #7DF9FF, #0077BE, #003366);
   border: 2px solid #004466;
-  box-shadow: 0 0 0 2px #333, 0 0 10px rgba(0, 180, 255, 0.4);
+  box-shadow: 0 0 0 2px #2A2A2A,
+              inset 0 -3px 5px rgba(0,0,0,0.45),
+              0 0 10px rgba(0, 180, 255, 0.35);
   flex-shrink: 0;
 }
 .indicator-dots {
@@ -325,14 +329,16 @@ body {
   filter: brightness(0);
   opacity: 0.6;
 }
+/* The uncaught ones are what you're hunting, so they get the readable colour and the
+   caught ones step back. It used to be the other way round. */
 .pokemon-cell .dex-num {
-  font-size: 9px;
-  color: #999;
+  font-size: 10px;
+  color: #6B6558;
   font-weight: 600;
   margin-top: 0;
   line-height: 1.1;
 }
-.pokemon-cell.caught .dex-num { color: #666; }
+.pokemon-cell.caught .dex-num { color: #8E887A; }
 .pokemon-cell.hidden { display: none; }
 
 /* ─── Controls Area (below screen) ─────────────────── */
@@ -971,13 +977,15 @@ body {
   gap: 4px;
   margin-top: 5px;
 }
+/* #E5E0D4, not #F0EDE4 — the old value matched .screen exactly, so the chip had no
+   edge and the recipe read as loose floating text. */
 .build-mat {
   display: inline-flex;
   align-items: center;
   gap: 3px;
   font-size: 11px;
   color: #555;
-  background: #F0EDE4;
+  background: #E5E0D4;
   border-radius: 8px;
   padding: 2px 7px 2px 3px;
 }
@@ -2236,13 +2244,13 @@ function syncStatusLine() {
   // Shown regardless of whether sync is on — a failed local save is the more serious
   // problem, and it must not be masked by a later "Backed up ✓".
   const warn = storageFailed
-    ? '<p class="sync-status"><span style="color:#CC0000">⚠ Couldn\'t save on this device — storage may be full. Catches may be lost when you close the app.</span></p>'
+    ? '<div class="sync-status"><span style="color:#CC0000">⚠ Couldn\'t save on this device — storage may be full. Catches may be lost when you close the app.</span></div>'
     : '';
   // "that code doesn't exist" must still be visible when the failed attempt left the
   // device with no code at all — otherwise a typo just silently does nothing.
   if (!syncCode) {
     return warn + (syncStatus === 'nocode'
-      ? '<p class="sync-status"><span style="color:#CC0000">No Pokodex found for that code — check it and try again.</span></p>'
+      ? '<div class="sync-status"><span style="color:#CC0000">No Pokodex found for that code — check it and try again.</span></div>'
       : '');
   }
   let line;
@@ -2277,7 +2285,7 @@ function renderSyncCard() {
     body = '<div class="sync-mini-label">Your sync code</div>' +
       '<div class="sync-code">' + syncCode + '</div>' +
       '<button class="sync-btn-primary" data-sync="copy">Copy Code</button>' +
-      '<p class="sync-status">' + syncStatusLine() + '</p>' +
+      '<div class="sync-status">' + syncStatusLine() + '</div>' +
       '<hr class="sync-divider">' +
       '<div class="sync-mini-label">Use on another device</div>' +
       '<p class="sync-sub">Open the app there, tap ☁, and paste this code to load your Pokodex. Catches from both devices are merged together. Un-catching only affects the device you do it on.</p>' +
