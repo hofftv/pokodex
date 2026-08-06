@@ -133,7 +133,7 @@ body {
   position: relative;
   /* Safe-area insets absorbed here so nothing sits under the status bar or the home
      indicator, while the shell itself still reaches the edges of the screen. */
-  padding: calc(10px + env(safe-area-inset-top, 0px)) 10px calc(4px + env(safe-area-inset-bottom, 0px));
+  padding: calc(6px + env(safe-area-inset-top, 0px)) 10px calc(2px + env(safe-area-inset-bottom, 0px));
   opacity: 0;
   transition: opacity 0.5s ease-out;
 }
@@ -144,15 +144,15 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 2px 6px 6px;
+  padding: 0 6px 3px;
   flex: 0 0 auto;
 }
 .lens {
-  width: 52px; height: 52px;
+  width: 28px; height: 28px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, #7DF9FF, #0077BE, #003366);
-  border: 3px solid #004466;
-  box-shadow: 0 0 0 3px #333, 0 0 12px rgba(0, 180, 255, 0.4);
+  border: 2px solid #004466;
+  box-shadow: 0 0 0 2px #333, 0 0 10px rgba(0, 180, 255, 0.4);
   flex-shrink: 0;
 }
 .indicator-dots {
@@ -170,17 +170,17 @@ body {
 
 /* Hinge line */
 .hinge-line {
-  height: 3px;
+  height: 2px;
   background: linear-gradient(90deg, transparent 5%, #660000 20%, #440000 50%, #660000 80%, transparent 95%);
   border-radius: 2px;
-  margin: 0 4px 10px;
+  margin: 0 4px 5px;
 }
 
 /* ─── Screen Area ──────────────────────────────────── */
 .screen-bezel {
   background: #222;
   border-radius: 12px;
-  padding: 6px;
+  padding: 4px;
   box-shadow: inset 0 2px 6px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.1);
   /* Take all remaining height. min-height:0 is the load-bearing part — without it
      a flex item refuses to shrink below its content, which is what let the grid
@@ -219,7 +219,7 @@ body {
 /* Screen header with progress */
 .screen-header {
   background: #E8E4DA;
-  padding: 10px 12px 8px;
+  padding: 6px 10px 6px;
   border-bottom: 1px solid #D0CCC2;
   position: sticky;
   top: 0;
@@ -229,7 +229,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 6px;
+  gap: 8px;
+  margin-bottom: 5px;
 }
 .progress-label {
   font-size: 14px;
@@ -240,7 +241,7 @@ body {
   gap: 6px;
 }
 .pokeball-icon {
-  width: 18px; height: 18px;
+  width: 16px; height: 16px;
   display: inline-block;
   background: radial-gradient(circle at 50% 50%, #fff 30%, #333 31%, #333 34%, transparent 35%),
               linear-gradient(to bottom, #CC0000 50%, #fff 50%);
@@ -273,18 +274,20 @@ body {
      narrowed to one result would blow that single tile up to full height. */
   align-content: start;
   gap: 2px;
-  padding: 6px;
+  padding: 4px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
 }
 .pokemon-cell {
-  aspect-ratio: 1;
+  /* Slightly wider than tall — the square tile reserved vertical space the
+     sprite never used, and vertical space is what limits how many you can see. */
+  aspect-ratio: 1.18;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4px 2px 2px;
+  padding: 2px 2px 1px;
   border-radius: 6px;
   cursor: pointer;
   position: relative;
@@ -301,8 +304,8 @@ body {
   border-color: #B0E0B0;
 }
 .pokemon-cell .sprite {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
   image-rendering: auto;
 }
@@ -314,23 +317,24 @@ body {
   font-size: 9px;
   color: #999;
   font-weight: 600;
-  margin-top: 1px;
+  margin-top: 0;
+  line-height: 1.1;
 }
 .pokemon-cell.caught .dex-num { color: #666; }
 .pokemon-cell.hidden { display: none; }
 
 /* ─── Controls Area (below screen) ─────────────────── */
 .controls-area {
-  padding: 8px 6px 4px;
+  padding: 5px 6px 2px;
   flex: 0 0 auto;
 }
 .search-row {
   position: relative;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 .search-input {
   width: 100%;
-  padding: 8px 12px 8px 32px;
+  padding: 6px 12px 6px 32px;
   border: 2px solid #660000;
   border-radius: 20px;
   background: #440000;
@@ -356,7 +360,7 @@ body {
   justify-content: center;
 }
 .filter-btn {
-  padding: 6px 14px;
+  padding: 5px 14px;
   border: 2px solid #660000;
   border-radius: 14px;
   background: #440000;
@@ -409,14 +413,14 @@ body {
 /* Two selects side by side so the extra filter costs no vertical space —
    the whole point of the layout work is that the controls stay on screen. */
 .region-row {
-  margin-top: 6px;
+  margin-top: 5px;
   display: flex;
   justify-content: center;
   gap: 6px;
 }
 .region-select {
   width: 100%;
-  padding: 7px 12px;
+  padding: 6px 12px;
   border: 2px solid #660000;
   border-radius: 14px;
   background: #440000;
@@ -800,10 +804,10 @@ body {
   display: flex;
   gap: 6px;
   justify-content: center;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 .view-btn {
-  padding: 6px 18px;
+  padding: 5px 16px;
   border: 2px solid #660000;
   border-radius: 14px;
   background: #440000;
@@ -826,17 +830,19 @@ body {
    handlers and an active-state sweep that would fight with the dex tabs. */
 .dex-toggle {
   display: flex;
-  gap: 6px;
-  justify-content: center;
-  margin-bottom: 6px;
+  gap: 3px;
+  flex: 0 0 auto;
+  background: #DCD8CE;
+  border-radius: 11px;
+  padding: 2px;
 }
 .dex-btn {
-  padding: 6px 18px;
-  border: 2px solid #660000;
-  border-radius: 14px;
-  background: #440000;
-  color: #CC8888;
-  font-size: 12px;
+  padding: 3px 11px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: #7A7669;
+  font-size: 11px;
   font-weight: 700;
   cursor: pointer;
   transition: none;
@@ -845,8 +851,7 @@ body {
 .dex-btn.active {
   background: #CC0000;
   color: #FFF;
-  border-color: #FF3333;
-  box-shadow: 0 0 8px rgba(255, 51, 51, 0.4);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 /* ─── Items View ──────────────────────────────────── */
@@ -1149,6 +1154,10 @@ body {
             <span class="pokeball-icon"></span>
             <span id="progress-title">Pokodex</span>
           </div>
+          <div class="dex-toggle" id="dex-row">
+            <button class="dex-btn active" data-dex="main">Main</button>
+            <button class="dex-btn" data-dex="basin">Basin</button>
+          </div>
           <div class="progress-count" id="progress-count">0 / 305</div>
         </div>
         <div class="progress-bar-bg">
@@ -1167,10 +1176,6 @@ body {
       <button class="view-btn active" data-view="pokemon">Pokémon</button>
       <button class="view-btn" data-view="build">Build</button>
       <button class="view-btn" data-view="items">Items</button>
-    </div>
-    <div class="dex-toggle" id="dex-row">
-      <button class="dex-btn active" data-dex="main">Main</button>
-      <button class="dex-btn" data-dex="basin">Basin</button>
     </div>
     <div class="search-row">
       <span class="search-icon">🔍</span>
