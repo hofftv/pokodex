@@ -26,8 +26,11 @@ body {
   padding-bottom: env(safe-area-inset-bottom, 0);
   -webkit-tap-highlight-color: transparent;
   user-select: none;
-  min-height: 100vh;
-  min-height: 100dvh;
+  /* Pinned to the viewport so the device shell can lay itself out as a fixed
+     column: screen on top, controls underneath, always in thumb reach. dvh
+     tracks Safari's collapsing address bar; the vh line is the fallback. */
+  height: 100vh;
+  height: 100dvh;
 }
 
 /* ─── Boot Animation ───────────────────────────────── */
@@ -114,11 +117,15 @@ body {
 }
 
 /* ─── Pokodex Shell ────────────────────────────────── */
+/* The shell is a fixed-height column: top bar and controls take what they need,
+   the screen absorbs the rest. No magic pixel numbers, so it adapts to any phone
+   and re-flows automatically when the dex tabs hide in Items view. */
 .pokedex-shell {
   max-width: 430px;
   margin: 0 auto;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(145deg, #DC1818 0%, #CC0000 30%, #AA0000 70%, #880000 100%);
   position: relative;
   padding: 12px 10px;
@@ -133,6 +140,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 4px 6px 10px;
+  flex: 0 0 auto;
 }
 .lens {
   width: 52px; height: 52px;
@@ -169,12 +177,37 @@ body {
   border-radius: 12px;
   padding: 6px;
   box-shadow: inset 0 2px 6px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.1);
+  /* Take all remaining height. min-height:0 is the load-bearing part — without it
+     a flex item refuses to shrink below its content, which is what let the grid
+     grow to 4,400px and push every control off the bottom of the page. */
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 .screen {
   background: #F0EDE4;
   border-radius: 8px;
   overflow: hidden;
-  min-height: 50vh;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+/* Header keeps its natural height; the scrolling list takes the rest. */
+.screen-header { flex: 0 0 auto; }
+.pokemon-grid,
+.items-container { flex: 1 1 auto; min-height: 0; }
+
+/* Landscape and other short viewports. Below roughly 560px of height there isn't
+   enough room to both fill the screen and show the controls, and a purely flexible
+   screen would shrink to a useless sliver. Give the screen a fixed slice and let the
+   shell itself scroll instead — the same escape hatch the page had before. This must
+   be a flex-basis, not a min-height: with min-height the bezel's natural height wins
+   and the grid grows back to its full 4,400px. */
+@media (max-height: 560px) {
+  .pokedex-shell { overflow-y: auto; }
+  .screen-bezel { flex: 0 0 170px; }
 }
 
 /* Screen header with progress */
@@ -230,6 +263,9 @@ body {
 .pokemon-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  /* Rows sit at the top rather than stretching to fill — otherwise a search
+     narrowed to one result would blow that single tile up to full height. */
+  align-content: start;
   gap: 2px;
   padding: 6px;
   overflow-y: auto;
@@ -280,6 +316,7 @@ body {
 /* ─── Controls Area (below screen) ─────────────────── */
 .controls-area {
   padding: 10px 6px 8px;
+  flex: 0 0 auto;
 }
 .search-row {
   position: relative;
@@ -1073,8 +1110,35 @@ POKEMON.forEach(p => {
 });
 
 // ─── State ────────────────────────────────────────────
+// A corrupt or non-array value here used to throw at top level and take the whole
+// script with it — boot screen forever, zero tiles, no way back without clearing
+// site data. Always hand back a usable Set.
+function loadUidSet(key) {
+  try {
+    const raw = JSON.parse(localStorage.getItem(key) || '[]');
+    return new Set(Array.isArray(raw) ? raw.filter(u => typeof u === 'string') : []);
+  } catch (e) {
+    return new Set();
+  }
+}
+
 const STORAGE_KEY = 'pokopia-caught';
-let caughtSet = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
+let caughtSet = loadUidSet(STORAGE_KEY);
+
+// Deliberate un-catches, kept LOCAL to this device and never sent to the cloud.
+//
+// The merge only ever added entries, so correcting a mis-tap never stuck: the next
+// pull found the old entry still up there and put it straight back. Recording the
+// removal lets the correction win over a stale cloud copy.
+//
+// These are deliberately not synced. Broadcasting them was tried and is unsafe: a
+// tombstone with no timestamp always beats a catch no matter which happened later,
+// so a genuine catch made on another device gets deleted and the two devices never
+// converge. Ordering that correctly needs per-entry timestamps and a server that
+// understands them. Keeping removals local means the worst case is two devices
+// disagreeing — never a lost Pokémon.
+const REMOVED_KEY = 'pokopia-removed';
+let removedSet = loadUidSet(REMOVED_KEY);
 
 // Cloud sync config/state (shared Supabase project, isolated pokopia_sync table)
 const CODE_KEY = 'pokopia-code';
@@ -1112,10 +1176,29 @@ const DEX_LABELS = { main: 'Pokodex', basin: 'Bubbly Basin' };
   if (changed) localStorage.setItem(STORAGE_KEY, JSON.stringify([...caughtSet]));
 })();
 
+// Set once the browser refuses a write. Sticky, because a failed save means what is
+// on screen no longer matches what is stored — the user needs to know that even after
+// a later sync reports success.
+let storageFailed = false;
+
 function saveCaught() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify([...caughtSet]));
+  // Guarded: if the browser refuses to write (storage full, private tab) this used to
+  // throw and abort the whole catch handler, so the tile never updated and the button
+  // appeared dead with no explanation.
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...caughtSet]));
+    localStorage.setItem(REMOVED_KEY, JSON.stringify([...removedSet]));
+    storageFailed = false;
+  } catch (e) {
+    storageFailed = true;
+  }
+  syncSetStatus(syncStatus);
   if (syncReady && syncCode) schedulePush();
 }
+
+// Catching clears any past un-catch, and vice versa, so the two sets never disagree.
+function markCaught(uid) { caughtSet.add(uid); removedSet.delete(uid); }
+function markUncaught(uid) { caughtSet.delete(uid); removedSet.add(uid); }
 
 function isCaught(uid) {
   return caughtSet.has(uid);
@@ -1233,7 +1316,9 @@ document.querySelectorAll('.dex-btn').forEach(btn => {
       b.classList.toggle('active', b.dataset.dex === currentDex));
     applyFilters();
     updateProgress();
-    document.querySelector('.screen').scrollTop = 0;
+    // The grid is the scroller, not .screen (which is overflow:hidden). Targeting
+    // .screen here silently did nothing and left you partway down the Basin list.
+    document.getElementById('pokemon-grid').scrollTop = 0;
   });
 });
 
@@ -1356,9 +1441,9 @@ document.getElementById('catch-btn').addEventListener('click', () => {
   if (!selectedPokemon) return;
   const uid = selectedPokemon.uid;
   if (isCaught(uid)) {
-    caughtSet.delete(uid);
+    markUncaught(uid);
   } else {
-    caughtSet.add(uid);
+    markCaught(uid);
   }
   saveCaught();
   updateCellState(uid);
@@ -1649,6 +1734,27 @@ function rpc(fn, body) {
   }).then(r => { if (!r.ok) throw new Error('http ' + r.status); return r.json(); });
 }
 
+// Point this device at a code. Removals are per-device and per-account, so they're
+// dropped on a switch — otherwise an old correction would follow you onto someone
+// else's dex and veto Pokémon they legitimately caught.
+function saveSyncCode(code) {
+  try {
+    localStorage.setItem(CODE_KEY, code);
+  } catch (e) {
+    storageFailed = true;
+    return false;
+  }
+  syncCode = code;
+  syncPulled = false;
+  clearRemovals();
+  return true;
+}
+
+function clearRemovals() {
+  removedSet.clear();
+  try { localStorage.removeItem(REMOVED_KEY); } catch (e) { storageFailed = true; }
+}
+
 function genCode() {
   const A = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
   const rnd = new Uint8Array(12); crypto.getRandomValues(rnd);
@@ -1665,8 +1771,17 @@ function syncSetStatus(s) {
 
 function schedulePush() { clearTimeout(pushTimer); pushTimer = setTimeout(pushNow, 1200); }
 
+// A push REPLACES the cloud row, so it must never run before this device has seen
+// what is up there. Without this gate a failed pull merely delayed the damage: the
+// next tap scheduled a push 1.2s later that overwrote a full backup with whatever
+// this device happened to hold — an empty list, on a fresh reinstall.
+let syncPulled = false;
+
 function pushNow() {
   if (!syncCode) return;
+  // Keep the more specific 'badrow' explanation rather than replacing it with the
+  // generic one — it tells the user to check the code instead of blaming the network.
+  if (!syncPulled) { if (syncStatus !== 'badrow') syncSetStatus('unsafe'); return; }
   syncSetStatus('saving');
   rpc('pokopia_push', { p_code: syncCode, p_caught: [...caughtSet] })
     .then(() => syncSetStatus('ok'), () => syncSetStatus('err'));
@@ -1676,28 +1791,84 @@ function pullAndMerge() {
   if (!syncCode) return;
   syncSetStatus('saving');
   rpc('pokopia_pull', { p_code: syncCode }).then(rows => {
-    if (rows && rows[0] && Array.isArray(rows[0].caught)) {
-      rows[0].caught.forEach(uid => caughtSet.add(uid));
-      localStorage.setItem(STORAGE_KEY, JSON.stringify([...caughtSet]));
+    if (!Array.isArray(rows)) { syncSetStatus('err'); return; }
+
+    // No row yet for this code — a brand-new code, or one whose row was cleared.
+    // Nothing to merge, and pushing here simply creates it.
+    if (rows.length === 0) { syncPulled = true; pushNow(); return; }
+
+    const remote = rows[0] && rows[0].caught;
+    if (!Array.isArray(remote)) {
+      // A 200 with a shape we don't recognise. Do NOT push: uploading this device's
+      // list would overwrite a good cloud backup with whatever is local — and on a
+      // fresh reinstall that is an empty list. Fail visibly and stay read-only.
+      syncSetStatus('badrow');
+      return;
+    }
+
+    const remoteSet = new Set(remote.filter(u => typeof u === 'string'));
+    let changed = false;
+    remoteSet.forEach(uid => {
+      if (removedSet.has(uid)) return;        // deliberately un-caught here; don't resurrect
+      if (!caughtSet.has(uid)) { caughtSet.add(uid); changed = true; }
+    });
+    // A removal that the cloud no longer knows about has done its job everywhere, so
+    // retire it. Keeps the veto list from silently blocking a genuine future catch.
+    removedSet.forEach(uid => {
+      if (!remoteSet.has(uid)) { removedSet.delete(uid); changed = true; }
+    });
+
+    syncPulled = true;
+    if (changed) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify([...caughtSet]));
+        localStorage.setItem(REMOVED_KEY, JSON.stringify([...removedSet]));
+      } catch (e) { storageFailed = true; }
       buildGrid();
       applyFilters();
+      // The open sheet's button is stale after a merge. Leaving it saying
+      // "Mark as Caught!" for a Pokémon the pull just marked caught meant one tap
+      // silently un-caught it.
+      if (selectedPokemon) openSheet(selectedPokemon);
     }
-    pushNow(); // write merged set back up
+    pushNow(); // write the merged set back up
   }, () => syncSetStatus('err'));
 }
 
 function syncStatusLine() {
-  if (syncStatus === 'saving') return '<span style="color:#999">Syncing…</span>';
-  if (syncStatus === 'err') return '<span style="color:#CC0000">Offline — will sync when reconnected</span>';
-  return '<span style="color:#2E9E2E">Backed up to the cloud ✓</span>';
+  // Shown regardless of whether sync is on — a failed local save is the more serious
+  // problem, and it must not be masked by a later "Backed up ✓".
+  const warn = storageFailed
+    ? '<p class="sync-status"><span style="color:#CC0000">⚠ Couldn\'t save on this device — storage may be full. Catches may be lost when you close the app.</span></p>'
+    : '';
+  if (!syncCode) return warn;
+  let line;
+  if (syncStatus === 'saving') line = '<span style="color:#999">Syncing…</span>';
+  else if (syncStatus === 'err') line = '<span style="color:#CC0000">Not backed up — couldn\'t reach the cloud</span>';
+  else if (syncStatus === 'unsafe') line = '<span style="color:#CC0000">Not backed up — waiting to read the cloud copy first</span>';
+  else if (syncStatus === 'badrow') line = '<span style="color:#CC0000">Cloud copy couldn\'t be read. Not writing over it — check the code.</span>';
+  // Only claim success once the server has actually confirmed a write. This used to be
+  // the default, so the card promised "Backed up ✓" before it had contacted anything.
+  else if (syncStatus === 'ok') line = '<span style="color:#2E9E2E">Backed up to the cloud ✓</span>';
+  else line = '<span style="color:#999">Not backed up yet</span>';
+  return warn + line;
 }
 
 function renderSyncCard() {
   const card = document.getElementById('sync-card');
   let body;
   if (!syncCode) {
-    body = '<p class="sync-sub">Back up your Pokodex to the cloud so it survives updates, reinstalls, and new phones — and syncs across your devices.</p>' +
-      '<button class="sync-btn-primary" data-sync="enable">Turn On Sync</button>';
+    // The paste box has to live here too. It used to appear only once a device already
+    // had a code, which made the app's own instructions impossible to follow: a new
+    // phone or iPad had no way to enter an existing code, only to mint a fresh empty one.
+    body = syncStatusLine() +
+      '<p class="sync-sub">Back up your Pokodex to the cloud so it survives updates, reinstalls, and new phones — and syncs across your devices.</p>' +
+      '<button class="sync-btn-primary" data-sync="enable">Turn On Sync</button>' +
+      '<hr class="sync-divider">' +
+      '<div class="sync-mini-label">Already have a code?</div>' +
+      '<p class="sync-sub">Paste it here to load your Pokodex onto this device.</p>' +
+      '<input class="sync-input2" id="sync-code-input" placeholder="XXXX-XXXX-XXXX" autocapitalize="characters" autocomplete="off" autocorrect="off">' +
+      '<button class="sync-btn-primary" data-sync="link">Load That Code</button>';
   } else {
     body = '<div class="sync-mini-label">Your sync code</div>' +
       '<div class="sync-code">' + syncCode + '</div>' +
@@ -1705,7 +1876,7 @@ function renderSyncCard() {
       '<p class="sync-status">' + syncStatusLine() + '</p>' +
       '<hr class="sync-divider">' +
       '<div class="sync-mini-label">Use on another device</div>' +
-      '<p class="sync-sub">Open the app there, tap ☁, and paste this code to load your Pokodex. It merges — you never lose a catch.</p>' +
+      '<p class="sync-sub">Open the app there, tap ☁, and paste this code to load your Pokodex. Catches from both devices are merged together. Un-catching only affects the device you do it on.</p>' +
       '<input class="sync-input2" id="sync-code-input" placeholder="XXXX-XXXX-XXXX" autocapitalize="characters" autocomplete="off" autocorrect="off">' +
       '<button class="sync-btn-primary" data-sync="link">Load That Code</button>' +
       '<button class="sync-btn-secondary" data-sync="off">Turn Off Sync (keeps this device)</button>';
@@ -1723,16 +1894,49 @@ document.getElementById('sync-overlay').addEventListener('click', (e) => {
   const btn = e.target.closest('[data-sync]'); if (!btn) return;
   const act = btn.getAttribute('data-sync');
   if (act === 'close') closeSync();
-  else if (act === 'enable') { syncCode = genCode(); localStorage.setItem(CODE_KEY, syncCode); pushNow(); renderSyncCard(); }
+  else if (act === 'enable') {
+    const code = genCode();
+    // If we can't persist the code, don't start syncing to it — the device would push
+    // to a code the user has never seen and lose it on the next reload.
+    if (!saveSyncCode(code)) { btn.textContent = 'Couldn\'t save on this device'; return; }
+    syncPulled = true; // brand-new code, nothing up there to overwrite
+    pushNow(); renderSyncCard();
+  }
   else if (act === 'copy') {
     if (navigator.clipboard) navigator.clipboard.writeText(syncCode);
     btn.textContent = 'Copied!';
     setTimeout(() => { if (document.getElementById('sync-overlay').classList.contains('open')) renderSyncCard(); }, 1200);
   } else if (act === 'link') {
-    const v = (document.getElementById('sync-code-input').value || '').trim().toUpperCase();
-    if (v.replace(/[^A-Z0-9]/g, '').length < 8) { btn.textContent = 'Enter your full code'; return; }
-    syncCode = v; localStorage.setItem(CODE_KEY, syncCode); pullAndMerge(); renderSyncCard();
-  } else if (act === 'off') { syncCode = ''; localStorage.removeItem(CODE_KEY); syncSetStatus(''); renderSyncCard(); }
+    // Normalise to the canonical XXXX-XXXX-XXXX shape. Typing the code without its
+    // dashes used to produce a different string, which silently pointed at a
+    // different (empty) cloud record while the real one became unreachable.
+    let raw = (document.getElementById('sync-code-input').value || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    // genCode never emits O, I, 0 or 1 precisely because they get misread, so treat a
+    // typed one as the character it was mistaken for rather than sending the user to a
+    // different, empty record that would then cheerfully report "Backed up ✓".
+    raw = raw.replace(/0/g, 'O').replace(/1/g, 'I').replace(/O/g, 'Q').replace(/I/g, 'J');
+    if (raw.length !== 12) { btn.textContent = 'Need all 12 characters'; return; }
+    const normalised = raw.slice(0, 4) + '-' + raw.slice(4, 8) + '-' + raw.slice(8, 12);
+    if (normalised === syncCode) { btn.textContent = 'Already using that code'; return; }
+    // Replacing a code strands the old one, so make the second tap deliberate.
+    if (syncCode && btn.dataset.armed !== '1') {
+      btn.dataset.armed = '1';
+      btn.textContent = 'Tap again to switch from ' + syncCode;
+      return;
+    }
+    if (!saveSyncCode(normalised)) { btn.textContent = 'Couldn\'t save on this device'; return; }
+    pullAndMerge(); renderSyncCard();
+  } else if (act === 'off') {
+    // Two-tap guard: this discards the only pointer to the cloud backup.
+    if (btn.dataset.armed !== '1') {
+      btn.dataset.armed = '1';
+      btn.textContent = 'Tap again — code ' + syncCode + ' will be forgotten';
+      return;
+    }
+    syncCode = ''; syncPulled = false; clearRemovals();
+    try { localStorage.removeItem(CODE_KEY); } catch (e) { storageFailed = true; }
+    syncSetStatus(''); renderSyncCard();
+  }
 });
 
 // ─── Init ────────────────────────────────────────────
