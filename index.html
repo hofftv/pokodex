@@ -122,17 +122,28 @@ body {
    the screen absorbs the rest. No magic pixel numbers, so it adapts to any phone
    and re-flows automatically when the dex tabs hide in Items view. */
 .pokedex-shell {
+  /* Pinned to the real viewport edges rather than sized with a height unit.
+     On an installed iPhone PWA, 100dvh resolves to the SAFE-AREA height — the screen
+     minus the Dynamic Island and the home-indicator strip — so sizing the shell that
+     way and then padding it for those same insets counted them twice: the shell ended
+     ~100px short of the bottom, and because its gradient ends at #880000 against a
+     #8B0000 page, the shortfall read as dead space instead of a missing element.
+     The height now comes from visualViewport (see fitShell), which reports what is
+     genuinely on screen regardless of how the CSS units resolve. */
+  position: fixed;
+  top: 0; right: 0; left: 0;
+  /* --vvh is the real visible height, set from visualViewport in JS. The fallback
+     only matters before that first run. Using a measured height rather than a unit
+     also means the shell shrinks when the keyboard opens, so the search box and
+     filters stay above it instead of hiding behind it. */
+  height: var(--vvh, 100dvh);
   max-width: 430px;
   margin: 0 auto;
-  /* Full viewport, not 100% of a padded body — see the note on body above. */
-  height: 100vh;
-  height: 100dvh;
   display: flex;
   flex-direction: column;
   background: linear-gradient(145deg, #DC1818 0%, #CC0000 30%, #AA0000 70%, #880000 100%);
-  position: relative;
-  /* Safe-area insets absorbed here so nothing sits under the status bar or the home
-     indicator, while the shell itself still reaches the edges of the screen. */
+  /* Insets absorbed here so nothing sits under the status bar or the home indicator,
+     while the shell itself still reaches the physical edges of the screen. */
   padding: calc(6px + env(safe-area-inset-top, 0px)) 10px calc(2px + env(safe-area-inset-bottom, 0px));
   opacity: 0;
   transition: opacity 0.5s ease-out;
@@ -2332,6 +2343,25 @@ document.getElementById('sync-overlay').addEventListener('click', (e) => {
     syncSetStatus(''); renderSyncCard();
   }
 });
+
+// ─── Fit the shell to the viewport that actually exists ──────────────────
+// On an installed iPhone PWA, 100dvh resolves to the SAFE-AREA height — the screen
+// minus the Dynamic Island and the home-indicator strip. Sizing the shell with it and
+// then padding for those same insets counted them twice, leaving ~100px of bare
+// background under the controls that read as dead space. visualViewport reports what
+// is genuinely visible, and it also shrinks when the keyboard opens.
+function fitShell() {
+  const vv = window.visualViewport;
+  document.documentElement.style.setProperty('--vvh',
+    Math.round(vv ? vv.height : window.innerHeight) + 'px');
+}
+fitShell();
+if (window.visualViewport) {
+  visualViewport.addEventListener('resize', fitShell);
+  visualViewport.addEventListener('scroll', fitShell);
+}
+window.addEventListener('orientationchange', () => setTimeout(fitShell, 300));
+window.addEventListener('resize', fitShell);
 
 // ─── Init ────────────────────────────────────────────
 // Reflect the remembered dex tab before first paint, then filter — buildGrid renders every
