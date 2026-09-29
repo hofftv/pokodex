@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pokopia-dex-v2';
+const CACHE_NAME = 'pokopia-dex-v3';
 
 // Install: cache core files
 self.addEventListener('install', e => {
